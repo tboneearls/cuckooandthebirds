@@ -1,29 +1,68 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+      <header>
+        <nav-bar 
+          id="nav-bar"
+          ref="navbar"
+          :inert="!navActive"
+          v-show="navActive"/>
+        <nav-toggle 
+          class="nav-toggle"
+          @toggle="handleToggle();"/>
+      </header>
+
+      <!-- clears nav height above each view -->
+      <div class="nav-clearfix"></div>
+
+      <router-view />
+
+      <vue-footer />
   </div>
 </template>
-
-<script lang="ts">
+<script>
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import NavBar from '@/components/navigation/NavBar.vue';
+import NavToggle from '@/components/navigation/NavToggle.vue';
 
-@Component({
-  components: {
-    HelloWorld,
+import VueFooter from '@/components/global/VueFooter.vue';
+
+export default {
+  name: 'app',
+  data() {
+    return {
+      navActive: false
+    }
   },
-})
-export default class App extends Vue {}
+  components: {
+    NavBar,
+    NavToggle,
+    VueFooter,
+  },
+  methods: {
+    handleToggle: function() {
+      console.log("toggle");
+      this.navActive = !this.navActive;
+      
+      if (this.navActive) {
+        this.initializeFocus();
+      }
+    },
+    initializeFocus: function() {
+      var firstLink = document.querySelector("nav ul li:first-child a");
+      firstLink.focus();
+    }
+  },
+}
 </script>
 
 <style lang="scss">
+@import "src/scss/global.scss";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $red;
+  margin-top: 100px;
 }
 </style>

@@ -1,29 +1,14 @@
-# cuckooandthebirds
+# Cuckoo and the Birds
 
-## Project setup
-```
-npm install
-```
+Cuckoo and the Birds is a Chicago rock band who play sad songs that flirt with harmonies.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Check out our Music: 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Spotify
+- Bandcamp
 
-### Run your tests
-```
-npm run test
-```
+## Check out our Social Media:
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Instagram
+- Facebook
+- Twitter
