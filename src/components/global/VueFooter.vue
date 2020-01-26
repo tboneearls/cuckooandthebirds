@@ -15,7 +15,7 @@ export default {
     computed: {
         footerText: function() {
             const year = new Date().getFullYear();
-            return "&copy; Tyler Earls " + year;
+            return "&copy; " + year + " Cuckoo and the Birds";
         }
     },
 
