@@ -3,10 +3,10 @@
         <a  class="social-link"
             rel="noreferrer"
             target="_blank"
-            v-for="(link, index) in socialLinks" 
+            v-for="(link, index) in socialLinks"
             :key="index"
             :href="link.href"
-            :aria-label="`Go to Tyler's ${link.label}`">
+            :aria-label="`Visit Cuckoo and the Birds ${link.label}`">
             <span>
                 <i  class="fab"
                     :class="link.icon"></i>
@@ -16,41 +16,48 @@
 </template>
 
 <script>
-var socialLinks = [
-    {
-        href: "https://cuckooandthebirds.bandcamp.com",
-        label: "Bandcamp",
-        icon: "fa-bandcamp"
-    },
-    {
-        href: "https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD",
-        label: "Spotify",
-        icon: "fa-spotify"
-    },
-    {
-        href: "https://www.instagram.com/cuckooandthebirds/",
-        label: "Instagram",
-        icon: "fa-instagram"
-    },
-    {
-        href: "https://www.facebook.com/cuckooandthebirds",
-        label: "Facebook",
-        icon: "fa-facebook"
-    },
-    {
-        href: "https://www.twitter.com/cuckooandbirds",
-        label: "Twitter",
-        icon: "fa-twitter"
-    },
+// TODO: add socialLinks to setup hook when Vue 3.x is released
+
+/*
+ * href: link to social media site
+ * label: website name that will be attached to aria-label
+ * icon: css class for font-awesome icon
+ */
+const socialLinks = [
+  {
+    href: "https://cuckooandthebirds.bandcamp.com",
+    label: "Bandcamp",
+    icon: "fa-bandcamp",
+  },
+  {
+    href: "https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD",
+    label: "Spotify",
+    icon: "fa-spotify",
+  },
+  {
+    href: "https://www.instagram.com/cuckooandthebirds/",
+    label: "Instagram",
+    icon: "fa-instagram",
+  },
+  {
+    href: "https://www.facebook.com/cuckooandthebirds",
+    label: "Facebook",
+    icon: "fa-facebook",
+  },
+  {
+    href: "https://www.twitter.com/cuckooandbirds",
+    label: "Twitter",
+    icon: "fa-twitter",
+  },
 ];
 
 export default {
-    data() {
-        return {
-            socialLinks,
-        }
-    },
-}
+  data() {
+    return {
+      socialLinks,
+    };
+  },
+};
 </script>
 
 <style lang="scss">

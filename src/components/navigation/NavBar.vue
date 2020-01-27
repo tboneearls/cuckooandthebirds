@@ -14,37 +14,43 @@
 </template>
 
 <script>
-var sections = [
-    {
-        "name": "Home",
-        "href": "/"
-    },
-    {
-        "name": "Music", 
-        "href": "/music"
-    },
-    {
-        "name": "Shows", 
-        "href": "/shows"
-    },
-    {
-        "name": "Press", 
-        "href": "/press"
-    },
-    {
-        "name": "Contact",
-        "href": "/contact"
-    }
+
+// TODO: add sections to setup hook when Vue 3.x is released
+/*
+ * href: router-link url
+ * name: route name that will appear on nav bar
+ */
+const sections = [
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/music",
+    name: "Music",
+  },
+  {
+    href: "/shows",
+    name: "Shows",
+  },
+  {
+    href: "/press",
+    name: "Press",
+  },
+  {
+    href: "/contact",
+    name: "Contact",
+  },
 ];
 
 export default {
-    data() {
-        return {
-            sections,
-        }
-    },
-    props: ['inert'],
-}
+  data() {
+    return {
+      sections,
+    };
+  },
+  props: ["inert"],
+};
 </script>
 
 <style lang="scss" scoped>
@@ -68,7 +74,7 @@ a {
         ul {
             margin-right: 50px;
             li {
-                padding: 0 2px !important; 
+                padding: 0 2px !important;
             }
         }
     }

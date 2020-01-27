@@ -1,17 +1,42 @@
 <template>
-  <div>
-    <h1>Music</h1>
+  <main id="music">
+    <h1>Cuckoo and the Birds Releases</h1>
+    <br/>
 
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum natus rem eos laudantium recusandae consequatur nobis reiciendis, incidunt inventore labore nesciunt asperiores earum obcaecati dolor, deserunt repellat iure. Illum, hic?</p>
-  </div>
+    <music-release-list>
+      <!-- todo: use scoped slots here -->
+      <!-- <template #title></template>
+      <template #image>
+        <router-link
+          :to="`music/${release.href}`">
+          <cld-image
+            :publicId="`${release.imgsrc}`">
+            <cld-transformation width="700" crop="scale" />
+          </cld-image>
+        </router-link>
+      </template> -->
+    </music-release-list>
+  </main>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-export default Vue.extend({
+<script>
+import MusicReleaseList from "../components/releases/MusicReleaseList.vue";
+
+export default ({
+  components: {
+    MusicReleaseList,
+  },
 });
 </script>
 
-<style lang="sass">
+<style lang="scss">
+#music {
+  .description {
+    font-size: 18px !important;
+  }
+  .credits p {
+    font-size: 14px !important;
+  }
+}
 
 </style>
