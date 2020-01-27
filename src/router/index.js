@@ -46,9 +46,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
   routes,
+  mode: "history",
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       // scroll to relative url on page

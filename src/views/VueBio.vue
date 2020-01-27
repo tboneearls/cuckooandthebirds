@@ -6,7 +6,7 @@
         <br/>
         <section>
           <p>
-            Cuckoo and the Birds hail from Chicago, IL. The name dates back to when Tyler tried his hand at a solo project in high school after getting kicked out of the band he was in.
+            Cuckoo and the Birds hail from Chicago, IL. The name dates back to when Tyler Earls tried his hand at a solo project in high school after getting kicked out of the band he was in.
           </p>
           <br/>
           <p>
