@@ -1,16 +1,17 @@
 <template>
-    <nav>
-        <ul>
-            <li v-for="(section, index) in sections"
-                :key="index">
-                <router-link
-                    :to="section.href"
-                    :tabindex="inert ? -1 : 0">
-                    {{section.name}}
-                </router-link>
-            </li>
-        </ul>
-    </nav>
+  <!-- TODO: implement mobile design of nav bar -->
+  <nav>
+    <ul>
+      <li v-for="(section, index) in sections"
+        :key="index">
+        <router-link
+          :to="section.href"
+          :tabindex="inert ? -1 : 0">
+          {{section.name}}
+        </router-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -29,18 +30,18 @@ const sections = [
     href: "/music",
     name: "Music",
   },
-  {
-    href: "/shows",
-    name: "Shows",
-  },
+  // {
+  //   href: "/shows",
+  //   name: "Shows",
+  // },
   {
     href: "/press",
     name: "Press",
   },
-  {
-    href: "/contact",
-    name: "Contact",
-  },
+  // {
+  //   href: "/contact",
+  //   name: "Contact",
+  // },
 ];
 
 export default {

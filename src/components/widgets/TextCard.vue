@@ -16,6 +16,9 @@ export default {
   h2 {
     margin-bottom: 12px;
   }
+  p {
+    text-align: left;
+  }
   .text-card {
     max-width: 80vw;
     margin: 0 auto;

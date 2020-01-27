@@ -35,7 +35,17 @@ const socialLinks = [
     icon: "fa-spotify",
   },
   {
-    href: "https://www.instagram.com/cuckooandthebirds/",
+    href: "https://www.soundcloud.com/cuckooandthebirds/sets/twin-stars",
+    label: "Soundcloud",
+    icon: "fa-soundcloud",
+  },
+  {
+    href: "mailto:cuckooandthebirds@gmail.com",
+    label: "Email",
+    icon: "fas fa-envelope",
+  },
+  {
+    href: "https://www.instagram.com/cuckooandthebirds",
     label: "Instagram",
     icon: "fa-instagram",
   },
