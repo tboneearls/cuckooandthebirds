@@ -21,6 +21,7 @@ export default {
   }
   .text-card {
     max-width: 80vw;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>

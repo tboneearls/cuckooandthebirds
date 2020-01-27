@@ -1,9 +1,10 @@
 <template>
   <main id="music">
-    <h1>Cuckoo and the Birds Releases</h1>
+    <h1>Releases</h1>
     <br/>
-
     <music-release-list>
+
+      <!-- TODO: put this in child component? -->
       <div slot="description">
         <p>
           Twin Stars is a project born in the aftermath of Tyler’s previous band breaking up. It explores the stages of coping with losing someone so close that a part of yourself seems lost, too.
@@ -25,11 +26,11 @@
           Featuring only two musicians, the raw, understated texture becomes a distinguishing character of Twin Stars.
         </p>
       </div>
-      <!-- todo: use scoped slots here -->
+      <!-- TODO: use scoped slots here -->
       <!-- <template #title></template>
       <template #image>
         <router-link
-          :to="`music/${release.href}`">
+          :to="`music/${release.v-href}`">
           <cld-image
             :publicId="`${release.imgsrc}`">
             <cld-transformation width="700" crop="scale" />
@@ -41,7 +42,7 @@
 </template>
 
 <script>
-import MusicReleaseList from "../components/releases/MusicReleaseList.vue";
+import MusicReleaseList from "@/components/releases/MusicReleaseList.vue";
 
 export default ({
   components: {

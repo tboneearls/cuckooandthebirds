@@ -1,42 +1,42 @@
 <template>
   <section>
     <div v-for="(release, index) in releases" :key="index">
-      <slot :title="release.title" :year="release.year" name="title">
-        <h2>{{ release.title }} ({{ release.year }})</h2>
-      </slot>
-
-      <br/>
-
-      <slot name="image">
-        <cld-image :publicId="release.imgsrc">
-          <cld-transformation width="700" crop="scale" />
-        </cld-image>
-      </slot>
-
-      <br/>
       <TextCard>
-        <slot name="description">
-          {{ release.description }}
+        <slot :title="release.title" :year="release.year" name="title" class="title">
+          <h2>{{ release.title }} ({{ release.year }})</h2>
         </slot>
       </TextCard>
 
-      <br/>
+      <div class="release-container">
+        <div class="release-image">
+          <slot name="image">
+            <a target="_blank"
+              rel="noreferrer"
+              :aria-label="'Listen to ' + release.title"
+              :href="release.href">
+              <cld-image
+                :publicId="release.imgsrc">
+                <cld-transformation width="400" crop="scale" />
+              </cld-image>
+            </a>
+            <span style="font-style: italic;">Artwork by Breanda Fedie</span>
+          </slot>
+        </div>
+        <div class="release-description">
+          <slot name="description"></slot>
+        </div>
+      </div>
+
       <TextCard>
         <div class="credits">
           <h2>Credits:</h2>
-          <br/>
           <slot name="credits">
-            <p v-for="(credit, index) in release.lineup" :key="index">
-              {{ credit }}
-            </p>
+            <p v-for="(credit, index) in release.lineup" :key="index">{{ credit }}</p>
+            <br/>
           </slot>
-          <br/>
 
           <p>Songs written by Tyler Earls</p>
           <p>Tracked, Mixed, and Mastered by Zachary Taylor</p>
-          <br/>
-
-          <p>Artwork by Breanda Fedie</p>
         </div>
       </TextCard>
     </div>
@@ -50,8 +50,9 @@ const releases = [
   {
     imgsrc: "Twin%20Stars/twin-stars-album-art.jpg",
     year: 2019,
-    href: "twin-stars",
+    "v-href": "twin-stars",
     title: "Twin Stars",
+    href: "https://cuckooandthebirds.bandcamp.com/releases",
     // description:
     //   `Twin Stars is a project born in the aftermath of Tyler’s previous band breaking up. It explores the stages of coping with losing someone so close that a part of yourself seems lost, too.
     //   These songs encapsulate a newfound sense of agency after a toxic friendship ends with finality, and the necessary re-framing of identity that follows.
@@ -68,6 +69,7 @@ export default {
   data() {
     return {
       releases,
+      imgwidth: 0,
     };
   },
   components: {
@@ -77,10 +79,38 @@ export default {
 </script>
 
 <style lang="scss">
+  a:hover {
+    opacity: 0.7;
+  }
+  .inline {
+    display: inline;
+  }
   .credits {
     h2 {
-      text-align: left;
-      font-size: 16px;
+      text-align: left !important;
+      font-size: 20px;
+      margin-bottom: 16px;
     }
+  }
+  .release-container {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  .release-image {
+    float: left;
+    width: 50%;
+    margin: 0 10px;
+    margin-bottom: 5px;
+    height: max-content;
+    img {
+      width: calc(100% - 20px * 2);
+      margin: 20px;
+    }
+  }
+  .release-description {
+    padding: 12px;
+    height: max-content;
+    text-align: left;
+    margin-bottom: 4px;
   }
 </style>

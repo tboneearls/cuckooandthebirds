@@ -24,7 +24,7 @@
 const sections = [
   {
     href: "/",
-    name: "Home",
+    name: "Bio",
   },
   {
     href: "/music",
