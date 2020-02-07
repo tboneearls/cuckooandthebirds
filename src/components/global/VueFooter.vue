@@ -1,17 +1,20 @@
 <template>
-  <footer>
+  <footer style="margin-bottom: 125px;">
     <br/>
     <social-media-icons></social-media-icons>
     <h6 v-html="footerText"></h6>
+    <embedded-player></embedded-player>
   </footer>
 </template>
 
 <script>
 import SocialMediaIcons from "@/components/widgets/SocialMediaIcons.vue";
+import EmbeddedPlayer from "@/components/global/EmbeddedPlayer.vue";
 
 export default {
   components: {
     SocialMediaIcons,
+    EmbeddedPlayer,
   },
   computed: {
     footerText() {

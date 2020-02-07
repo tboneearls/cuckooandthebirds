@@ -1,9 +1,11 @@
 import Vue from "vue";
+
+// 3rd party
 import Cloudinary from "cloudinary-vue";
 
-import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import App from "./App.vue";
 
 Vue.config.productionTip = false;
 

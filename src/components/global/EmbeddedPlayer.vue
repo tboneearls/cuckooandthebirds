@@ -1,26 +1,19 @@
 <template>
   <iframe
-    src="https://open.spotify.com/embed/album/5c9HeJ9tE2eUy9sqIc3fU4"
-    @mouseover="width = 300;"
-    @mouseleave="width = 80;"
-    :width="width"
-    height="80"
-    frameborder="0"
-    allowtransparency="true"
-    allow="encrypted-media"></iframe>
+    style="border: 0; width: 100%; height: 120px;"
+    src="https://bandcamp.com/EmbeddedPlayer/album=2807622445/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+    seamless>
+    <a href="http://cuckooandthebirds.bandcamp.com/album/twin-stars">
+      Twin Stars by Cuckoo and the Birds
+    </a>
+  </iframe>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      width: 80,
-    };
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-
   iframe {
     position: fixed;
     left: 0;

@@ -10,7 +10,7 @@
         class="nav-toggle"
         @toggle="handleToggle();"/>
     </header>
-    <embedded-player></embedded-player>
+
     <!-- clears nav height above each view -->
     <router-view />
 
@@ -20,7 +20,6 @@
 <script>
 // global
 import VueFooter from "@/components/global/VueFooter.vue";
-import EmbeddedPlayer from "@/components/global/EmbeddedPlayer.vue";
 
 // navigation
 import NavBar from "@/components/navigation/NavBar.vue";
@@ -35,7 +34,6 @@ export default {
   },
   components: {
     VueFooter,
-    EmbeddedPlayer,
     NavBar,
     NavToggle,
   },
