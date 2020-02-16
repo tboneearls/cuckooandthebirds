@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar/>
+    <nav-bar />
 
     <!-- clears nav height above each view -->
     <router-view />

@@ -1,5 +1,6 @@
 <template>
   <iframe
+    title="Embedded Bandcamp Music Player"
     style="border: 0; width: 100%; height: 120px;"
     src="https://bandcamp.com/EmbeddedPlayer/album=2807622445/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
     seamless>

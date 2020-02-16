@@ -15,7 +15,7 @@
       </ul>
     </nav>
     <nav-toggle
-      @toggleNavigation="isNavActive = $event"/>
+      @toggleNavigation="isNavActive = $event" />
   </div>
 </template>
 
