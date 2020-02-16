@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import VueBio from "../views/VueBio.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -13,7 +15,7 @@ const routes = [
   {
     path: "/",
     name: "VueBio",
-    component: () => import(/* webpackChunkName: "bio" */ "../views/VueBio.vue"),
+    component: VueBio,
   },
   {
     path: "/contact",
