@@ -1,41 +1,41 @@
 <template>
-    <div class="toggler-container">
-        <button id="custom-toggler"
-            :class="{active: toggleActive, inactive: !toggleActive}"
-            :aria-label="`${toggleActive ? 'Close Navigation' : 'Open Navigation'}`"
-            @click="handleToggle();"
-            @mouseover="hoverClass = true;"
-            @mouseleave="hoverClass = false;">
+  <div class="toggler-container">
+    <button id="custom-toggler"
+      :class="{active: isToggleActive, inactive: !isToggleActive}"
+      :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
+      @click="handleToggle($event);"
+      @mouseover="hoverClass = true;"
+      @mouseleave="hoverClass = false;">
 
-            <div id="toggler-top"
-                :class="{hover: hoverClass}"></div>
-            <div id="toggler-middle"
-                :class="{hover: hoverClass}"></div>
-            <div id="toggler-bottom"
-                :class="{hover: hoverClass}"></div>
+      <div id="toggler-top"
+          :class="{hover: hoverClass}"></div>
+      <div id="toggler-middle"
+          :class="{hover: hoverClass}"></div>
+      <div id="toggler-bottom"
+          :class="{hover: hoverClass}"></div>
 
-        </button>
-    </div>
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      toggleActive: false,
+      isToggleActive: false,
       hoverClass: false,
     };
   },
   methods: {
     handleToggle() {
-      this.$emit("toggle");
-      this.toggleActive = !this.toggleActive;
+      this.isToggleActive = !this.isToggleActive;
+      this.$emit("toggleNavigation", this.isToggleActive);
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import 'src/scss/global.scss';
 
 #custom-toggler {

@@ -1,15 +1,6 @@
 <template>
   <div id="app">
-    <header>
-      <nav-bar
-        id="nav-bar"
-        ref="navbar"
-        :inert="!navActive"
-        v-show="navActive"/>
-      <nav-toggle
-        class="nav-toggle"
-        @toggle="handleToggle();"/>
-    </header>
+    <nav-bar/>
 
     <!-- clears nav height above each view -->
     <router-view />
@@ -18,37 +9,14 @@
   </div>
 </template>
 <script>
-// global
-import VueFooter from "@/components/global/VueFooter.vue";
-
-// navigation
 import NavBar from "@/components/navigation/NavBar.vue";
-import NavToggle from "@/components/navigation/NavToggle.vue";
+import VueFooter from "@/components/global/VueFooter.vue";
 
 export default {
   name: "app",
-  data() {
-    return {
-      navActive: false,
-    };
-  },
   components: {
-    VueFooter,
     NavBar,
-    NavToggle,
-  },
-  methods: {
-    handleToggle() {
-      this.navActive = !this.navActive;
-
-      if (this.navActive) {
-        this.initializeFocus();
-      }
-    },
-    initializeFocus() {
-      const firstLink = document.querySelector("nav ul li:first-child a");
-      firstLink.focus();
-    },
+    VueFooter,
   },
 };
 </script>
