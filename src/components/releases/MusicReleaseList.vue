@@ -1,8 +1,16 @@
 <template>
   <section>
-    <div v-for="(release, index) in releases" :key="index">
+    <div
+      v-for="(release, key) in releases"
+      :key="key"
+    >
       <TextCard>
-        <slot :title="release.title" :year="release.year" name="title" class="title">
+        <slot
+          :title="release.title"
+          :year="release.year"
+          name="title"
+          class="title"
+        >
           <h2>{{ release.title }} ({{ release.year }})</h2>
         </slot>
       </TextCard>
@@ -10,20 +18,26 @@
       <div class="release-container">
         <div class="release-image">
           <slot name="image">
-            <a target="_blank"
+            <a
+              target="_blank"
               rel="noreferrer"
               :aria-label="'Listen to ' + release.title"
-              :href="release.href">
+              :href="release.href"
+            >
               <cld-image
-                :publicId="release.imgsrc">
-                <cld-transformation width="400" crop="scale" />
+                :public-id="release.imgsrc"
+              >
+                <cld-transformation
+                  width="400"
+                  crop="scale"
+                />
               </cld-image>
             </a>
             <span style="font-style: italic;">Artwork by Breanda Fedie</span>
           </slot>
         </div>
         <div class="release-description">
-          <slot name="description"></slot>
+          <slot name="description" />
         </div>
       </div>
 
@@ -31,8 +45,13 @@
         <div class="credits">
           <h2>Credits:</h2>
           <slot name="credits">
-            <p v-for="(credit, index) in release.lineup" :key="index">{{ credit }}</p>
-            <br/>
+            <p
+              v-for="(credit, index) in release.lineup"
+              :key="index"
+            >
+              {{ credit }}
+            </p>
+            <br>
           </slot>
 
           <p>Songs written by Tyler Earls</p>
@@ -66,14 +85,14 @@ const releases = [
   },
 ];
 export default {
+  components: {
+    TextCard,
+  },
   data() {
     return {
       releases,
       imgwidth: 0,
     };
-  },
-  components: {
-    TextCard,
   },
 };
 </script>

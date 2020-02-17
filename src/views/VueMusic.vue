@@ -1,27 +1,26 @@
 <template>
   <main id="music">
     <h1>Releases</h1>
-    <br/>
+    <br>
     <music-release-list>
-
       <!-- TODO: put this in child component? -->
       <div slot="description">
         <p>
           Twin Stars is a project born in the aftermath of Tyler’s previous band breaking up. It explores the stages of coping with losing someone so close that a part of yourself seems lost, too.
         </p>
-        <br/>
+        <br>
         <p>
           These songs encapsulate a newfound sense of agency after a toxic friendship ends with finality, and the necessary re-framing of identity that follows.
         </p>
-        <br/>
+        <br>
         <p>
           In a similar sense, because these are the first five songs Tyler has written since high school, when the Cuckoo and the Birds moniker was created, they can be viewed as a thought experiment to test how far this reinvigorated expression can go.
         </p>
-        <br/>
+        <br>
         <p>
           They were tracked, mixed, and mastered by Zachary Taylor, whose recording prowess and drumming wizardry take the songs to new heights. They were recorded DIY style over several nights in the comfort of Zach’s basement.
         </p>
-        <br/>
+        <br>
         <p>
           Featuring only two musicians, the raw, understated texture becomes a distinguishing character of Twin Stars.
         </p>

@@ -1,19 +1,25 @@
 <template>
   <div class="toggler-container">
-    <button id="custom-toggler"
+    <button
+      id="custom-toggler"
       :class="{active: isToggleActive, inactive: !isToggleActive}"
       :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
       @click="handleToggle($event);"
       @mouseover="hoverClass = true;"
-      @mouseleave="hoverClass = false;">
-
-      <div id="toggler-top"
-          :class="{hover: hoverClass}"></div>
-      <div id="toggler-middle"
-          :class="{hover: hoverClass}"></div>
-      <div id="toggler-bottom"
-          :class="{hover: hoverClass}"></div>
-
+      @mouseleave="hoverClass = false;"
+    >
+      <div
+        id="toggler-top"
+        :class="{hover: hoverClass}"
+      />
+      <div
+        id="toggler-middle"
+        :class="{hover: hoverClass}"
+      />
+      <div
+        id="toggler-bottom"
+        :class="{hover: hoverClass}"
+      />
     </button>
   </div>
 </template>

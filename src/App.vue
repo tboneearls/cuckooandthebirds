@@ -13,7 +13,7 @@ import NavBar from "@/components/navigation/NavBar.vue";
 import VueFooter from "@/components/global/VueFooter.vue";
 
 export default {
-  name: "app",
+  name: "App",
   components: {
     NavBar,
     VueFooter,

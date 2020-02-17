@@ -2,29 +2,31 @@
   <TextCard>
     <main id="press">
       <h1>Press</h1>
-      <br/>
+      <br>
       <h2>Interviews:</h2>
-      <br/>
+      <br>
       <template v-for="(interview, index) in interviews">
         <a
           :key="'interview' + index"
           :href="interview.href"
-          target="_blank">
+          target="_blank"
+        >
           {{ interview.text }}
         </a>
-        <br :key="'interview' + (interviews.length + index)"/>
+        <br :key="'interview' + (interviews.length + index)">
       </template>
 
       <h2>Reviews:</h2>
-      <br/>
+      <br>
       <template v-for="(review, index) in reviews">
         <a
           :key="'review' + index"
           :href="review.href"
-          target="_blank">
+          target="_blank"
+        >
           {{ review.text }}
         </a>
-        <br :key="'review' + (reviews.length + index)"/>
+        <br :key="'review' + (reviews.length + index)">
       </template>
     </main>
   </TextCard>
@@ -47,14 +49,14 @@ const reviews = [
   },
 ];
 export default ({
+  components: {
+    TextCard,
+  },
   data() {
     return {
       interviews,
       reviews,
     };
-  },
-  components: {
-    TextCard,
   },
 });
 </script>

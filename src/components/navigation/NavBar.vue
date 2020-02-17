@@ -1,21 +1,27 @@
 <template>
   <!-- TODO: implement mobile design of nav bar -->
   <div>
-    <nav id="nav-bar"
-      v-show="isNavActive">
+    <nav
+      v-show="isNavActive"
+      id="nav-bar"
+    >
       <ul>
-        <li v-for="(section, index) in sections"
-          :key="index">
+        <li
+          v-for="(section, index) in sections"
+          :key="index"
+        >
           <router-link
             :to="section.href"
-            :tabindex="isNavActive ? 0 : -1">
+            :tabindex="isNavActive ? 0 : -1"
+          >
             {{ section.name }}
           </router-link>
         </li>
       </ul>
     </nav>
     <nav-toggle
-      @toggleNavigation="isNavActive = $event" />
+      @toggleNavigation="isNavActive = $event"
+    />
   </div>
 </template>
 
@@ -51,14 +57,14 @@ const sections = [
 ];
 
 export default {
+  components: {
+    NavToggle,
+  },
   data() {
     return {
       isNavActive: false,
       sections,
     };
-  },
-  components: {
-    NavToggle,
   },
   watch: {
     isNavActive(isActive) {

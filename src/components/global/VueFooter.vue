@@ -1,9 +1,9 @@
 <template>
   <footer style="margin-bottom: 125px;">
-    <br/>
-    <social-media-icons></social-media-icons>
-    <h6 v-html="footerText"></h6>
-    <embedded-player></embedded-player>
+    <br>
+    <social-media-icons />
+    <h6 v-html="footerText" />
+    <embedded-player />
   </footer>
 </template>
 
