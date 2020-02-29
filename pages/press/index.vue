@@ -62,7 +62,7 @@ export default ({
 </script>
 
 <style lang="scss">
-@import "src/scss/global.scss";
+@import "~/assets/scss/global.scss";
 #press {
   h2 {
     text-align: left;

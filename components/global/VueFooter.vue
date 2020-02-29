@@ -18,8 +18,8 @@ export default {
   },
   computed: {
     footerText() {
-      const year = new Date().getFullYear();
-      return `&copy; ${year} Cuckoo and the Birds`;
+      const currentYear = new Date().getFullYear();
+      return `&copy; 2019-${currentYear} &bull; Cuckoo and the Birds`;
     },
   },
 };
