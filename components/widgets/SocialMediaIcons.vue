@@ -10,9 +10,9 @@
       :aria-label="`Visit Cuckoo and the Birds ${link.label}`"
     >
       <span>
-        <i
-          class="fab"
-          :class="link.icon"
+        <font-awesome-icon
+          :icon="[link.icon.lib, link.icon.to]"
+          size="1x"
         />
       </span>
     </a>
@@ -20,6 +20,13 @@
 </template>
 
 <script>
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faBandcamp, faSpotify, faSoundcloud, faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+library.add(faBandcamp, faSpotify, faSoundcloud, faEnvelope, faInstagram, faFacebook, faTwitter);
+
 // TODO: add socialLinks to setup hook when Vue 3.x is released
 
 /*
@@ -31,41 +38,65 @@ const socialLinks = [
   {
     href: "https://cuckooandthebirds.bandcamp.com",
     label: "Bandcamp",
-    icon: "fa-bandcamp",
+    icon: {
+      lib: "fab",
+      to: "bandcamp",
+    },
   },
   {
     href: "https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD",
     label: "Spotify",
-    icon: "fa-spotify",
+    icon: {
+      lib: "fab",
+      to: "spotify",
+    },
   },
   {
     href: "https://www.soundcloud.com/cuckooandthebirds/sets/twin-stars",
     label: "Soundcloud",
-    icon: "fa-soundcloud",
+    icon: {
+      lib: "fab",
+      to: "soundcloud",
+    },
   },
   {
     href: "mailto:cuckooandthebirds@gmail.com",
     label: "Email",
-    icon: "fas fa-envelope",
+    icon: {
+      lib: "fa",
+      to: "envelope",
+    },
   },
   {
     href: "https://www.instagram.com/cuckooandthebirds",
     label: "Instagram",
-    icon: "fa-instagram",
+    icon: {
+      lib: "fab",
+      to: "instagram",
+    },
   },
   {
     href: "https://www.facebook.com/cuckooandthebirds",
     label: "Facebook",
-    icon: "fa-facebook",
+    icon: {
+      lib: "fab",
+      to: "facebook",
+    },
   },
   {
     href: "https://www.twitter.com/cuckooandbirds",
     label: "Twitter",
-    icon: "fa-twitter",
+    icon: {
+      lib: "fab",
+      to: "twitter",
+    },
   },
 ];
 
 export default {
+  components: {
+    FontAwesomeIcon,
+  },
   data() {
     return {
       socialLinks,
@@ -75,7 +106,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'src/scss/global.scss';
+@import "~/assets/scss/global.scss";
 
 nav .social-container {
     position: absolute;

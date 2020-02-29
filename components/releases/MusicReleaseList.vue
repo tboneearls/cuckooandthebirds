@@ -8,8 +8,8 @@
         <slot
           :title="release.title"
           :year="release.year"
-          name="title"
-          class="title"
+          name="title-year"
+          class="release-title"
         >
           <h2>{{ release.title }} ({{ release.year }})</h2>
         </slot>
@@ -24,14 +24,16 @@
               :aria-label="'Listen to ' + release.title"
               :href="release.href"
             >
-              <cld-image
-                :public-id="release.imgsrc"
-              >
-                <cld-transformation
-                  width="400"
-                  crop="scale"
-                />
-              </cld-image>
+              <client-only>
+                <cld-image
+                  :public-id="release.imgsrc"
+                >
+                  <cld-transformation
+                    width="400"
+                    crop="scale"
+                  />
+                </cld-image>
+              </client-only>
             </a>
             <span style="font-style: italic;">Artwork by Breanda Fedie</span>
           </slot>
@@ -111,6 +113,9 @@ export default {
       margin-bottom: 16px;
     }
   }
+  .release-title {
+    text-align: center;
+  }
   .release-container {
     max-width: 80vw;
     margin: 0 auto;
@@ -120,6 +125,7 @@ export default {
     width: 50%;
     margin: 0 10px;
     margin-bottom: 5px;
+    text-align: center;
     height: max-content;
     img {
       width: calc(100% - 20px * 2);

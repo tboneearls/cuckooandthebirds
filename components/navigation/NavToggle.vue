@@ -41,8 +41,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import 'src/scss/global.scss';
+<style lang="scss" scoped>
+@import "~/assets/scss/global.scss";
 
 #custom-toggler {
     background: none;
