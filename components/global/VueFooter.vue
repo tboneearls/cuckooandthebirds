@@ -3,7 +3,7 @@
     <br>
     <social-media-icons />
     <h6 v-html="footerText" />
-    <embedded-player></embedded-player>
+    <embedded-player />
   </footer>
 </template>
 
