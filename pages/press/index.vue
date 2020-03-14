@@ -7,8 +7,8 @@
       <br>
       <template v-for="(interview, index) in interviews">
         <a
-          rel="noreferrer"
           :key="'interview' + index"
+          rel="noreferrer"
           :href="interview.href"
           target="_blank"
         >
