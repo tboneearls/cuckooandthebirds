@@ -28,7 +28,7 @@ export default {
   methods: {
     checkIsMobile() {
       let isMobile;
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= this.$store.state.mobileMaxWidth) {
         isMobile = true;
       } else {
         isMobile = false;

@@ -1,5 +1,6 @@
 export const state = () => ({
-  isMobile: false
+  isMobile: false,
+  mobileMaxWidth: 768 // anything below this width is considered mobile
 });
 
 export const mutations = {
