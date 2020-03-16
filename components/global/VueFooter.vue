@@ -1,5 +1,5 @@
 <template>
-  <footer style="margin-bottom: 125px;">
+  <footer>
     <br>
     <social-media-icons />
     <h6 v-html="footerText" />
@@ -26,5 +26,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>

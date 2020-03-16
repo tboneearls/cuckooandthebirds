@@ -18,6 +18,27 @@ export default {
     NavBar,
     VueFooter,
   },
+  created() {
+    this.checkIsMobile();
+    window.addEventListener("resize", this.checkIsMobile);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.checkIsMobile);
+  },
+  methods: {
+    checkIsMobile() {
+      let isMobile;
+      if (window.innerWidth <= 768) {
+        isMobile = true;
+      } else {
+        isMobile = false;
+      }
+      // only commit mutation when value in store needs to be changed
+      if (isMobile !== this.$store.state.isMobile) {
+        this.$store.commit("resize", isMobile);
+      }
+    }
+  },
 };
 </script>
 

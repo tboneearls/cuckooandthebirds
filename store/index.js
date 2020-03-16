@@ -1,6 +1,12 @@
-export const state = () => {};
+export const state = () => ({
+  isMobile: false
+});
 
-export const mutations = () => {};
+export const mutations = {
+  resize(state, isMobile) {
+    state.isMobile = isMobile;
+  }
+};
 
 export const actions = () => {};
 

@@ -16,7 +16,10 @@
       </TextCard>
 
       <div class="release-container">
-        <div class="release-image">
+        <div 
+          :class="{'mobile-release-image': $store.state.isMobile, 'desktop-release-image': !$store.state.isMobile}"
+          class="release-image"
+        >
           <slot name="image">
             <a
               target="_blank"
@@ -100,6 +103,15 @@ export default {
 </script>
 
 <style lang="scss">
+  .mobile-release-image {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+    img {
+      width: 100%;
+      margin: 10px 0 !important;
+    }
+  }
   a:hover {
     opacity: 0.7;
   }
@@ -120,15 +132,18 @@ export default {
     max-width: 80vw;
     margin: 0 auto;
   }
-  .release-image {
+  .desktop-release-image {
     float: left;
     width: 50%;
-    margin: 0 10px;
-    margin-bottom: 5px;
-    text-align: center;
-    height: max-content;
     img {
       width: calc(100% - 20px * 2);
+    }
+  }
+  .release-image {
+    text-align: center;
+    height: max-content;
+    margin-bottom: 4px;
+    img {
       margin: 20px;
     }
   }
