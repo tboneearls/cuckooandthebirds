@@ -40,14 +40,14 @@ export default {
 
 <style lang="scss" scoped>
   iframe {
+    display: block;
+    position: fixed;
     left: 0;
     bottom: 0;
     transition: width 200ms linear;
-    display: block;
   }
   .desktop-embedded-player {
     width: 700px; 
-    margin: 0 auto;
   }
   .mobile-embedded-player {
     width: 100%;
