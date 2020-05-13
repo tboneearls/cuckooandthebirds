@@ -13,6 +13,7 @@
           <router-link
             :to="section.href"
             :tabindex="isNavActive ? 0 : -1"
+            class="px-1"
           >
             {{ section.name }}
           </router-link>
@@ -85,21 +86,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "~/assets/scss/global.scss";
-
-a {
-  font-size: 20px;
-  padding: 0px 5px;
-}
-@media (max-width: $S) {
-  nav {
-    ul {
-      margin-right: 50px;
-      li {
-        padding: 0 2px !important;
-      }
-    }
-  }
-}
+<style src="@/assets/css/tailwind.css">
 </style>
