@@ -11,6 +11,15 @@
     Twin Stars by Cuckoo and the Birds
     </a>
   </iframe>
+  <!-- light theme version -->
+  <!-- <iframe
+    style="border: 0; width: 100%; height: 120px;"
+    src="https://bandcamp.com/EmbeddedPlayer/album=2807622445/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+    seamless
+    ><a href="http://cuckooandthebirds.bandcamp.com/album/twin-stars"
+      >Twin Stars by Cuckoo and the Birds</a
+    ></iframe
+  > -->
 </template>
 <script>
 export default {
@@ -39,17 +48,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  iframe {
-    display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    transition: width 200ms linear;
-  }
-  .desktop-embedded-player {
-    width: 700px; 
-  }
-  .mobile-embedded-player {
-    width: 100%;
-  }
+iframe {
+  display: block;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transition: width 200ms linear;
+}
+.desktop-embedded-player {
+  width: 700px;
+}
+.mobile-embedded-player {
+  width: 100%;
+}
 </style>

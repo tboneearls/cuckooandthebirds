@@ -1,19 +1,26 @@
 <template>
   <!-- TODO: implement mobile design of nav bar -->
-  <div>
+  <div
+    class="fixed flex items-center justify-end w-screen top-0 text-white h-16 transition-background-color duration-100"
+    :class="{'bg-gray-800': isNavActive}"
+  >
     <nav
-      v-show="isNavActive"
       id="nav-bar"
+      class="opacity-0 transition-opacity duration-100"
+      :class="{'opacity-100': isNavActive}"
     >
-      <ul>
+      <!-- add mobile-first styles here (flex columns) -->
+      <ul class="flex">
         <li
+
           v-for="(section, index) in sections"
           :key="index"
+          :class="index === sections.length - 1 ? 'mr-4' : ''"
         >
           <router-link
             :to="section.href"
             :tabindex="isNavActive ? 0 : -1"
-            class="px-1"
+            class="px-4 text-lg hover:text-teal-200 hover:opacity-100"
           >
             {{ section.name }}
           </router-link>
@@ -87,4 +94,5 @@ export default {
 </script>
 
 <style src="@/assets/css/tailwind.css">
+
 </style>

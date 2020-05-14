@@ -43,16 +43,20 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~/assets/scss/global.scss";
+@import "~/assets/scss/variables.scss";
+body {
+  padding: 0;
+  margin: 0;
+  margin-top: 4rem;
+  transition: padding 400ms $easing;
+  background-color: $softblack;
+  padding-top: 4rem;
+}
+h1, h2, span {
+  color: $red;
+}
 h1 {
   text-align: center;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $red;
-  margin-top: calc(#{$navHeight} + 30px);
-}
 </style>

@@ -2,7 +2,6 @@
 @import './variables.scss';
 body {
     margin: 0;
-    background-color: $softblack;
     transition: padding 400ms $easing;
     * {
         box-sizing: border-box;
@@ -13,64 +12,14 @@ body {
         font-weight: 200;
         letter-spacing: 0.6px;
         &:focus {
-            outline: $yellow dotted 2px;
+            outline: rgb(178, 245, 234) dotted 2px;
         }
     }
-}
-body.active {
-    padding-top: $navHeight;
 }
 p {
     margin: 0 auto;
     padding: 0 20px;
     max-width: 75vw;
-}
-a {
-    text-decoration: none;
-    color: $red;
-    cursor: pointer;
-    &:hover {
-        cursor: pointer;
-        color: $lightblue;
-        transition: 0.2s ease;
-    }
-}
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: $black;
-    width: 100vw;
-    z-index: 100;
-    height: $navHeight;
-    h1, h2, h3, h4, h5, h6 {
-        color: $red;
-        text-align: center;
-    }
-    h2 {
-        margin-top: 10px;
-    }
-    h4 {
-        margin-top: 3px;
-    }
-    ul {
-        list-style-type: none;
-        margin: 0;
-        line-height: 1.5em;
-        padding-left: 1em;
-        color: $red;
-        display: flex;
-        height: 100%;
-        margin-right: 100px;
-        justify-content: flex-end;
-    }
-    li {
-        margin: 0 10px;
-        display: flex;
-        a {
-            margin: auto 0px;
-        }
-    }
 }
 section {
     h1, h2, h3 {
@@ -80,12 +29,6 @@ section {
     p {
         color: $softwhite;
     }
-    // img {
-    //     &:hover {
-    //         opacity: 0.7;
-    //         transition: opacity 0.09s linear;
-    //     }
-    // }
     form {
         legend {
             color: $red;
