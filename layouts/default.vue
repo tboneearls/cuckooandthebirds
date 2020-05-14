@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app"
+    >
     <nav-bar />
 
     <nuxt />
@@ -42,21 +43,27 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "~/assets/scss/variables.scss";
+<style>
 body {
   padding: 0;
   margin: 0;
   margin-top: 4rem;
-  transition: padding 400ms $easing;
-  background-color: $softblack;
   padding-top: 4rem;
+  background-color: rgb(45, 55, 72);
+  background-color: rgb(26, 32, 44);
 }
-h1, h2, span {
-  color: $red;
+body *:focus {
+  outline: 0;
+  box-shadow: 0 0 3pt 2pt rgb(178, 245, 234);
+  /* outline: rgb(178, 245, 234) dotted 2px; */
+  border-color: transparent;
+}
+body.dark {
+  background-color: rgb(26, 32, 44);
 }
 h1 {
   text-align: center;
 }
+
 
 </style>

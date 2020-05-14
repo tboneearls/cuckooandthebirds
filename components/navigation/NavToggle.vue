@@ -2,7 +2,7 @@
   <div class="p-4 h-16">
     <button
       id="custom-toggler"
-      class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+      class="flex items-center px-3 py-2 border rounded text-red-600 border-red-400 hover:text-teal-400 hover:border-teal-400"
       :class="{active: isToggleActive, inactive: !isToggleActive}"
       :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
       @click="handleToggle($event);"

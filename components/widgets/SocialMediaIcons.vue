@@ -3,11 +3,12 @@
     <a
       v-for="(link, index) in socialLinks"
       :key="index"
-      class="social-link"
+      class="mt-4 p-3 text-red-600 hover:opacity-100 hover:text-teal-400"
       rel="noreferrer"
       target="_blank"
       :href="link.href"
       :aria-label="`Visit Cuckoo and the Birds ${link.label}`"
+      
     >
       <span>
         <font-awesome-icon

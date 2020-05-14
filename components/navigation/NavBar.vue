@@ -2,7 +2,7 @@
   <!-- TODO: implement mobile design of nav bar -->
   <div
     class="fixed flex items-center justify-end w-screen top-0 text-white h-16 transition-background-color duration-100"
-    :class="{'bg-gray-800': isNavActive}"
+    :class="{'bg-gray-900': isNavActive}"
   >
     <nav
       id="nav-bar"
@@ -20,7 +20,7 @@
           <router-link
             :to="section.href"
             :tabindex="isNavActive ? 0 : -1"
-            class="px-4 text-lg hover:text-teal-200 hover:opacity-100"
+            class="px-4 text-lg hover:text-teal-400 hover:opacity-100"
           >
             {{ section.name }}
           </router-link>

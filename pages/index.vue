@@ -1,8 +1,8 @@
 <template>
-  <div id="about">
+  <div>
     <TextCard>
       <template>
-        <h1>Bio</h1>
+        <h1 class="text-red-600">Our Story</h1>
         <br>
         <section>
           <p>
@@ -15,6 +15,10 @@
           <br>
           <p>
             Several years later, Tyler resolved for better or worse to bring Cuckoo and the Birds back from the dead—but this time around, he rams heavy metal drummers through the wall.
+          </p>
+          <br>
+          <p>
+            For booking inquiries, please email <a class="text-teal-400" target="_blank" href="mailto:cuckooandthebirds@gmail.com">cuckooandthebirds@gmail.com</a>.
           </p>
         </section>
       </template>
@@ -32,5 +36,5 @@ export default ({
 });
 </script>
 
-<style lang="scss">
+<style>
 </style>

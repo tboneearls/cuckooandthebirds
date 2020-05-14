@@ -1,6 +1,6 @@
 <template>
   <main id="music">
-    <h1>Releases</h1>
+    <h1 class="text-red-600">Releases</h1>
     <br>
     <music-release-list>
       <!-- TODO: put this in child component? -->

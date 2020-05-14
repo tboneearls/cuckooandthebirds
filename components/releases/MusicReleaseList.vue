@@ -11,7 +11,7 @@
           name="title-year"
           class="release-title"
         >
-          <h2>{{ release.title }} ({{ release.year }})</h2>
+          <h2 class="text-red-600">{{ release.title }} ({{ release.year }})</h2>
         </slot>
       </TextCard>
 
@@ -38,7 +38,7 @@
                 </cld-image>
               </client-only>
             </a>
-            <span style="font-style: italic;">Artwork by Breanda Fedie</span>
+            <span class="text-red-600 italic">Artwork by Breanda Fedie</span>
           </slot>
         </div>
         <div class="release-description">
@@ -48,7 +48,7 @@
 
       <TextCard>
         <div class="credits">
-          <h2>Credits:</h2>
+          <h2 class="text-red-600">Credits:</h2>
           <slot name="credits">
             <p
               v-for="(credit, index) in release.lineup"
