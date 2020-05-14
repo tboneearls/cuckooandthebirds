@@ -2,7 +2,9 @@
   <div>
     <TextCard>
       <template>
-        <h1 class="text-red-600">Our Story</h1>
+        <h1 class="text-red-600">
+          Our Story
+        </h1>
         <br>
         <section>
           <p>
@@ -18,7 +20,11 @@
           </p>
           <br>
           <p>
-            For booking inquiries, please email <a class="text-teal-400" target="_blank" href="mailto:cuckooandthebirds@gmail.com">cuckooandthebirds@gmail.com</a>.
+            For booking inquiries, please email <a
+              class="text-teal-400"
+              target="_blank"
+              href="mailto:cuckooandthebirds@gmail.com"
+            >cuckooandthebirds@gmail.com</a>.
           </p>
         </section>
       </template>

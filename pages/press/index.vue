@@ -1,9 +1,13 @@
 <template>
   <TextCard>
     <main id="press">
-      <h1 class="text-red-600">Press</h1>
+      <h1 class="text-red-600">
+        Press
+      </h1>
       <br>
-      <h2 class="text-red-600">Interviews:</h2>
+      <h2 class="text-red-600">
+        Interviews:
+      </h2>
       <br>
       <template v-for="(interview, index) in interviews">
         <a
@@ -17,7 +21,9 @@
         <br :key="'interview' + (interviews.length + index)">
       </template>
 
-      <h2 class="text-red-600">Reviews:</h2>
+      <h2 class="text-red-600">
+        Reviews:
+      </h2>
       <br>
       <template v-for="(review, index) in reviews">
         <a

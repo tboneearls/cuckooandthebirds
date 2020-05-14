@@ -11,7 +11,9 @@
           name="title-year"
           class="release-title"
         >
-          <h2 class="text-red-600">{{ release.title }} ({{ release.year }})</h2>
+          <h2 class="text-red-600">
+            {{ release.title }} ({{ release.year }})
+          </h2>
         </slot>
       </TextCard>
 
@@ -48,7 +50,9 @@
 
       <TextCard>
         <div class="credits">
-          <h2 class="text-red-600">Credits:</h2>
+          <h2 class="text-red-600">
+            Credits:
+          </h2>
           <slot name="credits">
             <p
               v-for="(credit, index) in release.lineup"

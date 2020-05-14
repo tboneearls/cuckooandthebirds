@@ -8,7 +8,6 @@
       target="_blank"
       :href="link.href"
       :aria-label="`Visit Cuckoo and the Birds ${link.label}`"
-      
     >
       <span>
         <font-awesome-icon
