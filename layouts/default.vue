@@ -1,7 +1,5 @@
 <template>
-  <div
-    id="app"
-  >
+  <div id="app">
     <nav-bar />
 
     <nuxt />
@@ -18,7 +16,7 @@ export default {
   name: "App",
   components: {
     NavBar,
-    VueFooter,
+    VueFooter
   },
   created() {
     this.checkIsMobile();
@@ -40,7 +38,7 @@ export default {
         this.$store.commit("resize", isMobile);
       }
     }
-  },
+  }
 };
 </script>
 
@@ -48,8 +46,7 @@ export default {
 body {
   padding: 0;
   margin: 0;
-  margin-top: 4rem;
-  padding-top: 4rem;
+  margin-top: 4.25rem;
   background-color: rgb(45, 55, 72);
   background-color: rgb(26, 32, 44);
 }
@@ -65,6 +62,4 @@ body.dark {
 h1 {
   text-align: center;
 }
-
-
 </style>
