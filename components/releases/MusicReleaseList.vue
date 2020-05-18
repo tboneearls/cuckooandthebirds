@@ -4,18 +4,16 @@
       v-for="(release, key) in releases"
       :key="key"
     >
-      <TextCard>
-        <slot
-          :title="release.title"
-          :year="release.year"
-          name="title-year"
-          class="release-title"
-        >
-          <h2 class="text-red-600">
-            {{ release.title }} ({{ release.year }})
-          </h2>
-        </slot>
-      </TextCard>
+      <slot
+        :title="release.title"
+        :year="release.year"
+        name="title-year"
+        class="release-title"
+      >
+        <h2 class="text-red-600 text-center text-2xl font-semibold">
+          {{ release.title }} ({{ release.year }})
+        </h2>
+      </slot>
 
       <div class="release-container">
         <div 
@@ -40,31 +38,35 @@
                 </cld-image>
               </client-only>
             </a>
-            <span class="text-red-600 italic">Artwork by Breanda Fedie</span>
+            <span class="text-red-600 text-lg italic">Artwork by Breanda Fedie</span>
           </slot>
         </div>
-        <div class="release-description">
+        <div class="release-description px-8">
           <slot name="description" />
         </div>
       </div>
 
       <TextCard>
-        <div class="credits">
-          <h2 class="text-red-600">
+        <div>
+          <h2 class="text-red-600 text-2xl font-semibold">
             Credits:
           </h2>
           <slot name="credits">
             <p
               v-for="(credit, index) in release.lineup"
               :key="index"
+              class="px-8 text-xl"
             >
               {{ credit }}
             </p>
             <br>
+            <p class="px-8 text-xl">
+              Songs written by Tyler Earls
+            </p>
+            <p class="px-8 text-xl">
+              Tracked, Mixed, and Mastered by Zachary Taylor
+            </p>
           </slot>
-
-          <p>Songs written by Tyler Earls</p>
-          <p>Tracked, Mixed, and Mastered by Zachary Taylor</p>
         </div>
       </TextCard>
     </div>
@@ -152,7 +154,7 @@ export default {
     }
   }
   .release-description {
-    padding: 12px;
+    // padding: 12px;
     height: max-content;
     text-align: left;
     margin-bottom: 4px;
