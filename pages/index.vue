@@ -2,11 +2,10 @@
   <div>
     <TextCard>
       <template>
-        <h1 class="text-red-600">
+        <h1 class="font-default text-4xl font-bold text-red-600">
           Our Story
         </h1>
-        <br>
-        <section>
+        <section class="text-white text-xl">
           <p>
             Cuckoo and the Birds hail from Chicago, IL. The name dates back to when Tyler Earls tried his hand at a solo project in high school after getting kicked out of the band he was in.
           </p>
