@@ -2,9 +2,8 @@
   <!-- TODO: implement mobile design of nav bar -->
   <div
     id="nav-container"
-    class="fixed flex items-center justify-end w-screen top-0 font-default text-white h-16 transition-background-color duration-100"
-    :class="{'bg-gray-900': isNavActive}"
-    :style="isNavActive ? 'box-shadow: 1pt 1pt 4pt 1pt rgb(178, 245, 234);' :''"
+    class="fixed flex items-center justify-end w-screen top-0 font-default text-white h-16 transition-background-color duration-100 border-b border-t-0 border-l-0 border-r-0"
+    :class="{'border border-gray-700 bg-gray-900': isNavActive, 'border-gray-900': !isNavActive}"
   >
     <nav
       id="nav-bar"

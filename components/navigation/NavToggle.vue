@@ -2,18 +2,29 @@
   <div class="p-4 h-16">
     <button
       id="custom-toggler"
-      class="flex items-center px-3 py-2 border rounded text-red-600 border-red-400 hover:text-teal-400 hover:border-teal-400"
+      class="pt-1 px-1"
+      style="margin-top: -0.2rem;"
       :class="{active: isToggleActive, inactive: !isToggleActive}"
       :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
       @click="handleToggle($event);"
+      @mouseover="hoverClass = true;"
+      @mouseleave="hoverClass = false;"
     >
-      <svg
-        class="fill-current h-3 w-3"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-      </svg>
+      <div
+        id="toggler-top"
+        class="bg-red-600"
+        :class="{hover: hoverClass}"
+      />
+      <div
+        id="toggler-middle"
+        class="bg-red-600"
+        :class="{hover: hoverClass}"
+      />
+      <div
+        id="toggler-bottom"
+        class="bg-red-600"
+        :class="{hover: hoverClass}"
+      />
     </button>
   </div>
 </template>
@@ -35,5 +46,46 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+#custom-toggler {
+  /* background: none; */
+  /* border: none; */
+  /* position: fixed;
+  top: 20px;
+  right: 30px; */
+  /* z-index: 99999; */
+  /* padding: 5px; */
+  border-radius: 3px;
+  transform: none;
+  opacity: 1;
+  cursor: pointer;
+}
+#custom-toggler > div {
+  width: 32px;
+  height: 2px;
+  margin-bottom: 8px;
+  /* background-color: red; */
+  transition: transform 500ms ease, opacity 500ms;
+  will-change: transform, opacity;
+}
+#toggler-top {
+  margin-top: 4px;
+}
+#toggler-bottom {
+  margin-bottom: 4px;
+}
+.active #toggler-top {
+  transform: translateY(10px) rotate(-135deg);
+}
+.active #toggler-middle {
+  opacity: 0;
+  transform: rotate(135deg);
+}
+.active #toggler-bottom {
+  transform: translateY(-10px) rotate(-45deg);
+}
+.hover {
+  background-color: rgb(79, 209, 197) !important;
+  transition: 0.2s ease;
+}
 </style>
