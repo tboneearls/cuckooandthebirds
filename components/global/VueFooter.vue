@@ -2,7 +2,10 @@
   <footer>
     <br>
     <social-media-icons />
-    <h6 v-html="footerText" />
+    <h6 
+      class="text-white font-default text-center text-sm font-thin tracking-wide"
+      v-html="footerText"
+    />
     <embedded-player />
   </footer>
 </template>
