@@ -8,17 +8,15 @@
         :title="release.title"
         :year="release.year"
         name="title-year"
-        class="release-title"
       >
-        <h2 class="text-red-600 text-center text-2xl font-semibold">
+        <h2 class="text-red-600 text-center text-2xl font-semibold mb-4">
           {{ release.title }} ({{ release.year }})
         </h2>
       </slot>
 
-      <div class="release-container">
+      <div class="w-4/5 mx-auto">
         <div 
-          :class="{'mobile-release-image': $store.state.isMobile, 'desktop-release-image': !$store.state.isMobile}"
-          class="release-image"
+          class="mx-auto w-4/5 mb-4 md:w-1/2 md:float-left md:mr-2 md:mb-2"
         >
           <slot name="image">
             <a
@@ -29,6 +27,7 @@
             >
               <client-only>
                 <cld-image
+                  class="flex justify-center m-2"
                   :public-id="release.imgsrc"
                 >
                   <cld-transformation
@@ -38,33 +37,34 @@
                 </cld-image>
               </client-only>
             </a>
-            <span class="text-red-600 text-lg italic">Artwork by Breanda Fedie</span>
+            <span class="block text-center text-red-600 text-lg italic">Artwork by Breanda Fedie</span>
           </slot>
         </div>
-        <div class="release-description px-8">
+        <div class="px-8 mb-4">
           <slot name="description" />
         </div>
       </div>
 
       <TextCard>
         <div>
-          <h2 class="text-red-600 text-2xl font-semibold">
+          <h2 class="text-red-600 text-2xl font-semibold mb-4">
             Credits:
           </h2>
           <slot name="credits">
             <p
-              v-for="(credit, index) in release.lineup"
-              :key="index"
+              v-for="(member, index) in release.members"
+              :key="'member' + index"
+              class="px-8 text-xl"
+            >
+              {{ member }}
+            </p>
+            <br>
+            <p
+              v-for="(credit, index) in release.credits"
+              :key="'credit' + index"
               class="px-8 text-xl"
             >
               {{ credit }}
-            </p>
-            <br>
-            <p class="px-8 text-xl">
-              Songs written by Tyler Earls
-            </p>
-            <p class="px-8 text-xl">
-              Tracked, Mixed, and Mastered by Zachary Taylor
             </p>
           </slot>
         </div>
@@ -89,9 +89,13 @@ const releases = [
     //   In a similar sense, because these are the first five songs Tyler has written since high school, when the Cuckoo and the Birds moniker was created, they can be viewed as a thought experiment to test how far this reinvigorated expression can go.
     //   They were tracked, mixed, and mastered by Zachary Taylor, whose recording prowess and drumming wizardry take the songs to new heights. They were recorded DIY style over several nights in the comfort of Zach’s basement.
     //   Featuring only two musicians, the raw, understated texture becomes a distinguishing character of Twin Stars.`,
-    lineup: [
+    members: [
       "Tyler Earls: Vocals, Guitars, Bass",
       "Zachary Taylor: Drums, Percussion",
+    ],
+    credits: [
+      "Songs written by Tyler Earls",
+      "Tracked, Mixed, and Mastered by Zachary Taylor",
     ],
   },
 ];
@@ -102,61 +106,14 @@ export default {
   data() {
     return {
       releases,
-      imgwidth: 0,
     };
   },
 };
 </script>
 
-<style lang="scss">
-  .mobile-release-image {
-    width: 80%;
-    margin: 0 auto;
-    float: none;
-    img {
-      width: 100%;
-      margin: 10px 0 !important;
-    }
-  }
-  a:hover {
-    opacity: 0.7;
-  }
-  .inline {
-    display: inline;
-  }
-  .credits {
-    h2 {
-      text-align: left !important;
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-  }
-  .release-title {
-    text-align: center;
-  }
-  .release-container {
-    max-width: 80vw;
-    margin: 0 auto;
-  }
-  .desktop-release-image {
-    float: left;
-    width: 50%;
-    img {
-      width: calc(100% - 20px * 2);
-    }
-  }
-  .release-image {
-    text-align: center;
-    height: max-content;
-    margin-bottom: 4px;
-    img {
-      margin: 20px;
-    }
-  }
-  .release-description {
-    // padding: 12px;
-    height: max-content;
-    text-align: left;
-    margin-bottom: 4px;
-  }
+<style>
+/* need this style because I can't target the image in tailwind */
+.cld-image > img {
+  width: 95%;
+}
 </style>

@@ -28,10 +28,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
   footer {
     width: 100%;
     padding-bottom: 8px;
-    margin-bottom: 120px !important; // to override body * style
+    margin-bottom: 120px !important; /* to override body * style */
   }
 </style>

@@ -3,7 +3,7 @@
     id="music"
     class="font-default text-white"
   >
-    <h1 class="font-default text-4xl font-bold text-red-600">
+    <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
       Releases
     </h1>
     <music-release-list>
@@ -54,15 +54,5 @@ export default ({
 });
 </script>
 
-<style lang="scss" scoped>
-
-// #music {
-//   .description {
-//     font-size: 18px !important;
-//   }
-//   .credits p {
-//     font-size: 16px !important;
-//   }
-// }
-
+<style>
 </style>

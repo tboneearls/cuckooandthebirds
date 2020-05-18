@@ -2,7 +2,7 @@
   <div>
     <TextCard>
       <template>
-        <h1 class="font-default text-4xl font-bold text-red-600">
+        <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
           Our Story
         </h1>
         <section class="text-white text-xl">
@@ -22,6 +22,7 @@
             For booking inquiries, please email <a
               class="text-teal-400"
               target="_blank"
+              rel="noreferrer"
               href="mailto:cuckooandthebirds@gmail.com"
             >cuckooandthebirds@gmail.com</a>.
           </p>

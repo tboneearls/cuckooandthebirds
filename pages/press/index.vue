@@ -1,7 +1,7 @@
 <template>
   <TextCard>
     <main id="press">
-      <h1 class="font-default text-4xl font-bold text-red-600">
+      <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
         Press
       </h1>
       <h2 class="text-red-600 text-2xl font-semibold">
@@ -13,7 +13,7 @@
           :href="interview.href"
           rel="noreferrer"
           target="_blank"
-          class="block text-white text-xl px-8 mb-2 hover:text-teal-400 hover:opacity-100"
+          class="block text-white text-xl px-8 my-2 hover:text-teal-400 hover:opacity-100"
         >
           {{ interview.text }}
         </a>
@@ -28,7 +28,7 @@
           :href="review.href"
           rel="noreferrer"
           target="_blank"
-          class="block text-white text-xl px-8 mb-2 hover:text-teal-400 hover:opacity-100"
+          class="block text-white text-xl px-8 my-2 hover:text-teal-400 hover:opacity-100"
         >
           {{ review.text }}
         </a>
@@ -66,18 +66,5 @@ export default ({
 });
 </script>
 
-<style lang="scss" scoped>
-// @import "~/assets/scss/global.scss";
-// #press {
-//   h2 {
-//     text-align: left;
-//   }
-//   a {
-//     display: block;
-//     color: $softwhite;
-//     font-size: 22px;
-//     text-align: left;
-//     padding: 0 20px;
-//   }
-// }
+<style>
 </style>

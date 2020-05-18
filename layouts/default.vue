@@ -47,7 +47,7 @@ body {
   padding: 0;
   margin: 0;
   margin-top: 4.25rem;
-  background-color: rgb(45, 55, 72);
+  /* background-color: rgb(45, 55, 72); */
   background-color: rgb(26, 32, 44);
 }
 body *:focus {
@@ -58,8 +58,5 @@ body *:focus {
 }
 body.dark {
   background-color: rgb(26, 32, 44);
-}
-h1 {
-  text-align: center;
 }
 </style>
