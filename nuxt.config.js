@@ -47,7 +47,7 @@ export default {
     ],
     link: [
       {
-        href: "https://fonts.googleapis.com/css?family=Asul:400,700|Roboto:400,700&display=swap",
+        href: "https://fonts.googleapis.com/css?family=Asul:100,200,300,400,500,600,700&display=swap",
         rel: "preload", 
         as: "style",
         onload: "this.onload = null; this.rel = 'stylesheet';",
