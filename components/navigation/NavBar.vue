@@ -1,8 +1,10 @@
 <template>
   <!-- TODO: implement mobile design of nav bar -->
   <div
-    class="fixed flex items-center justify-end w-screen top-0 text-white h-16 transition-background-color duration-100"
+    id="nav-container"
+    class="fixed flex items-center justify-end w-screen top-0 font-default text-white h-16 transition-background-color duration-100"
     :class="{'bg-gray-900': isNavActive}"
+    :style="isNavActive ? 'box-shadow: 1pt 1pt 4pt 1pt rgb(178, 245, 234);' :''"
   >
     <nav
       id="nav-bar"
@@ -94,5 +96,7 @@ export default {
 </script>
 
 <style src="@/assets/css/tailwind.css">
-
+  #nav-container {
+    
+  }
 </style>
