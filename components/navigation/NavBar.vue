@@ -3,7 +3,7 @@
   <div
     id="nav-container"
     class="fixed flex items-center justify-end w-screen top-0 font-default text-white transition-background-color transition-opacity duration-100 border border-b border-t-0 border-l-0 border-r-0 h-auto sm:h-16"
-    :class="{'border border-gray-600 bg-gray-900': isNavActive, 'border-gray-900': !isNavActive}"
+    :class="{'border border-gray-600 bg-gray-900': isNavActive, 'border-none': !isNavActive}"
   >
     <nav
       id="nav-bar"
