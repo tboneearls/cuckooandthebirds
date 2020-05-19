@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  purge: [
+    "./components/**/*.vue",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue"
+  ],
   theme: {
     extend: {},
     fontFamily: {
