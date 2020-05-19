@@ -161,6 +161,6 @@ export default {
   width: 95%;
 }
 .cld-image > img:hover {
-  opacity: 70%;
+  opacity: 0.7;
 }
 </style>
