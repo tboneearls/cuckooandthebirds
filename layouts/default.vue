@@ -47,14 +47,16 @@ body {
   padding: 0;
   margin: 0;
   margin-top: 4.25rem;
-  /* background-color: rgb(45, 55, 72); */
+  transition: margin 300ms ease;
   background-color: rgb(26, 32, 44);
 }
 body *:focus {
   outline: 0;
   box-shadow: 0 0 3pt 2pt rgb(178, 245, 234);
-  /* outline: rgb(178, 245, 234) dotted 2px; */
   border-color: transparent;
+}
+body.light {
+  background-color: rgb(45, 55, 72);
 }
 body.dark {
   background-color: rgb(26, 32, 44);

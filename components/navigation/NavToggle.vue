@@ -37,12 +37,36 @@ export default {
       hoverClass: false
     };
   },
+  computed: {
+    bodyTopMargin() {
+      const navContainer = document.getElementById("nav-container");
+      const navHeight = navContainer.offsetHeight;
+      let margin = navHeight + 4 + "px";
+      return margin;
+    }
+  },
+  created() {
+    window.addEventListener("resize", this.adjustBodyTopMargin);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.adjustBodyTopMargin);
+  },
   methods: {
     handleToggle() {
       this.isToggleActive = !this.isToggleActive;
+      this.adjustBodyTopMargin();
       this.$emit("toggleNavigation", this.isToggleActive);
-    }
-  }
+    },
+    adjustBodyTopMargin() {
+      this.$nextTick(() => {
+          if (this.isToggleActive && window.innerWidth < 640) {
+          document.body.style.marginTop = this.bodyTopMargin;
+        } else {
+          document.body.style.marginTop = "4.25rem"; // horizontal navHeight is 4rem (64px)
+        }
+      });
+    },
+  },
 };
 </script>
 
