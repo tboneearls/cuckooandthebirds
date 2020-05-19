@@ -13,7 +13,6 @@
       <!-- add mobile-first styles here (flex columns) -->
       <ul class="flex">
         <li
-
           v-for="(section, index) in sections"
           :key="index"
           :class="index === sections.length - 1 ? 'mr-4' : ''"
@@ -21,7 +20,7 @@
           <router-link
             :to="section.href"
             :tabindex="isNavActive ? 0 : -1"
-            class="px-4 text-lg hover:text-teal-400 hover:opacity-100"
+            class="px-4 text-lg hover:text-teal-400 hover:opacity-100 rounded-sm"
           >
             {{ section.name }}
           </router-link>

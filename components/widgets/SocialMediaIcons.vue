@@ -3,7 +3,7 @@
     <a
       v-for="(link, index) in socialLinks"
       :key="index"
-      class="mt-4 p-4 text-red-600 hover:text-teal-400 hover:opacity-100"
+      class="mt-4 p-4 text-red-600 hover:text-teal-400 hover:opacity-100 rounded-sm"
       rel="noreferrer"
       target="_blank"
       :href="link.href"

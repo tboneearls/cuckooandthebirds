@@ -2,7 +2,7 @@
   <div class="p-4 h-16">
     <button
       id="custom-toggler"
-      class="pt-1 px-1"
+      class="pt-1 px-1 rounded-sm"
       style="margin-top: -0.2rem;"
       :class="{active: isToggleActive, inactive: !isToggleActive}"
       :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
@@ -47,24 +47,10 @@ export default {
 </script>
 
 <style scoped>
-#custom-toggler {
-  /* background: none; */
-  /* border: none; */
-  /* position: fixed;
-  top: 20px;
-  right: 30px; */
-  /* z-index: 99999; */
-  /* padding: 5px; */
-  border-radius: 3px;
-  transform: none;
-  opacity: 1;
-  cursor: pointer;
-}
 #custom-toggler > div {
   width: 32px;
   height: 2px;
   margin-bottom: 8px;
-  /* background-color: red; */
   transition: transform 500ms ease, opacity 500ms;
   will-change: transform, opacity;
 }

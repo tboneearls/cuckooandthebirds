@@ -21,6 +21,7 @@
           >
             <a
               target="_blank"
+              class="release-link focus:shadow-none"
               rel="noreferrer"
               :aria-label="'Listen to ' + release.title"
               :href="release.href"
@@ -127,6 +128,30 @@ export default {
       releases,
     };
   },
+  mounted() {
+    const releaseLinks = document.querySelectorAll(".release-link");
+    for (let i = 0; i < releaseLinks.length; i++) {
+      let releaseLink = releaseLinks[i];
+      releaseLink.addEventListener("focus", this.addFocusStyleToParent);
+      releaseLink.addEventListener("blur", this.removeFocusStyleFromParent);
+    }
+  },
+  destroyed() {
+    const releaseLinks = document.querySelectorAll(".release-link");
+    for (let i = 0; i < releaseLinks.length; i++) {
+      let releaseLink = releaseLinks[i];
+      releaseLink.removeEventListener("focus", this.addFocusStyleToParent);
+      releaseLink.removeEventListener("blur", this.removeFocusStyleFromParent);
+    }
+  },
+  methods: {
+    addFocusStyleToParent(e) {
+      e.target.parentElement.style.boxShadow = "0 0 3pt 2pt rgb(178, 245, 234)";
+    },
+    removeFocusStyleFromParent(e) {
+      e.target.parentElement.style.boxShadow = "";
+    }
+  }
 };
 </script>
 
