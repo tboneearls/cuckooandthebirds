@@ -1,3 +1,5 @@
+import { join } from "path";
+
 export default {
   build: {
     extractCSS: true,
@@ -24,6 +26,14 @@ export default {
     "@nuxtjs/tailwindcss"
   ],
   mode: "spa",
+  postcss: {
+    plugins: {
+      tailwindcss: join(__dirname, "tailwind.config.js"),
+    },
+    preset: {
+      stage: 2
+    },
+  },
   tailwindcss: {
     exposeConfig: true
   },
