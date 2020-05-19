@@ -14,8 +14,8 @@
       <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
         <li
           v-for="(section, index) in sections"
-          class="mx-auto py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-700 sm:border-none sm:mx-0 sm:w-auto"
           :key="index"
+          class="mx-auto py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-700 sm:border-none sm:mx-0 sm:w-auto"
           :class="index === sections.length - 1 ? 'border-none' : ''"
         >
           <router-link
