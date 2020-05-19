@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 h-16">
+  <div class="fixed top-0 right-0 z-10 float-right p-4 h-16 sm:float-none sm:static">
     <button
       id="custom-toggler"
       class="pt-1 px-1 rounded-sm"

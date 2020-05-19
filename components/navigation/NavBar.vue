@@ -2,20 +2,21 @@
   <!-- TODO: implement mobile design of nav bar -->
   <div
     id="nav-container"
-    class="fixed flex items-center justify-end w-screen top-0 font-default text-white h-16 transition-background-color duration-100 border-b border-t-0 border-l-0 border-r-0"
-    :class="{'border border-gray-700 bg-gray-900': isNavActive, 'border-gray-900': !isNavActive}"
+    class="fixed flex items-center justify-end w-screen top-0 font-default text-white transition-background-color transition-opacity duration-100 border border-b border-t-0 border-l-0 border-r-0 h-auto sm:h-16"
+    :class="{'border border-gray-600 bg-gray-900': isNavActive, 'border-gray-900': !isNavActive}"
   >
     <nav
       id="nav-bar"
-      class="opacity-0 transition-opacity duration-100"
+      class="opacity-0 transition-opacity duration-100 w-screen"
       :class="{'opacity-100': isNavActive}"
     >
       <!-- add mobile-first styles here (flex columns) -->
-      <ul class="flex">
+      <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
         <li
           v-for="(section, index) in sections"
+          class="mx-auto py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-700 sm:border-none sm:mx-0 sm:w-auto"
           :key="index"
-          :class="index === sections.length - 1 ? 'mr-4' : ''"
+          :class="index === sections.length - 1 ? 'border-none' : ''"
         >
           <router-link
             :to="section.href"
