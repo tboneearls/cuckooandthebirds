@@ -2,7 +2,10 @@
   <footer>
     <br>
     <social-media-icons />
-    <h6 v-html="footerText" />
+    <h6 
+      class="text-white font-default text-center text-sm font-thin tracking-wide"
+      v-html="footerText"
+    />
     <embedded-player />
   </footer>
 </template>
@@ -25,10 +28,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
   footer {
     width: 100%;
     padding-bottom: 8px;
-    margin-bottom: 120px !important; // to override body * style
+    margin-bottom: 120px !important; /* to override body * style */
   }
 </style>

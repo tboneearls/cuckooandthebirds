@@ -1,10 +1,11 @@
 <template>
-  <div id="about">
+  <div>
     <TextCard>
       <template>
-        <h1>Bio</h1>
-        <br>
-        <section>
+        <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
+          Our Story
+        </h1>
+        <section class="text-white text-xl">
           <p>
             Cuckoo and the Birds hail from Chicago, IL. The name dates back to when Tyler Earls tried his hand at a solo project in high school after getting kicked out of the band he was in.
           </p>
@@ -15,6 +16,15 @@
           <br>
           <p>
             Several years later, Tyler resolved for better or worse to bring Cuckoo and the Birds back from the dead—but this time around, he rams heavy metal drummers through the wall.
+          </p>
+          <br>
+          <p>
+            For booking inquiries, please email <a
+              class="text-red-600 hover:text-teal-400 rounded-sm"
+              target="_blank"
+              rel="noreferrer"
+              href="mailto:cuckooandthebirds@gmail.com"
+            >cuckooandthebirds@gmail.com</a>.
           </p>
         </section>
       </template>
@@ -32,5 +42,5 @@ export default ({
 });
 </script>
 
-<style lang="scss">
+<style>
 </style>

@@ -1,33 +1,37 @@
 <template>
   <TextCard>
     <main id="press">
-      <h1>Press</h1>
-      <br>
-      <h2>Interviews:</h2>
-      <br>
+      <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
+        Press
+      </h1>
+      <h2 class="text-red-600 text-2xl font-semibold">
+        Interviews:
+      </h2>
       <template v-for="(interview, index) in interviews">
         <a
           :key="'interview' + index"
-          rel="noreferrer"
           :href="interview.href"
+          rel="noreferrer"
           target="_blank"
+          class="block text-white text-xl px-8 my-2 hover:text-teal-400 rounded-sm"
         >
           {{ interview.text }}
         </a>
-        <br :key="'interview' + (interviews.length + index)">
       </template>
 
-      <h2>Reviews:</h2>
-      <br>
+      <h2 class="text-red-600 text-2xl font-semibold">
+        Reviews:
+      </h2>
       <template v-for="(review, index) in reviews">
         <a
           :key="'review' + index"
           :href="review.href"
+          rel="noreferrer"
           target="_blank"
+          class="block text-white text-xl px-8 my-2 hover:text-teal-400 rounded-sm"
         >
           {{ review.text }}
         </a>
-        <br :key="'review' + (reviews.length + index)">
       </template>
     </main>
   </TextCard>
@@ -62,21 +66,5 @@ export default ({
 });
 </script>
 
-<style lang="scss">
-@import "~/assets/scss/global.scss";
-#press {
-  h2 {
-    text-align: left;
-  }
-  a {
-    display: block;
-    color: $softwhite;
-    font-size: 22px;
-    text-align: left;
-    padding: 0 20px;
-    &:hover {
-      color: $lightblue;
-    }
-  }
-}
+<style>
 </style>

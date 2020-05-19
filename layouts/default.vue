@@ -16,7 +16,7 @@ export default {
   name: "App",
   components: {
     NavBar,
-    VueFooter,
+    VueFooter
   },
   created() {
     this.checkIsMobile();
@@ -38,21 +38,27 @@ export default {
         this.$store.commit("resize", isMobile);
       }
     }
-  },
+  }
 };
 </script>
 
-<style lang="scss">
-@import "~/assets/scss/global.scss";
-h1 {
-  text-align: center;
+<style>
+body {
+  padding: 0;
+  margin: 0;
+  margin-top: 4.25rem;
+  transition: margin 300ms ease;
+  background-color: rgb(26, 32, 44);
 }
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $red;
-  margin-top: calc(#{$navHeight} + 30px);
+body *:focus {
+  outline: 0;
+  box-shadow: 0 0 3pt 2pt rgb(178, 245, 234);
+  border-color: transparent;
+}
+body.light {
+  background-color: rgb(45, 55, 72);
+}
+body.dark {
+  background-color: rgb(26, 32, 44);
 }
 </style>

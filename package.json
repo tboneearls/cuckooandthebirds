@@ -16,6 +16,10 @@
       "pre-commit": "eslint --ext .js,.vue --ignore-path .gitignore ."
     }
   },
+  "engines": {
+    "node": ">=12.16.3",
+    "npm": ">=6.14.4"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
@@ -37,8 +41,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-vue": "^6.1.2",
     "husky": "^4.2.3",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.0",
+    "tailwindcss": "^1.4.6",
     "vue-template-compiler": "^2.6.11"
   }
 }

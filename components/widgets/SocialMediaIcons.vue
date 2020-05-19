@@ -1,18 +1,18 @@
 <template>
-  <div class="social-container">
+  <div class="flex justify-center">
     <a
       v-for="(link, index) in socialLinks"
       :key="index"
-      class="social-link"
+      class="mt-4 p-4 text-red-600 hover:text-teal-400 hover:opacity-100 rounded-sm"
       rel="noreferrer"
       target="_blank"
       :href="link.href"
-      :aria-label="`Visit Cuckoo and the Birds ${link.label}`"
+      :aria-label="`Visit Cuckoo and the Birds's ${link.ariaLabel}`"
     >
       <span>
         <font-awesome-icon
           :icon="[link.icon.lib, link.icon.to]"
-          size="1x"
+          size="lg"
         />
       </span>
     </a>
@@ -31,13 +31,16 @@ library.add(faBandcamp, faSpotify, faSoundcloud, faEnvelope, faInstagram, faFace
 
 /*
  * href: link to social media site
- * label: website name that will be attached to aria-label
- * icon: css class for font-awesome icon
+ * ariaLabel: website name that will be attached to aria-label
+ * icon: {
+ *  lib: font-awesome class
+ *  to: name of destination (lowercase)
+ * }
  */
 const socialLinks = [
   {
     href: "https://cuckooandthebirds.bandcamp.com",
-    label: "Bandcamp",
+    ariaLabel: "Bandcamp",
     icon: {
       lib: "fab",
       to: "bandcamp",
@@ -45,7 +48,7 @@ const socialLinks = [
   },
   {
     href: "https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD",
-    label: "Spotify",
+    ariaLabel: "Spotify",
     icon: {
       lib: "fab",
       to: "spotify",
@@ -53,7 +56,7 @@ const socialLinks = [
   },
   {
     href: "https://www.soundcloud.com/cuckooandthebirds/sets/twin-stars",
-    label: "Soundcloud",
+    ariaLabel: "Soundcloud",
     icon: {
       lib: "fab",
       to: "soundcloud",
@@ -61,7 +64,7 @@ const socialLinks = [
   },
   {
     href: "mailto:cuckooandthebirds@gmail.com",
-    label: "Email",
+    ariaLabel: "Email",
     icon: {
       lib: "fa",
       to: "envelope",
@@ -69,7 +72,7 @@ const socialLinks = [
   },
   {
     href: "https://www.instagram.com/cuckooandthebirds",
-    label: "Instagram",
+    ariaLabel: "Instagram",
     icon: {
       lib: "fab",
       to: "instagram",
@@ -77,7 +80,7 @@ const socialLinks = [
   },
   {
     href: "https://www.facebook.com/cuckooandthebirds",
-    label: "Facebook",
+    ariaLabel: "Facebook",
     icon: {
       lib: "fab",
       to: "facebook",
@@ -85,7 +88,7 @@ const socialLinks = [
   },
   {
     href: "https://www.twitter.com/cuckooandbirds",
-    label: "Twitter",
+    ariaLabel: "Twitter",
     icon: {
       lib: "fab",
       to: "twitter",
@@ -105,48 +108,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "~/assets/scss/global.scss";
-
-nav .social-container {
-    position: absolute;
-    bottom: 70px;
-    left: 32px;
-    margin: 0;
-}
-
-.social-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.social-link {
-    margin: 5px 0;
-    span {
-        color: $red;
-        display: inline-block;
-        font-weight: 400;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        padding: .35rem .7rem;
-        font-size: 1.5rem;
-        line-height: 1.5;
-        border-radius: .25rem;
-        &:hover {
-            color: $lightblue;
-            transition: all 0.2s ease;
-        }
-    }
-}
+<style>
 </style>
