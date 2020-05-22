@@ -84,6 +84,14 @@ export default {
         content: "Cuckoo and the Birds | Chicago, IL"
       },
       {
+        property: "og:type",
+        content: "website"
+      },
+      {
+        property: "og:url",
+        content: "https://www.cuckooandthebirds.com"
+      },
+      {
         property: "og:image",
         content:
           "https://res.cloudinary.com/cuckooandthebirds/image/upload/c_scale,w_450/v1580078198/Twin%20Stars/laser-tyler.jpg"
