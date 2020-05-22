@@ -69,6 +69,31 @@ export default {
         content:
           "Cuckoo and the Birds is a Chicago rock band who play sad songs that flirt with harmonies."
       },
+      {
+        name: "image",
+        content: "https://res-console.cloudinary.com/cuckooandthebirds/thumbnails/transform/v1/image/upload//v1580078198/VHdpbiBTdGFycy9sYXNlci10eWxlcg==/drilldown?0.5285202838237029",
+      },
+      {
+        property: "og:description",
+        content:
+          "Cuckoo and the Birds is a Chicago rock band who play sad songs that flirt with harmonies."
+      },
+      {
+        property: "og:title",
+        content: "Cuckoo and the Birds | Chicago, IL"
+      },
+      {
+        property: "og:image",
+        content: "https://res-console.cloudinary.com/cuckooandthebirds/thumbnails/transform/v1/image/upload//v1580078198/VHdpbiBTdGFycy9sYXNlci10eWxlcg==/drilldown?0.5285202838237029",
+      },
+      {
+        property: "og:image:height",
+        content: "450"
+      },
+      {
+        property: "og:image:width",
+        content: "450"
+      },
       { name: "author", content: "Cuckoo and the Birds" },
       {
         name: "keywords",
