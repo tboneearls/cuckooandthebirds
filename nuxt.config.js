@@ -28,11 +28,11 @@ export default {
   mode: "spa",
   postcss: {
     plugins: {
-      tailwindcss: join(__dirname, "tailwind.config.js"),
+      tailwindcss: join(__dirname, "tailwind.config.js")
     },
     preset: {
       stage: 2
-    },
+    }
   },
   tailwindcss: {
     exposeConfig: true
@@ -71,7 +71,8 @@ export default {
       },
       {
         name: "image",
-        content: "https://res-console.cloudinary.com/cuckooandthebirds/thumbnails/transform/v1/image/upload//v1580078198/VHdpbiBTdGFycy9sYXNlci10eWxlcg==/drilldown?0.5285202838237029",
+        content:
+          "https://res.cloudinary.com/cuckooandthebirds/image/upload/c_scale,w_450/v1580078198/Twin%20Stars/laser-tyler.jpg"
       },
       {
         property: "og:description",
@@ -84,15 +85,8 @@ export default {
       },
       {
         property: "og:image",
-        content: "https://res-console.cloudinary.com/cuckooandthebirds/thumbnails/transform/v1/image/upload//v1580078198/VHdpbiBTdGFycy9sYXNlci10eWxlcg==/drilldown?0.5285202838237029",
-      },
-      {
-        property: "og:image:height",
-        content: "450"
-      },
-      {
-        property: "og:image:width",
-        content: "450"
+        content:
+          "https://res.cloudinary.com/cuckooandthebirds/image/upload/c_scale,w_450/v1580078198/Twin%20Stars/laser-tyler.jpg"
       },
       { name: "author", content: "Cuckoo and the Birds" },
       {
