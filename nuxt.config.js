@@ -94,7 +94,7 @@ export default {
       {
         property: "og:image",
         content:
-          "https://res.cloudinary.com/cuckooandthebirds/image/upload/v1580078198/Twin%20Stars/laser-tyler.jpg"
+          "https://res.cloudinary.com/cuckooandthebirds/image/upload/c_scale,w_450/v1590178958/Twin%20Stars/laser-tyler-og.png"
       },
       {
         property: "og:image:alt",
