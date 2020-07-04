@@ -30,6 +30,7 @@
                 <cld-image
                   class="flex justify-center m-2"
                   :public-id="release.imgsrc"
+                  :alt="release.alt"
                 >
                   <cld-transformation
                     width="400"
@@ -87,6 +88,7 @@ import TextCard from "@/components/widgets/TextCard.vue";
 
 /*
   imgsrc - cloudinary image link
+  alt - alt value for image
   year - year the release was made
   title - title of the release
   href - bandcamp link
@@ -97,6 +99,7 @@ import TextCard from "@/components/widgets/TextCard.vue";
 const releases = [
   {
     imgsrc: "Twin%20Stars/twin-stars-album-art.jpg",
+    alt: "Album Artwork for Twin Stars",
     year: 2019,
     "v-href": "twin-stars",
     title: "Twin Stars",
