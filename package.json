@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt --port 8080",
+    "serve": "nuxt --port 8080",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
