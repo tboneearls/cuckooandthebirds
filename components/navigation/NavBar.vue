@@ -1,5 +1,4 @@
 <template>
-  <!-- TODO: implement mobile design of nav bar -->
   <div
     id="nav-container"
     class="fixed flex items-center justify-end w-screen top-0 font-default text-white transition-background-color transition-opacity duration-100 border border-b border-t-0 border-l-0 border-r-0 h-auto sm:h-16"
@@ -10,7 +9,6 @@
       class="opacity-0 transition-opacity duration-100 w-screen"
       :class="{'opacity-100': isNavActive}"
     >
-      <!-- add mobile-first styles here (flex columns) -->
       <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
         <li
           v-for="(section, index) in sections"
