@@ -5,9 +5,9 @@
     :class="{'border border-gray-600 bg-gray-900': isNavActive, 'border-none': !isNavActive}"
   >
     <nav
+      v-show="isNavActive"
       id="nav-bar"
       class="w-screen"
-      v-show="isNavActive"
     >
       <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
         <li
