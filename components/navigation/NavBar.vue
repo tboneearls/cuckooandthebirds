@@ -6,8 +6,8 @@
   >
     <nav
       id="nav-bar"
-      class="opacity-0 transition-opacity duration-100 w-screen"
-      :class="{'opacity-100': isNavActive}"
+      class="w-screen"
+      v-show="isNavActive"
     >
       <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
         <li
