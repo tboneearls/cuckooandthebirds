@@ -50,7 +50,7 @@ export default {
       ];
     }
   },
-  plugins: ["~/plugins/global.js"],
+  plugins: ["~/plugins/cloudinary.js"],
   head: {
     htmlAttrs: {
       lang: "en"
