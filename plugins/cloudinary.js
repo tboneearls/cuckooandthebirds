@@ -3,6 +3,6 @@ import Cloudinary from "cloudinary-vue";
 
 Vue.use(Cloudinary, {
   configuration: {
-    cloudName: "cuckooandthebirds",
+    cloudName: process.env.CLOUDINARY_ID,
   },
 });

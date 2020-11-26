@@ -3,6 +3,9 @@ import { join } from "path";
 export default {
   target: "static",
   ssr: true,
+  env: {
+    CLOUDINARY_ID: process.env.CLOUDINARY_ID,
+  },
   build: {
     extractCSS: true,
     optimization: {
