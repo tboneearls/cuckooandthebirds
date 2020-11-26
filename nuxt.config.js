@@ -7,19 +7,20 @@ export default {
     CLOUDINARY_ID: process.env.CLOUDINARY_ID,
   },
   build: {
+    analyze: process.env.NODE_ENV !== "production" ? true : false,
     extractCSS: true,
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: "styles",
-            test: /\.(css|vue)$/,
-            chunks: "all",
-            enforce: true,
-          },
-        },
-      },
-    },
+    // optimization: {
+    //   splitChunks: {
+    //     cacheGroups: {
+    //       styles: {
+    //         name: "styles",
+    //         test: /\.(css|vue)$/,
+    //         chunks: "all",
+    //         enforce: true,
+    //       },
+    //     },
+    //   },
+    // },
   },
   buildModules: [
     [
