@@ -2,7 +2,7 @@
   <footer>
     <br>
     <social-media-icons />
-    <h6 
+    <p 
       class="text-white font-default text-center text-sm font-thin tracking-wide"
       v-html="footerText"
     />
