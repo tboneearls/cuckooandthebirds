@@ -6,8 +6,8 @@
       id="custom-toggler"
       class="group pt-1 px-1 rounded-sm"
       style="margin-top: -0.2rem;"
-      :class="{ active: isToggleActive, inactive: !isToggleActive }"
-      :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
+      :class="{ active: isNavActive, inactive: !isNavActive }"
+      :aria-label="`${isNavActive ? 'Close Navigation' : 'Open Navigation'}`"
       @click="handleToggle($event)"
     >
       <div
@@ -27,13 +27,13 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      isToggleActive: false,
-    };
-  },
   computed: {
+    ...mapState([
+      "isNavActive",
+    ]),
     bodyTopMargin() {
       const navContainer = document.getElementById("nav-container");
       const navHeight = navContainer.offsetHeight;
@@ -49,13 +49,12 @@ export default {
   },
   methods: {
     handleToggle() {
-      this.isToggleActive = !this.isToggleActive;
       this.adjustBodyTopMargin();
-      this.$emit("toggle-navigation", this.isToggleActive);
+      this.$store.commit("toggleNavActive");
     },
     adjustBodyTopMargin() {
       this.$nextTick(() => {
-        if (this.isToggleActive && window.innerWidth < 640) {
+        if (this.isNavActive && window.innerWidth < 640) {
           document.body.style.marginTop = this.bodyTopMargin;
         } else {
           document.body.style.marginTop = "4.25rem"; // horizontal navHeight is 4rem (64px)

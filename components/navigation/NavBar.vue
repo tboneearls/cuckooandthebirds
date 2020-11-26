@@ -26,13 +26,12 @@
         </li>
       </ul>
     </nav>
-    <nav-toggle
-      @toggle-navigation="isNavActive = $event"
-    />
+    <nav-toggle />
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import NavToggle from "./NavToggle.vue";
 
 // TODO: add sections to setup hook when Vue 3.x is released
@@ -69,9 +68,13 @@ export default {
   },
   data() {
     return {
-      isNavActive: false,
       sections,
     };
+  },
+  computed: {
+    ...mapState([
+      "isNavActive",
+    ]),
   },
   watch: {
     isNavActive(isActive) {
