@@ -1,7 +1,7 @@
 <template>
   <div>
     <TextCard>
-      <template>
+      <div>
         <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
           Our Story
         </h1>
@@ -27,7 +27,7 @@
             >cuckooandthebirds@gmail.com</a>.
           </p>
         </section>
-      </template>
+      </div>
     </TextCard>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <main 
-    id="music"
+    id="releases"
     class="font-default text-white"
   >
     <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
@@ -26,6 +26,7 @@
               :aria-label="'Listen to ' + release.title"
               :href="release.href"
             >
+            <client-only>
               <cld-image
                 class="flex justify-center m-2"
                 format="jpg"
@@ -37,6 +38,7 @@
                   quality="auto"
                 />
               </cld-image>
+            </client-only>
             </a>
             <span class="block text-center text-red-600 text-lg italic">Artwork by Breanda Fedie</span>
           </div>
