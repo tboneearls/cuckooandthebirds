@@ -133,6 +133,9 @@ export default {
     ],
     // scripts will not be url-encoded
     __dangerouslyDisableSanitizers: ["script"],
+    router: {
+      linkActiveClass: "active-link",
+    },
     script: [
       {
         type: "application/ld+json",

@@ -7,6 +7,9 @@ module.exports = {
       fontFamily: {
         default: "Asul, sans-sarif",
       },
+      height: {
+        "fit": "fit-content",
+      },
       // cyan, coolgray are used. the others are from the tailwind 2.0 color palette for experimenting.
       colors: {
         "soft-black": "#121212",

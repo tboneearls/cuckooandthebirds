@@ -34,32 +34,20 @@ export default {
     ...mapState([
       "isNavActive",
     ]),
-    bodyTopMargin() {
-      const navContainer = document.getElementById("nav-container");
-      const navHeight = navContainer.offsetHeight;
-      let margin = `${navHeight + 4}px`;
-      return margin;
+  },
+  watch: {
+    isNavActive(newValue) {
+      const body = document.body;
+      if (newValue && body != null) {
+        body.classList.add("nav-active");
+      } else if (body != null) {
+        body.classList.remove("nav-active");
+      }
     },
-  },
-  beforeMount() {
-    window.addEventListener("resize", this.adjustBodyTopMargin);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.adjustBodyTopMargin);
   },
   methods: {
     handleToggle() {
-      this.adjustBodyTopMargin();
       this.$store.commit("toggleNavActive");
-    },
-    adjustBodyTopMargin() {
-      this.$nextTick(() => {
-        if (this.isNavActive && window.innerWidth < 640) {
-          document.body.style.marginTop = this.bodyTopMargin;
-        } else {
-          document.body.style.marginTop = "4.25rem"; // horizontal navHeight is 4rem (64px)
-        }
-      });
     },
   },
 };
@@ -67,7 +55,7 @@ export default {
 
 <style scoped>
 #custom-toggler > div {
-  width: 32px;
+  width: 36px;
   height: 2px;
   margin-bottom: 8px;
   transition: transform 500ms ease, opacity 500ms;
