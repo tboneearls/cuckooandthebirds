@@ -2,7 +2,7 @@
   <div
     id="nav-container"
     class="fixed flex items-center justify-end w-screen top-0 font-default text-white transition-background-color transition-opacity duration-100 border border-b border-t-0 border-l-0 border-r-0 h-auto sm:h-16"
-    :class="{'border border-gray-600 bg-gray-900': isNavActive, 'border-none': !isNavActive}"
+    :class="{'border border-gray-600 bg-coolgray-900': isNavActive, 'border-none': !isNavActive}"
   >
     <nav
       v-show="isNavActive"
@@ -19,7 +19,7 @@
           <router-link
             :to="section.href"
             :tabindex="isNavActive ? 0 : -1"
-            class="px-4 text-lg hover:text-teal-400 hover:opacity-100 rounded-sm"
+            class="px-4 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm"
           >
             {{ section.name }}
           </router-link>
@@ -46,8 +46,8 @@ const sections = [
     name: "Bio",
   },
   {
-    href: "/music",
-    name: "Music",
+    href: "/releases",
+    name: "Releases",
   },
   // {
   //   href: "/shows",

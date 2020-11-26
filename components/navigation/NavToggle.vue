@@ -1,29 +1,26 @@
 <template>
-  <div class="fixed top-0 right-0 z-10 float-right p-4 h-16 sm:float-none sm:static">
+  <div
+    class="fixed top-0 right-0 z-10 float-right p-4 h-16 sm:float-none sm:static"
+  >
     <button
       id="custom-toggler"
-      class="pt-1 px-1 rounded-sm"
+      class="group pt-1 px-1 rounded-sm"
       style="margin-top: -0.2rem;"
-      :class="{active: isToggleActive, inactive: !isToggleActive}"
+      :class="{ active: isToggleActive, inactive: !isToggleActive }"
       :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
-      @click="handleToggle($event);"
-      @mouseover="hoverClass = true;"
-      @mouseleave="hoverClass = false;"
+      @click="handleToggle($event)"
     >
       <div
         id="toggler-top"
-        class="bg-red-600"
-        :class="{hover: hoverClass}"
+        class="bg-red-600 group-hover:bg-cyan-300"
       />
       <div
         id="toggler-middle"
-        class="bg-red-600"
-        :class="{hover: hoverClass}"
+        class="bg-red-600 group-hover:bg-cyan-300"
       />
       <div
         id="toggler-bottom"
-        class="bg-red-600"
-        :class="{hover: hoverClass}"
+        class="bg-red-600 group-hover:bg-cyan-300"
       />
     </button>
   </div>
@@ -34,14 +31,13 @@ export default {
   data() {
     return {
       isToggleActive: false,
-      hoverClass: false,
     };
   },
   computed: {
     bodyTopMargin() {
       const navContainer = document.getElementById("nav-container");
       const navHeight = navContainer.offsetHeight;
-      let margin = `${navHeight + 4  }px`;
+      let margin = `${navHeight + 4}px`;
       return margin;
     },
   },
@@ -59,7 +55,7 @@ export default {
     },
     adjustBodyTopMargin() {
       this.$nextTick(() => {
-          if (this.isToggleActive && window.innerWidth < 640) {
+        if (this.isToggleActive && window.innerWidth < 640) {
           document.body.style.marginTop = this.bodyTopMargin;
         } else {
           document.body.style.marginTop = "4.25rem"; // horizontal navHeight is 4rem (64px)
@@ -93,9 +89,5 @@ export default {
 }
 .active #toggler-bottom {
   transform: translateY(-10px) rotate(-45deg);
-}
-.hover {
-  background-color: rgb(79, 209, 197) !important;
-  transition: 0.2s ease;
 }
 </style>

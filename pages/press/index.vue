@@ -13,7 +13,7 @@
           :href="interview.href"
           rel="noreferrer"
           target="_blank"
-          class="block text-white text-xl px-8 my-2 hover:text-teal-400 rounded-sm"
+          class="block text-white text-xl px-8 my-2 hover:text-cyan-300 rounded-sm"
         >
           {{ interview.text }}
         </a>
@@ -28,7 +28,7 @@
           :href="review.href"
           rel="noreferrer"
           target="_blank"
-          class="block text-white text-xl px-8 my-2 hover:text-teal-400 rounded-sm"
+          class="block text-white text-xl px-8 my-2 hover:text-cyan-300 rounded-sm"
         >
           {{ review.text }}
         </a>

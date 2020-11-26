@@ -20,7 +20,7 @@
           <br>
           <p>
             For booking inquiries, please email <a
-              class="text-red-600 hover:text-teal-400 rounded-sm"
+              class="text-red-600 hover:text-cyan-300 rounded-sm"
               target="_blank"
               rel="noreferrer"
               href="mailto:cuckooandthebirds@gmail.com"

@@ -23,11 +23,11 @@ export default {
 
 <style>
 body {
+  @apply bg-coolgray-900;
   padding: 0;
   margin: 0;
   margin-top: 4.25rem;
   transition: margin 300ms ease;
-  background-color: rgb(26, 32, 44);
 }
 body *:focus {
   outline: 0;
