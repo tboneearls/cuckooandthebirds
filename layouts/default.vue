@@ -16,29 +16,8 @@ export default {
   name: "App",
   components: {
     NavBar,
-    VueFooter
+    VueFooter,
   },
-  created() {
-    this.checkIsMobile();
-    window.addEventListener("resize", this.checkIsMobile);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.checkIsMobile);
-  },
-  methods: {
-    checkIsMobile() {
-      let isMobile;
-      if (window.innerWidth <= this.$store.state.mobileMaxWidth) {
-        isMobile = true;
-      } else {
-        isMobile = false;
-      }
-      // only commit mutation when value in store needs to be changed
-      if (isMobile !== this.$store.state.isMobile) {
-        this.$store.commit("resize", isMobile);
-      }
-    }
-  }
 };
 </script>
 
@@ -54,11 +33,5 @@ body *:focus {
   outline: 0;
   box-shadow: 0 0 3pt 2pt rgb(178, 245, 234);
   border-color: transparent;
-}
-body.light {
-  background-color: rgb(45, 55, 72);
-}
-body.dark {
-  background-color: rgb(26, 32, 44);
 }
 </style>

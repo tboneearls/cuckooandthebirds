@@ -34,28 +34,28 @@ export default {
   data() {
     return {
       isToggleActive: false,
-      hoverClass: false
+      hoverClass: false,
     };
   },
   computed: {
     bodyTopMargin() {
       const navContainer = document.getElementById("nav-container");
       const navHeight = navContainer.offsetHeight;
-      let margin = navHeight + 4 + "px";
+      let margin = `${navHeight + 4  }px`;
       return margin;
-    }
+    },
   },
-  created() {
+  beforeMount() {
     window.addEventListener("resize", this.adjustBodyTopMargin);
   },
-  destroyed() {
+  beforeDestroy() {
     window.removeEventListener("resize", this.adjustBodyTopMargin);
   },
   methods: {
     handleToggle() {
       this.isToggleActive = !this.isToggleActive;
       this.adjustBodyTopMargin();
-      this.$emit("toggleNavigation", this.isToggleActive);
+      this.$emit("toggle-navigation", this.isToggleActive);
     },
     adjustBodyTopMargin() {
       this.$nextTick(() => {

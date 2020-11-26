@@ -26,18 +26,17 @@
               :aria-label="'Listen to ' + release.title"
               :href="release.href"
             >
-              <client-only>
-                <cld-image
-                  class="flex justify-center m-2"
-                  :public-id="release.imgsrc"
-                  :alt="release.alt"
-                >
-                  <cld-transformation
-                    width="400"
-                    crop="scale"
-                  />
-                </cld-image>
-              </client-only>
+              <cld-image
+                class="flex justify-center m-2"
+                format="jpg"
+                :public-id="release.imgsrc"
+                :alt="release.alt"
+              >
+                <cld-transformation
+                  width="400"
+                  quality="auto"
+                />
+              </cld-image>
             </a>
             <span class="block text-center text-red-600 text-lg italic">Artwork by Breanda Fedie</span>
           </div>
@@ -153,8 +152,8 @@ export default {
     },
     removeFocusStyleFromParent(e) {
       e.target.parentElement.style.boxShadow = "";
-    }
-  }
+    },
+  },
 };
 </script>
 
