@@ -19,7 +19,7 @@
         </a>
       </template>
 
-      <h2 class="">
+      <h2 class="text-red-600 text-2xl font-semibold">
         Reviews:
       </h2>
       <template v-for="(review, index) in reviews">
