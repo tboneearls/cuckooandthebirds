@@ -43,7 +43,6 @@ body.nav-active h1 {
 }
 
 /* transitions */
-
 .fade-enter-active {
   transition: all 400ms ease-out;
 }
