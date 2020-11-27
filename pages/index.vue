@@ -1,7 +1,7 @@
 <template>
   <div>
     <TextCard>
-      <template>
+      <div>
         <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
           Our Story
         </h1>
@@ -20,14 +20,14 @@
           <br>
           <p>
             For booking inquiries, please email <a
-              class="text-red-600 hover:text-teal-400 rounded-sm"
+              class="text-red-600 hover:text-cyan-300 rounded-sm"
               target="_blank"
               rel="noreferrer"
               href="mailto:cuckooandthebirds@gmail.com"
             >cuckooandthebirds@gmail.com</a>.
           </p>
         </section>
-      </template>
+      </div>
     </TextCard>
   </div>
 </template>
@@ -41,6 +41,3 @@ export default ({
   },
 });
 </script>
-
-<style>
-</style>

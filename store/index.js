@@ -1,12 +1,11 @@
 export const state = () => ({
-  isMobile: false,
-  mobileMaxWidth: 768 // anything below this width is considered mobile
+  isNavActive: false,
 });
 
 export const mutations = {
-  resize(state, isMobile) {
-    state.isMobile = isMobile;
-  }
+  toggleNavActive(state) {
+    state.isNavActive = !state.isNavActive; 
+  },
 };
 
 export const actions = () => {};

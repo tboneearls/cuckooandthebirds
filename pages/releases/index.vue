@@ -1,6 +1,6 @@
 <template>
   <main 
-    id="music"
+    id="releases"
     class="font-default text-white"
   >
     <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
@@ -29,12 +29,13 @@
               <client-only>
                 <cld-image
                   class="flex justify-center m-2"
+                  format="jpg"
                   :public-id="release.imgsrc"
                   :alt="release.alt"
                 >
                   <cld-transformation
                     width="400"
-                    crop="scale"
+                    quality="auto"
                   />
                 </cld-image>
               </client-only>
@@ -153,8 +154,8 @@ export default {
     },
     removeFocusStyleFromParent(e) {
       e.target.parentElement.style.boxShadow = "";
-    }
-  }
+    },
+  },
 };
 </script>
 

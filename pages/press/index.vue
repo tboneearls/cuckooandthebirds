@@ -13,7 +13,7 @@
           :href="interview.href"
           rel="noreferrer"
           target="_blank"
-          class="block text-white text-xl px-8 my-2 hover:text-teal-400 rounded-sm"
+          class="interview-link"
         >
           {{ interview.text }}
         </a>
@@ -28,7 +28,7 @@
           :href="review.href"
           rel="noreferrer"
           target="_blank"
-          class="block text-white text-xl px-8 my-2 hover:text-teal-400 rounded-sm"
+          class="review-link"
         >
           {{ review.text }}
         </a>
@@ -66,5 +66,8 @@ export default ({
 });
 </script>
 
-<style>
+<style scoped>
+.interview-link, .review-link {
+  @apply inline-block text-white text-xl px-2 mx-6 my-2 hover:text-cyan-300 rounded-sm;
+}
 </style>

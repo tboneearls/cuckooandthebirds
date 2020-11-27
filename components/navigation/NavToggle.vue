@@ -1,70 +1,53 @@
 <template>
-  <div class="fixed top-0 right-0 z-10 float-right p-4 h-16 sm:float-none sm:static">
+  <div
+    class="fixed top-0 right-0 z-10 float-right p-4 h-16 sm:float-none sm:static"
+  >
     <button
       id="custom-toggler"
-      class="pt-1 px-1 rounded-sm"
+      class="group pt-1 px-1 rounded-sm"
       style="margin-top: -0.2rem;"
-      :class="{active: isToggleActive, inactive: !isToggleActive}"
-      :aria-label="`${isToggleActive ? 'Close Navigation' : 'Open Navigation'}`"
-      @click="handleToggle($event);"
-      @mouseover="hoverClass = true;"
-      @mouseleave="hoverClass = false;"
+      :class="{ active: isNavActive, inactive: !isNavActive }"
+      :aria-label="`${isNavActive ? 'Close Navigation' : 'Open Navigation'}`"
+      @click="handleToggle($event)"
     >
       <div
         id="toggler-top"
-        class="bg-red-600"
-        :class="{hover: hoverClass}"
+        class="bg-red-600 group-hover:bg-cyan-300"
       />
       <div
         id="toggler-middle"
-        class="bg-red-600"
-        :class="{hover: hoverClass}"
+        class="bg-red-600 group-hover:bg-cyan-300"
       />
       <div
         id="toggler-bottom"
-        class="bg-red-600"
-        :class="{hover: hoverClass}"
+        class="bg-red-600 group-hover:bg-cyan-300"
       />
     </button>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      isToggleActive: false,
-      hoverClass: false
-    };
-  },
   computed: {
-    bodyTopMargin() {
-      const navContainer = document.getElementById("nav-container");
-      const navHeight = navContainer.offsetHeight;
-      let margin = navHeight + 4 + "px";
-      return margin;
-    }
+    ...mapState([
+      "isNavActive",
+    ]),
   },
-  created() {
-    window.addEventListener("resize", this.adjustBodyTopMargin);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.adjustBodyTopMargin);
+  watch: {
+    isNavActive(newValue) {
+      const body = document.body;
+      if (newValue && body != null) {
+        body.classList.add("nav-active");
+      } else if (body != null) {
+        body.classList.remove("nav-active");
+      }
+    },
   },
   methods: {
     handleToggle() {
-      this.isToggleActive = !this.isToggleActive;
-      this.adjustBodyTopMargin();
-      this.$emit("toggleNavigation", this.isToggleActive);
-    },
-    adjustBodyTopMargin() {
-      this.$nextTick(() => {
-          if (this.isToggleActive && window.innerWidth < 640) {
-          document.body.style.marginTop = this.bodyTopMargin;
-        } else {
-          document.body.style.marginTop = "4.25rem"; // horizontal navHeight is 4rem (64px)
-        }
-      });
+      this.$store.commit("toggleNavActive");
     },
   },
 };
@@ -72,7 +55,7 @@ export default {
 
 <style scoped>
 #custom-toggler > div {
-  width: 32px;
+  width: 36px;
   height: 2px;
   margin-bottom: 8px;
   transition: transform 500ms ease, opacity 500ms;
@@ -93,9 +76,5 @@ export default {
 }
 .active #toggler-bottom {
   transform: translateY(-10px) rotate(-45deg);
-}
-.hover {
-  background-color: rgb(79, 209, 197) !important;
-  transition: 0.2s ease;
 }
 </style>
