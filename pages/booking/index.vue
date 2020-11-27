@@ -1,10 +1,18 @@
 <template>
   <section class="px-4 mt-20 mx-auto max-w-none w-4/5 leading-8">
     <h1 class="text-center mb-4 text-red-600 font-extrabold text-4xl leading-tight">
-      Contact Cuckoo and the Birds
+      Fly with Cuckoo and the Birds
     </h1>
-    <p class="w-full max-w-lg mx-auto text-justify text-white my-4 text-lg md:text-xl leading-normal">
-      The best way to book the band is by email. You can do that by filling out the form below. 
+    <p class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal">
+      NOTE: With the ongoing Covid-19 pandemic in mind, Cuckoo and the Birds is not booking shows at this time. However, please feel free to say hello! We love hearing from you.
+    </p>
+    <p class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal">
+      The best way to contact us is via email at <a
+              class="text-red-600 hover:text-cyan-300 rounded-sm"
+              target="_blank"
+              rel="noreferrer"
+              href="mailto:cuckooandthebirds@gmail.com"
+            >cuckooandthebirds@gmail.com</a>. If you'd like, you can fill out the handy-dandy form below.
     </p>
     <form
       id="contact"
@@ -59,7 +67,7 @@
             type="email"
             name="email"
             required
-            placeholder="beammeup@scotty.com"
+            :placeholder="email.placeholder"
             @input="$v.email.text.$reset(); isUserTyping = true;"
             @blur="$v.email.text.$touch(); isUserTyping = false;"
           >
@@ -207,19 +215,19 @@ export default {
       errorLines: 0,
       isUserTyping: false,
       name: {
-        placeholder: "Captain Kirk",
+        placeholder: "Getty Lee",
         text: "",
       },
       email: {
-        placeholder: "beammeup@scotty.com",
+        placeholder: "bigtime@rush.com",
         text: "",
       },
       subject: {
-        placeholder: "Captain's Log",
+        placeholder: "Today's Tom Sawyer",
         text: "",
       },
       message: {
-        placeholder: "Stardate 2713.5\n\nIn the distant reaches of our galaxy, we have made an astonishing discovery—Earth-type radio signals coming from a planet which apparently is an exact duplicate of the Earth.\n\nIt seems impossible, but there it is.",
+        placeholder: "A modern-day warrior\nMean, mean stride\nToday's Tom Sawyer\nMean, mean pride\n\nThough his mind is not for rent\nDon't put him down as arrogant\nHis reserve, a quiet defense\nRiding out the day's events\nThe river\n\nWhat you say about his company\nIs what you say about society\nCatch the mist\nCatch the myth\nCatch the mystery\nCatch the drift",
         text: "",
       },
       requestState: RequestState.idle,

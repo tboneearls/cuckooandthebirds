@@ -62,8 +62,8 @@ const sections = [
     name: "Press",
   },
   {
-    href: "/contact",
-    name: "Contact",
+    href: "/booking",
+    name: "Booking",
   },
 ];
 
