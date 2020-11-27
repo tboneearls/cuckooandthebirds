@@ -1,18 +1,27 @@
 <template>
   <section class="px-4 mt-20 mx-auto max-w-none w-4/5 leading-8">
-    <h1 class="text-center mb-4 text-red-600 font-extrabold text-4xl leading-tight">
+    <h1
+      class="text-center mb-4 text-red-600 font-extrabold text-4xl leading-tight"
+    >
       Fly with Cuckoo and the Birds
     </h1>
-    <p class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal">
-      NOTE: With the ongoing Covid-19 pandemic in mind, Cuckoo and the Birds is not booking shows at this time. However, please feel free to say hello! We love hearing from you.
+    <p
+      class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal"
+    >
+      NOTE: With the ongoing Covid-19 pandemic in mind, Cuckoo and the Birds is
+      not booking shows at this time. However, please feel free to say hello! We
+      love hearing from you.
     </p>
-    <p class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal">
-      The best way to contact us is via email at <a
-              class="text-red-600 hover:text-cyan-300 rounded-sm"
-              target="_blank"
-              rel="noreferrer"
-              href="mailto:cuckooandthebirds@gmail.com"
-            >cuckooandthebirds@gmail.com</a>. If you'd like, you can fill out the handy-dandy form below.
+    <p
+      class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal"
+    >
+      The best way to contact us is via email at
+      <a
+        class="text-red-600 hover:text-cyan-300 rounded-sm"
+        target="_blank"
+        rel="noreferrer"
+        href="mailto:cuckooandthebirds@gmail.com"
+      >cuckooandthebirds@gmail.com</a>. If you'd like, you can fill out the handy-dandy form below.
     </p>
     <form
       id="contact"
@@ -21,9 +30,7 @@
       enctype="text/plain"
       @submit.prevent="submitEmail"
     >
-      <fieldset
-        class="px-4 py-2"
-      >
+      <fieldset class="px-4 py-2">
         <div>
           <label
             class="block text-red-500 font-bold mb-1 md:mb-0 pr-4"
@@ -39,8 +46,14 @@
             type="text"
             name="name"
             :placeholder="name.placeholder"
-            @input="$v.name.text.$reset(); isUserTyping = true;"
-            @blur="$v.name.text.$touch(); isUserTyping = false;"
+            @input="
+              $v.name.text.$reset();
+              isUserTyping = true;
+            "
+            @blur="
+              $v.name.text.$touch();
+              isUserTyping = false;
+            "
           >
           <p
             v-if="$v.name.text.$error"
@@ -50,9 +63,9 @@
           </p>
         </div>
 
-        <div 
+        <div
           class="flex flex-col"
-          :class="{'mb-2': !$v.email.text.$error}"
+          :class="{ 'mb-2': !$v.email.text.$error }"
         >
           <label
             class="block text-red-500 font-bold mb-1 md:mb-0 pr-4"
@@ -68,8 +81,14 @@
             name="email"
             required
             :placeholder="email.placeholder"
-            @input="$v.email.text.$reset(); isUserTyping = true;"
-            @blur="$v.email.text.$touch(); isUserTyping = false;"
+            @input="
+              $v.email.text.$reset();
+              isUserTyping = true;
+            "
+            @blur="
+              $v.email.text.$touch();
+              isUserTyping = false;
+            "
           >
           <p
             v-if="$v.email.text.$dirty && !$v.email.text.required"
@@ -99,9 +118,9 @@
             :placeholder="subject.placeholder"
           >
         </div>
-        <div 
+        <div
           class="flex flex-col"
-          :class="{'mb-4': !$v.message.text.$error}"
+          :class="{ 'mb-4': !$v.message.text.$error }"
         >
           <label
             class="block text-red-500 font-bold mb-1 md:mb-0 pr-4"
@@ -116,8 +135,14 @@
             name="message"
             required
             :placeholder="message.placeholder"
-            @input="$v.message.text.$reset(); isUserTyping = true;"
-            @blur="$v.message.text.$touch(); isUserTyping = false;"
+            @input="
+              $v.message.text.$reset();
+              isUserTyping = true;
+            "
+            @blur="
+              $v.message.text.$touch();
+              isUserTyping = false;
+            "
           />
           <p
             v-if="$v.message.text.$error"
@@ -137,7 +162,7 @@
         />
 
         <div class="relative">
-          <p 
+          <p
             v-if="!saveDisabled"
             class="success-message"
           >
@@ -165,12 +190,12 @@
               value="Send Email"
               :disabled="saveDisabled"
               class="inline-block my-2 text-white transition-colors transition-padding ease-in-out duration-200 bg-emerald-400 rounded-lg pl-2 pr-10 disabled:pr-2 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus:shadow-outline-dark"
-              :class="{'submit-hover': !saveDisabled && hoveringMessage }"
+              :class="{ 'submit-hover': !saveDisabled && hoveringMessage }"
               @mouseover="hoveringMessage = !saveDisabled"
               @mouseleave="hoveringMessage = false"
             >
             <transition name="draw">
-              <RightArrowIcon 
+              <RightArrowIcon
                 v-if="!saveDisabled"
                 style="margin-left: -32px;"
               />
@@ -183,12 +208,15 @@
 </template>
 
 <script>
-// NOTE: not converting this to TS until I can fully migrate to vue 3. 
+// NOTE: not converting this to TS until I can fully migrate to vue 3.
 // the type inferences are all fucked.
 import { mapState } from "vuex";
 import VueRecaptcha from "vue-recaptcha";
 import axios from "axios";
-import { required, email as emailValidationRegex } from "vuelidate/lib/validators";
+import {
+  required,
+  email as emailValidationRegex
+} from "vuelidate/lib/validators";
 
 import RightArrowIcon from "@/components/widgets/svg/RightArrowIcon.vue";
 import LoadingState from "@/components/requestStates/LoadingState.vue";
@@ -227,7 +255,8 @@ export default {
         text: "",
       },
       message: {
-        placeholder: "A modern-day warrior\nMean, mean stride\nToday's Tom Sawyer\nMean, mean pride\n\nThough his mind is not for rent\nDon't put him down as arrogant\nHis reserve, a quiet defense\nRiding out the day's events\nThe river\n\nWhat you say about his company\nIs what you say about society\nCatch the mist\nCatch the myth\nCatch the mystery\nCatch the drift",
+        placeholder:
+          "A modern-day warrior\nMean, mean stride\nToday's Tom Sawyer\nMean, mean pride\n\nThough his mind is not for rent\nDon't put him down as arrogant\nHis reserve, a quiet defense\nRiding out the day's events\nThe river\n\nWhat you say about his company\nIs what you say about society\nCatch the mist\nCatch the myth\nCatch the mystery\nCatch the drift",
         text: "",
       },
       requestState: RequestState.idle,
@@ -252,13 +281,11 @@ export default {
     },
   },
   computed: {
-    ...mapState([
-      "prefersDarkMode",
-    ]),
+    ...mapState(["prefersDarkMode"]),
     saveDisabled() {
       return (
         this.requestState !== RequestState.idle ||
-        !this.recaptchaVerified || 
+        !this.recaptchaVerified ||
         this.isUserTyping ||
         !this.$v.name.text.required ||
         !this.$v.email.text.required ||
@@ -278,7 +305,7 @@ export default {
     emailBody() {
       return {
         name: this.name.text,
-        subject: this.subject.text, 
+        subject: this.subject.text,
         message: this.message.text,
         to: this.email.text,
       };
@@ -308,9 +335,11 @@ export default {
     checkCompactRecaptcha() {
       const compactRecaptchaBreakPoint = 560;
       const oldShouldCompactRecaptcha = this.shouldCompactRecaptcha;
-      this.shouldCompactRecaptcha = window.innerWidth <= compactRecaptchaBreakPoint;
+      this.shouldCompactRecaptcha =
+        window.innerWidth <= compactRecaptchaBreakPoint;
 
-      const isRecaptchaRedrawn = oldShouldCompactRecaptcha !== this.shouldCompactRecaptcha;
+      const isRecaptchaRedrawn =
+        oldShouldCompactRecaptcha !== this.shouldCompactRecaptcha;
       if (isRecaptchaRedrawn) {
         this.removeRecaptchaContainer();
       }
@@ -319,21 +348,19 @@ export default {
       const vm = this;
       this.requestState = RequestState.loading;
       // show loading state, success state, failed state
-      axios.post(
-        vm.mailToURL, 
-        vm.emailBody
-      )
-      .then(response => {
-        if (response.status === 200) {
-          this.requestState = RequestState.success;
-        } else {
+      axios
+        .post(vm.mailToURL, vm.emailBody)
+        .then(response => {
+          if (response.status === 200) {
+            this.requestState = RequestState.success;
+          } else {
+            this.requestState = RequestState.error;
+          }
+        })
+        .catch(error => {
+          console.log(`error: ${error}`);
           this.requestState = RequestState.error;
-        }
-      })
-      .catch(error => {
-        console.log(`error: ${error}`);
-        this.requestState = RequestState.error;
-      });
+        });
     },
   },
 };
