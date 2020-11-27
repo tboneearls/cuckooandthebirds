@@ -8,12 +8,14 @@ module.exports = {
         default: "Asul, sans-sarif",
       },
       height: {
-        "fit": "fit-content",
+        fit: "fit-content",
       },
       boxShadow: {
         "outline-light": "0 0 0 3px #22D3EE", // cyan-400
         "outline-dark": "0 0 0 3px #67E8F9", // cyan-300
-        // box-shadow: inset 0 -0.125em 0 0 #fff, inset 0 -0.375em 0 0 rgba(165,243,252,.4);
+        "outline-inset-dark":
+          "inset 0 -0.125em 0 0 #111827, inset 0 -0.22em 0 0 #22D3EE", // coolgray-900, cyan-400
+        "outline-inset-dark-fill": "inset 0 -0.125em 0 0 #111827, inset 0 -1em 0 0 #22D3EE", // coolgray-900, cyan-400
       },
       // cyan, coolgray are used. the others are from the tailwind 2.0 color palette for experimenting.
       colors: {

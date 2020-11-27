@@ -41,3 +41,13 @@ export default ({
   },
 });
 </script>
+
+<style scoped>
+.text-shadow {
+  text-shadow:
+    1px 1px #111827,
+    1px -1px #111827,
+    -1px 1px #111827,
+    -1px -1px #111827;
+}
+</style>
