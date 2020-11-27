@@ -43,6 +43,7 @@ export default {
   },
   plugins: [
     { src: "~/plugins/cloudinary.js" },
+    { src: "~/plugins/vuelidate.js" },
   ],
   head: {
     htmlAttrs: {

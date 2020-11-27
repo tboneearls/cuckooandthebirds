@@ -23,9 +23,7 @@ export default {
 
 <style>
 body {
-  @apply bg-coolgray-900;
-  padding: 0;
-  margin: 0;
+  @apply bg-coolgray-900 font-default p-0 m-0;
 }
 body *:focus {
   outline: 0;

@@ -61,10 +61,10 @@ const sections = [
     href: "/press",
     name: "Press",
   },
-  // {
-  //   href: "/contact",
-  //   name: "Contact",
-  // },
+  {
+    href: "/contact",
+    name: "Contact",
+  },
 ];
 
 export default {
