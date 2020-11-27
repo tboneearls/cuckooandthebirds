@@ -3,29 +3,31 @@
     <h1
       class="text-center mb-4 text-red-600 font-extrabold text-4xl leading-tight"
     >
-      Fly with Cuckoo and the Birds
+      Fly Away with Cuckoo and the Birds
     </h1>
-    <p
-      class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal"
-    >
-      NOTE: With the ongoing Covid-19 pandemic in mind, Cuckoo and the Birds is
-      not booking shows at this time. However, please feel free to say hello! We
-      love hearing from you.
-    </p>
-    <p
-      class="w-full max-w-lg mx-auto text-white my-4 text-lg md:text-xl leading-normal"
-    >
-      The best way to contact us is via email at
-      <a
-        class="text-red-600 hover:text-cyan-300 rounded-sm"
-        target="_blank"
-        rel="noreferrer"
-        href="mailto:cuckooandthebirds@gmail.com"
-      >cuckooandthebirds@gmail.com</a>. If you'd like, you can fill out the handy-dandy form below.
-    </p>
+    <div class="my-4">
+      <p
+        class="w-full mx-auto text-white my-4 text-lg md:text-xl leading-normal"
+      >
+        NOTE: With the ongoing Covid-19 pandemic in mind, Cuckoo and the Birds
+        is not booking shows at this time. However, please feel free to say
+        hello! We love hearing from you.
+      </p>
+      <p
+        class="w-full mx-auto text-white my-4 text-lg md:text-xl leading-normal"
+      >
+        The best way to contact us is via email at
+        <a
+          class="text-red-600 hover:text-cyan-300 rounded-sm"
+          target="_blank"
+          rel="noreferrer"
+          href="mailto:cuckooandthebirds@gmail.com"
+        >cuckooandthebirds@gmail.com</a>. If you'd like, you can fill out the handy-dandy form below.
+      </p>
+    </div>
     <form
       id="contact"
-      class="form-boxshadow mx-auto my-8 bg-coolgray-800 rounded-md w-full max-w-sm"
+      class="form-boxshadow mx-auto mt-8 bg-coolgray-800 rounded-md w-full max-w-sm"
       method="POST"
       enctype="text/plain"
       @submit.prevent="submitEmail"
@@ -46,14 +48,8 @@
             type="text"
             name="name"
             :placeholder="name.placeholder"
-            @input="
-              $v.name.text.$reset();
-              isUserTyping = true;
-            "
-            @blur="
-              $v.name.text.$touch();
-              isUserTyping = false;
-            "
+            @input="resetFieldValidation('name')"
+            @blur="touchFieldValidation('name')"
           >
           <p
             v-if="$v.name.text.$error"
@@ -81,14 +77,8 @@
             name="email"
             required
             :placeholder="email.placeholder"
-            @input="
-              $v.email.text.$reset();
-              isUserTyping = true;
-            "
-            @blur="
-              $v.email.text.$touch();
-              isUserTyping = false;
-            "
+            @input="resetFieldValidation('email')"
+            @blur="touchFieldValidation('email')"
           >
           <p
             v-if="$v.email.text.$dirty && !$v.email.text.required"
@@ -131,18 +121,12 @@
           <textarea
             id="contactMessage"
             v-model.trim="message.text"
-            class="form-textarea w-full h-32 text-soft-black placeholder-gray-600 focus:bg-white focus:outline-none focus:shadow-outline-dark"
+            class="form-textarea w-full h-40 text-soft-black placeholder-gray-600 focus:bg-white focus:outline-none focus:shadow-outline-dark"
             name="message"
             required
             :placeholder="message.placeholder"
-            @input="
-              $v.message.text.$reset();
-              isUserTyping = true;
-            "
-            @blur="
-              $v.message.text.$touch();
-              isUserTyping = false;
-            "
+            @input="resetFieldValidation('message')"
+            @blur="touchFieldValidation('message')"
           />
           <p
             v-if="$v.message.text.$error"
@@ -322,6 +306,18 @@ export default {
     this.removeRecaptchaContainer();
   },
   methods: {
+    resetFieldValidation(fieldName) {
+      if (fieldName != null) {
+        this.$v[fieldName]["text"].$reset();
+      }
+      this.isUserTyping = true;
+    },
+    touchFieldValidation(fieldName) {
+      if (fieldName != null) {
+        this.$v[fieldName]["text"].$touch();
+      }
+      this.isUserTyping = false;
+    },
     removeRecaptchaContainer() {
       // grab the container that is appended to the DOM from recaptcha script & remove it
       const { lastChild } = document.body;
@@ -370,15 +366,9 @@ export default {
 .error-message {
   @apply text-red-500 font-semibold;
 }
-/* html.dark .error-message {
-  @apply text-red-500;
-} */
 .success-message {
   @apply text-emerald-400 font-semibold;
 }
-/* html.dark .success-message {
-  @apply text-emerald-400;
-} */
 .disabled {
   @apply cursor-not-allowed;
 }
