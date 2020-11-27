@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     checkIsMaxWidth() {
+      // has to be 700px; that's the full width of the embedded player
       if (window.innerWidth >= 700) {
         this.isMaxWidth = true;
       } else {
@@ -61,6 +62,6 @@ iframe {
   width: 700px;
 }
 .mobile-embedded-player {
-  width: 100%;
+  @apply w-full;
 }
 </style>
