@@ -2,7 +2,7 @@
   <div>
     <TextCard>
       <div>
-        <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
+        <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-8">
           Our Story
         </h1>
         <section class="text-white text-xl">

@@ -3,9 +3,18 @@ import { join } from "path";
 export default {
   target: "static",
   ssr: true,
-  env: {
-    CLOUDINARY_ID: process.env.CLOUDINARY_ID,
+  /////////////////////
+  // PUBLIC ENV VARS //
+  /////////////////////
+  publicRuntimeConfig: {
+    // baseURL: process.env.BASE_URL
+    cloudinaryId: process.env.CLOUDINARY_ID,
+    recaptchaSitekey: process.env.RECAPTCHA_SITEKEY,
   },
+  //////////////////////
+  // PRIVATE ENV VARS //
+  //////////////////////
+  privateRuntimeConfig: {},
   build: {
     // allows webpack analyzer to run when doing npm run generate in development
     // analyze: process.env.NODE_ENV !== "production" ? true : false,

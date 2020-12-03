@@ -1,7 +1,7 @@
 <template>
   <section class="px-4 mt-20 mx-auto max-w-none w-4/5 leading-8">
     <h1
-      class="text-center mb-4 text-red-600 font-extrabold text-4xl leading-tight"
+      class="text-center mb-8 text-red-600 font-extrabold text-4xl leading-tight"
     >
       Contact Cuckoo and the Birds
     </h1>
@@ -143,7 +143,7 @@
         </div>
         <vue-recaptcha
           :key="shouldCompactRecaptcha"
-          sitekey="6LfWJbcUAAAAAAPyrhy_FrLb_2y3wuLIzl3dEtZx"
+          :sitekey="$config.recaptchaSitekey"
           theme="dark"
           :size="shouldCompactRecaptcha ? 'compact' : 'normal'"
           :load-recaptcha-script="true"

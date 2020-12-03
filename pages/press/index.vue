@@ -1,7 +1,7 @@
 <template>
   <TextCard>
     <main id="press">
-      <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
+      <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-8">
         Press
       </h1>
       <h2 class="text-red-600 text-2xl font-semibold">

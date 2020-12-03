@@ -3,7 +3,7 @@
     id="releases"
     class="font-default text-white"
   >
-    <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-4">
+    <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-8">
       Releases
     </h1>
     <section>
