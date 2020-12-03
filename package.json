@@ -39,7 +39,7 @@
   "devDependencies": {
     "@nuxt/babel-preset-app": "^2.14.7",
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/tailwindcss": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^3.3.0",
     "babel-eslint": "^10.0.3",
     "core-js": "^3.8.0",
     "eslint": "^7.10.0",
