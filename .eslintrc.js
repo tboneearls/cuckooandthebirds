@@ -24,9 +24,9 @@ module.exports = {
     "comma-dangle": ["error", {
       "arrays": "always-multiline",
       "objects": "always-multiline",
+      "functions": "always-multiline",
       "imports": "never",
       "exports": "never",
-      "functions": "never",
     }],
     "eol-last": ["error", "always"],
     "object-curly-spacing": ["error", "always"],

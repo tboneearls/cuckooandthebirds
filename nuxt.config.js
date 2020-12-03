@@ -8,7 +8,7 @@ export default {
   },
   build: {
     // allows webpack analyzer to run when doing npm run generate in development
-    analyze: process.env.NODE_ENV !== "production" ? true : false,
+    // analyze: process.env.NODE_ENV !== "production" ? true : false,
     extractCSS: true,
   },
   buildModules: [
@@ -43,6 +43,7 @@ export default {
   },
   plugins: [
     { src: "~/plugins/cloudinary.js" },
+    { src: "~/plugins/vuelidate.js" },
   ],
   head: {
     htmlAttrs: {
