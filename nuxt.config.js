@@ -7,7 +7,6 @@ export default {
   // PUBLIC ENV VARS //
   /////////////////////
   publicRuntimeConfig: {
-    // baseURL: process.env.BASE_URL
     cloudinaryId: process.env.CLOUDINARY_ID,
     recaptchaSitekey: process.env.RECAPTCHA_SITEKEY,
   },
