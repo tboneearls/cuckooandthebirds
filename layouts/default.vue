@@ -37,7 +37,8 @@ h1 {
   transition: all 300ms ease-out 100ms;
 }
 body.nav-active h1 {
-  @apply mt-40 sm:mt-20;
+  /* 4 items in nav, 28 mt difference. mt change = nav items * 7 */
+  @apply mt-48 pt-1 sm:mt-20 sm:pt-0;
 }
 
 /* transitions */
