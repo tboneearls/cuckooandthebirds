@@ -11,6 +11,7 @@
     >
       <span>
         <font-awesome-icon
+          v-show="pageLoaded"
           :icon="[link.icon.lib, link.icon.to]"
           size="lg"
         />
@@ -103,7 +104,11 @@ export default {
   data() {
     return {
       socialLinks,
+      pageLoaded: false,
     };
+  },
+  mounted() {
+    this.pageLoaded = true;
   },
 };
 </script>
