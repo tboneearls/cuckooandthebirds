@@ -31,13 +31,13 @@
         </ul>
       </nav>
     </transition>
-    <nav-toggle />
+    <nav-bar-toggle />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import NavToggle from "./NavToggle.vue";
+import NavBarToggle from "./NavBarToggle.vue";
 
 // TODO: add sections to setup hook when Vue 3.x is released
 /*
@@ -69,7 +69,7 @@ const sections = [
 
 export default {
   components: {
-    NavToggle,
+    NavBarToggle,
   },
   data() {
     return {

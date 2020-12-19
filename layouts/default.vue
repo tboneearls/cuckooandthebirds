@@ -4,19 +4,19 @@
 
     <nuxt />
 
-    <vue-footer />
+    <the-footer />
   </div>
 </template>
 
 <script>
 import NavBar from "../components/navigation/NavBar.vue";
-import VueFooter from "../components/global/VueFooter.vue";
+import TheFooter from "../components/global/TheFooter.vue";
 
 export default {
   name: "App",
   components: {
     NavBar,
-    VueFooter,
+    TheFooter,
   },
 };
 </script>
