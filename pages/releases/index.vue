@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <TextCard>
+        <text-card>
           <div>
             <h2 class="text-red-600 text-2xl font-semibold mb-4">
               Credits:
@@ -78,7 +78,7 @@
               {{ credit }}
             </p>
           </div>
-        </TextCard>
+        </text-card>
       </div>
     </section>
   </main>
