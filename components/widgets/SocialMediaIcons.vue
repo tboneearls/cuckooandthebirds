@@ -13,7 +13,7 @@
         <font-awesome-icon
           v-show="pageLoaded"
           :icon="[link.icon.lib, link.icon.to]"
-          size="lg"
+          size="2x"
         />
       </span>
     </a>
@@ -112,3 +112,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+</style>

@@ -1,17 +1,13 @@
 <template>
-  <div 
-    class="flex flex-row my-8"
-    :class="imageFirst ? '' : 'flex-row-reverse'"
+  <div
+    class="flex flex-col sm:flex-row my-24 w-full justify-between"
+    :class="imageFirst ? '' : 'sm:flex-row-reverse'"
   >
-    <div class="self-center max-w-md px-2">
-      <slot 
-        name="image" 
-      />
+    <div class="p-4 self-center max-w-md w-full sm:w-1/2">
+      <slot name="image" />
     </div>
-    <div class="self-center px-2">
-      <slot 
-        name="text" 
-      />
+    <div class="p-4 self-center w-full sm:w-1/2">
+      <slot name="text" />
     </div>
   </div>
 </template>
