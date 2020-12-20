@@ -20,7 +20,7 @@
             </template>
           </text-image-card>
 
-          <text-image-card :imageFirst="false">
+          <text-image-card :image-first="false">
             <template #image>
               <img
                 src="https://placekitten.com/g/500/500"
@@ -48,7 +48,7 @@
             </template>
           </text-image-card>
 
-          <text-image-card :imageFirst="false">
+          <text-image-card :image-first="false">
             <template #image>
               <img
                 src="https://placekitten.com/g/800/800"
