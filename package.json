@@ -29,7 +29,7 @@
     "axios": "^0.21.0",
     "cloudinary-vue": "^1.1.2",
     "dotenv": "^8.2.0",
-    "nuxt": "^2.14.7",
+    "nuxt": "^2.14.12",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "vue": "^2.6.12",
@@ -37,15 +37,15 @@
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
-    "@nuxt/babel-preset-app": "^2.14.7",
+    "@nuxt/babel-preset-app": "^2.14.12",
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/tailwindcss": "^3.3.0",
-    "babel-eslint": "^10.0.3",
-    "core-js": "^3.8.0",
-    "eslint": "^7.10.0",
+    "@nuxtjs/tailwindcss": "^3.4.1",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.8.1",
+    "eslint": "^7.16.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "husky": "^4.3.0",
+    "eslint-plugin-vue": "^7.3.0",
+    "husky": "^4.3.6",
     "vue-template-compiler": "^2.6.12"
   }
 }

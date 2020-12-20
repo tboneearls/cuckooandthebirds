@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TextCard>
+    <text-card>
       <div>
         <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-8">
           Our Story
@@ -28,7 +28,7 @@
           </p>
         </section>
       </div>
-    </TextCard>
+    </text-card>
   </div>
 </template>
 

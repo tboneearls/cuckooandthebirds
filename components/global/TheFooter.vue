@@ -6,18 +6,18 @@
       class="text-white font-default text-center text-sm font-thin tracking-wide"
       v-html="footerText"
     />
-    <embedded-player />
+    <the-embedded-player />
   </footer>
 </template>
 
 <script>
 import SocialMediaIcons from "@/components/widgets/SocialMediaIcons.vue";
-import EmbeddedPlayer from "@/components/global/EmbeddedPlayer.vue";
+import TheEmbeddedPlayer from "@/components/global/TheEmbeddedPlayer.vue";
 
 export default {
   components: {
     SocialMediaIcons,
-    EmbeddedPlayer,
+    TheEmbeddedPlayer,
   },
   computed: {
     footerText() {

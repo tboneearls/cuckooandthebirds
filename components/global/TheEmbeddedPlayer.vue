@@ -5,30 +5,35 @@
       title="Embedded Bandcamp Music Player"
       style="border: 0; height: 120px;"
       :class="{'desktop-embedded-player': isMaxWidth, 'mobile-embedded-player': !isMaxWidth}"
-      src="https://bandcamp.com/EmbeddedPlayer/album=2807622445/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+      :src="embeddedPlayerSrc"
       seamless
     >
       <a href="https://cuckooandthebirds.bandcamp.com/album/twin-stars">
       Twin Stars by Cuckoo and the Birds
       </a>
     </iframe>
-    <!-- light theme version -->
-    <!-- <iframe
-      style="border: 0; width: 100%; height: 120px;"
-      src="https://bandcamp.com/EmbeddedPlayer/album=2807622445/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
-      seamless
-      ><a href="http://cuckooandthebirds.bandcamp.com/album/twin-stars"
-        >Twin Stars by Cuckoo and the Birds</a
-      ></iframe
-    > -->
   </client-only>
 </template>
 <script>
 export default {
+  props: {
+    prefersDarkMode: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
       isMaxWidth: false,
     };
+  },
+  computed: {
+    embeddedPlayerSrc() {
+      if (this.prefersDarkMode) {
+        return "https://bandcamp.com/EmbeddedPlayer/album=2807622445/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/";
+      }
+      return "https://bandcamp.com/EmbeddedPlayer/album=2807622445/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/";
+    },
   },
   beforeMount() {
     this.checkIsMaxWidth();

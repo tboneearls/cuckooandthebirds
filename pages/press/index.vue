@@ -1,5 +1,5 @@
 <template>
-  <TextCard>
+  <text-card>
     <main id="press">
       <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-8">
         Press
@@ -34,7 +34,7 @@
         </a>
       </template>
     </main>
-  </TextCard>
+  </text-card>
 </template>
 
 <script>

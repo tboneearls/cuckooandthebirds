@@ -185,7 +185,7 @@
               @mouseleave="hoveringMessage = false"
             >
             <transition name="draw">
-              <RightArrowIcon
+              <right-arrow-icon
                 v-if="!saveDisabled"
                 style="margin-left: -32px;"
               />
