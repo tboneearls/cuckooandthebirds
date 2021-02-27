@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center">
-  <i class="fab fa-youtube"></i>
+    <i class="fab fa-youtube" />
     <a
       v-for="(link, index) in socialLinks"
       :key="index"
