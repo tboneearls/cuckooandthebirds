@@ -1,5 +1,6 @@
 <template>
   <div class="flex justify-center">
+    <i class="fab fa-youtube" />
     <a
       v-for="(link, index) in socialLinks"
       :key="index"
@@ -23,10 +24,10 @@
 <script>
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faBandcamp, faSpotify, faSoundcloud, faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBandcamp, faSpotify, faYoutube, faSoundcloud, faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faBandcamp, faSpotify, faSoundcloud, faEnvelope, faInstagram, faFacebook, faTwitter);
+library.add(faBandcamp, faSpotify, faYoutube, faSoundcloud, faEnvelope, faInstagram, faFacebook, faTwitter);
 
 // TODO: add socialLinks to setup hook when Vue 3.x is released
 
@@ -53,6 +54,14 @@ const socialLinks = [
     icon: {
       lib: "fab",
       to: "spotify",
+    },
+  },
+  {
+    href: "https://www.youtube.com/channel/UCoDdh8m-C8GPhGktauuuifQ",
+    ariaLabel: "YouTube",
+    icon: {
+      lib: "fab",
+      to: "youtube",
     },
   },
   {

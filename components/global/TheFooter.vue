@@ -29,9 +29,9 @@ export default {
 </script>
 
 <style scoped>
-  footer {
-    width: 100%;
-    padding-bottom: 8px;
-    margin-bottom: 120px !important; /* to override body * style */
-  }
+footer {
+  width: 100%;
+  padding-bottom: 8px;
+  margin-bottom: 120px !important; /* to override body * style */
+}
 </style>
