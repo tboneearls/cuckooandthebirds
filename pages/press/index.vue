@@ -7,32 +7,36 @@
       <h2 class="text-red-600 text-2xl font-semibold">
         Interviews:
       </h2>
-      <template v-for="(interview, index) in interviews">
-        <a
-          :key="'interview' + index"
-          :href="interview.href"
-          rel="noreferrer"
-          target="_blank"
-          class="interview-link"
-        >
-          {{ interview.text }}
-        </a>
-      </template>
+      <div class="flex flex-col my-4">
+        <template v-for="(interview, index) in interviews">
+          <a
+            :key="'interview' + index"
+            :href="interview.href"
+            rel="noreferrer"
+            target="_blank"
+            class="interview-link"
+          >
+            {{ interview.text }}
+          </a>
+        </template>
+      </div>
 
       <h2 class="text-red-600 text-2xl font-semibold">
         Reviews:
       </h2>
-      <template v-for="(review, index) in reviews">
-        <a
-          :key="'review' + index"
-          :href="review.href"
-          rel="noreferrer"
-          target="_blank"
-          class="review-link"
-        >
-          {{ review.text }}
-        </a>
-      </template>
+      <div class="flex flex-col my-4">
+        <template v-for="(review, index) in reviews">
+          <a
+            :key="'review' + index"
+            :href="review.href"
+            rel="noreferrer"
+            target="_blank"
+            class="review-link"
+          >
+            {{ review.text }}
+          </a>
+        </template>
+      </div>
     </main>
   </text-card>
 </template>
@@ -49,7 +53,7 @@ const interviews = [
 ];
 const reviews = [
   {
-    text: "V3 Media (April 2021)",
+    text: "V13 Media (April 2021)",
     href: "https://v13.net/2021/04/cuckoo-and-the-birds-go-retro-with-their-video-game-themed-show-me-the-dark-music-video-premiere",
   },
   {
@@ -72,6 +76,6 @@ export default ({
 
 <style scoped>
 .interview-link, .review-link {
-  @apply inline-block text-white text-xl px-2 mx-6 my-2 hover:text-cyan-300 rounded-sm;
+  @apply inline-block w-max text-white text-xl px-2 mx-6 my-2 hover:text-cyan-300 rounded-sm;
 }
 </style>
