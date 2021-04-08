@@ -14,7 +14,10 @@
             :key="'text-item-' + index"
             :image-first="index % 2 === 0"
           >
-            <template v-if="item.cloudinaryPublicId != null" #image>
+            <template
+              v-if="item.cloudinaryPublicId != null"
+              #image
+            >
               <cld-image
                 format="jpg"
                 :public-id="item.cloudinaryPublicId"
@@ -65,7 +68,7 @@ export default {
         profile: 7,
         rickenbacker: 6,
         telecaster: 2,
-      }
+      },
     };
   },
   computed: {
@@ -74,7 +77,7 @@ export default {
     },
     textAndImageData() {
       const photoGroups = this.shuffledPhotoGroups;
-      return textData.map((item, i, array) => {
+      return textData.map((item, i) => {
         const photoGroupName = photoGroups[i];
         if (photoGroupName == null) return item;
         
@@ -84,9 +87,9 @@ export default {
           ...item,
           cloudinaryPublicId: `Sanjana%20Quarantine%20Photoshoot/${photoGroupName}/${photoId}`,
           imageAlt: `Sanjana Quarantine Photoshoot ${photoGroupName}-${photoId}`,
-        }
+        };
       });
-    }
+    },
   },
   methods: {
     getRandomNumber(max, min = 1) {
