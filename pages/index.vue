@@ -10,19 +10,28 @@
         <!-- TODO: add splash image as a banner of sorts -->
         <section class="text-white text-xl">
           <text-image-card
-            v-for="(item, index) in textData"
+            v-for="(item, index) in textAndImageData"
             :key="'text-item-' + index"
             :image-first="index % 2 === 0"
           >
-            <template #image>
-              <img
-                :src="item.imgSrc"
+            <template v-if="item.cloudinaryPublicId != null" #image>
+              <cld-image
+                format="jpg"
+                :public-id="item.cloudinaryPublicId"
                 :alt="item.imgAlt"
               >
+                <cld-transformation
+                  width="400"
+                  quality="auto"
+                />
+              </cld-image>
+            </template>
+            <template #photo-credit>
+              Photo by Sanjana Elina
             </template>
             <template #text>
               <p
-                v-if="item.html !== undefined"
+                v-if="item.html != null"
                 v-html="item.html"
               />
               <p v-else>
@@ -49,7 +58,40 @@ export default {
   data() {
     return {
       textData,
+      photoGroupLengths: {
+        // harmonica: 2,
+        joy: 5,
+        martin: 11,
+        profile: 7,
+        rickenbacker: 6,
+        telecaster: 2,
+      }
     };
+  },
+  computed: {
+    shuffledPhotoGroups() {
+      return Object.keys(this.photoGroupLengths).sort(() => 0.5 - Math.random());
+    },
+    textAndImageData() {
+      const photoGroups = this.shuffledPhotoGroups;
+      return textData.map((item, i, array) => {
+        const photoGroupName = photoGroups[i];
+        if (photoGroupName == null) return item;
+        
+        const photoGroupLength = this.photoGroupLengths[photoGroupName];
+        const photoId = this.getRandomNumber(photoGroupLength);
+        return {
+          ...item,
+          cloudinaryPublicId: `Sanjana%20Quarantine%20Photoshoot/${photoGroupName}/${photoId}`,
+          imageAlt: `Sanjana Quarantine Photoshoot ${photoGroupName}-${photoId}`,
+        }
+      });
+    }
+  },
+  methods: {
+    getRandomNumber(max, min = 1) {
+      return Math.floor(Math.random()*(max-min+1)+min);
+    },
   },
 };
 </script>
