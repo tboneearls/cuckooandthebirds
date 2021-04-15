@@ -43,7 +43,7 @@
     "eslint": "^7.21.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^7.6.0",
-    "husky": "^5.1.1",
+    "husky": "^6.0.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "vue-template-compiler": "^2.6.12"
