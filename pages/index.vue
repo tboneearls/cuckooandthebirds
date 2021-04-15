@@ -32,7 +32,9 @@
               </cld-image>
             </template>
             <template #photo-credit>
-              Photo by Sanjana Elina
+              <p class="my-2">
+                Photo by Sanjana Elina
+              </p>
             </template>
             <template #text>
               <p
