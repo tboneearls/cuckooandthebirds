@@ -24,6 +24,7 @@
                 :alt="item.imgAlt"
                 loading="lazy"
               >
+                <cld-placeholder />
                 <cld-transformation
                   width="500"
                   quality="auto"
