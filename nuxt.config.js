@@ -7,7 +7,7 @@ export default {
   // PUBLIC ENV VARS //
   /////////////////////
   publicRuntimeConfig: {
-    cloudinaryId: process.env.CLOUDINARY_ID,
+    // cloudinaryId: process.env.CLOUDINARY_ID,
     recaptchaSitekey: process.env.RECAPTCHA_SITEKEY,
   },
   //////////////////////
@@ -27,7 +27,12 @@ export default {
       },
     ],
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/cloudinary",
   ],
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_ID,
+    useComponent: true,
+  },
   babel: {
     presets() {
       return [
@@ -50,7 +55,7 @@ export default {
     },
   },
   plugins: [
-    { src: "~/plugins/cloudinary.js" },
+    // { src: "~/plugins/cloudinary.js" },
     { src: "~/plugins/vuelidate.js" },
   ],
   head: {

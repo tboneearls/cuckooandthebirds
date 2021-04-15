@@ -27,7 +27,7 @@
               :href="release.href"
             >
               <client-only>
-                <cld-image
+                <!-- <cld-image
                   class="flex justify-center m-2"
                   format="jpg"
                   :public-id="release.imgsrc"
@@ -37,7 +37,7 @@
                     width="400"
                     quality="auto"
                   />
-                </cld-image>
+                </cld-image> -->
               </client-only>
             </a>
             <span class="block text-center text-red-600 text-lg italic">Artwork by Breanda Fedie</span>
@@ -102,7 +102,6 @@ const releases = [
     imgsrc: "Twin%20Stars/twin-stars-album-art.jpg",
     alt: "Album Artwork for Twin Stars",
     year: 2019,
-    "v-href": "twin-stars",
     title: "Twin Stars",
     href: "https://cuckooandthebirds.bandcamp.com/releases",
     descriptions: [

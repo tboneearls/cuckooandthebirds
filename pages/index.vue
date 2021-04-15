@@ -18,17 +18,22 @@
               v-if="item.cloudinaryPublicId != null"
               #image
             >
-              <cld-image
-                format="jpg"
-                :public-id="item.cloudinaryPublicId"
-                :alt="item.imgAlt"
-                loading="lazy"
-              >
-                <cld-transformation
-                  width="500"
-                  quality="auto"
-                />
-              </cld-image>
+              <!-- <client-only>
+                <cld-image
+                  format="jpg"
+                  :public-id="item.cloudinaryPublicId"
+                  :alt="item.imgAlt"
+                  loading="lazy"
+                >
+                  <cld-transformation
+                    width="500"
+                    quality="auto"
+                  />
+                </cld-image>
+              </client-only> -->
+              <client-only>
+                <img :src="getCloudinaryUrl(item.cloudinaryPublicId)" :alt="item.imgAlt">
+              </client-only>
             </template>
             <template #photo-credit>
               Photo by Sanjana Elina
@@ -95,6 +100,17 @@ export default {
   methods: {
     getRandomNumber(max, min = 1) {
       return Math.floor(Math.random()*(max-min+1)+min);
+    },
+    getCloudinaryUrl(publicId) {
+      return this.$cloudinary.image.url(
+        publicId,
+        {
+          format: "jpg",
+          loading: "lazy",
+          width: "500",
+          quality: "auto",
+        },
+      );
     },
   },
 };
