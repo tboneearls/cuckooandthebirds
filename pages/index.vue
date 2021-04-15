@@ -19,6 +19,7 @@
               #image
             >
               <cld-image
+                secure="true"
                 format="jpg"
                 :public-id="item.cloudinaryPublicId"
                 :alt="item.imgAlt"
