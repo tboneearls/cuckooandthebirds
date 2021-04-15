@@ -22,9 +22,10 @@
                 format="jpg"
                 :public-id="item.cloudinaryPublicId"
                 :alt="item.imgAlt"
+                loading="lazy"
               >
                 <cld-transformation
-                  width="400"
+                  width="500"
                   quality="auto"
                 />
               </cld-image>
