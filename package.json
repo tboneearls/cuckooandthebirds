@@ -4,17 +4,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "serve": "nuxt --port 8080",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "eslint --ext .js,.vue --ignore-path .gitignore ."
-    }
   },
   "engines": {
     "node": ">=12.0.0 <13.0.0",
