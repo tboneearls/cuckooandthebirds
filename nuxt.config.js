@@ -1,5 +1,3 @@
-import { join } from "path";
-
 export default {
   target: "static",
   ssr: true,

@@ -31,7 +31,7 @@
                   crop="fill"
                   gravity="face"
                   quality="70"
-                  fetchFormat="auto"
+                  fetch-format="auto"
                 />
               </cld-image>
             </template>
