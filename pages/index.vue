@@ -30,7 +30,7 @@
                 <cld-transformation
                   crop="fill"
                   gravity="face"
-                  quality="70"
+                  quality="60"
                   fetch-format="auto"
                 />
               </cld-image>
