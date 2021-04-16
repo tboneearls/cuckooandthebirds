@@ -22,13 +22,16 @@
                 secure="true"
                 format="jpg"
                 :public-id="item.cloudinaryPublicId"
-                :alt="item.imgAlt"
+                :alt="item.imageAlt"
                 loading="lazy"
+                width="500"
+                height="700"
               >
-                <cld-placeholder />
                 <cld-transformation
-                  width="500"
-                  quality="auto"
+                  crop="fill"
+                  gravity="face"
+                  quality="70"
+                  fetchFormat="auto"
                 />
               </cld-image>
             </template>
