@@ -32,7 +32,6 @@ export default {
     "@nuxtjs/tailwindcss",
     "@nuxtjs/cloudinary",
   ],
-  // modules: [],
   babel: {
     presets() {
       return [
@@ -46,6 +45,7 @@ export default {
       ];
     },
   },
+  // https://github.com/tailwindlabs/tailwindcss/issues/4176
   // tailwindcss: {
   //   jit: true,
   // },
