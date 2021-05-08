@@ -14,7 +14,7 @@
         <font-awesome-icon
           v-show="pageLoaded"
           :icon="[link.icon.lib, link.icon.to]"
-          size="lg"
+          size="2x"
         />
       </span>
     </a>
@@ -24,10 +24,10 @@
 <script>
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faBandcamp, faSpotify, faYoutube, faSoundcloud, faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBandcamp, faSpotify, faYoutube, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faBandcamp, faSpotify, faYoutube, faSoundcloud, faEnvelope, faInstagram, faFacebook, faTwitter);
+library.add(faBandcamp, faSpotify, faYoutube, faEnvelope, faInstagram, faTwitter);
 
 // TODO: add socialLinks to setup hook when Vue 3.x is released
 
@@ -49,14 +49,6 @@ const socialLinks = [
     },
   },
   {
-    href: "https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD",
-    ariaLabel: "Spotify",
-    icon: {
-      lib: "fab",
-      to: "spotify",
-    },
-  },
-  {
     href: "https://www.youtube.com/channel/UCoDdh8m-C8GPhGktauuuifQ",
     ariaLabel: "YouTube",
     icon: {
@@ -65,19 +57,11 @@ const socialLinks = [
     },
   },
   {
-    href: "https://www.soundcloud.com/cuckooandthebirds/sets/twin-stars",
-    ariaLabel: "Soundcloud",
+    href: "https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD",
+    ariaLabel: "Spotify",
     icon: {
       lib: "fab",
-      to: "soundcloud",
-    },
-  },
-  {
-    href: "mailto:cuckooandthebirds@gmail.com",
-    ariaLabel: "Email",
-    icon: {
-      lib: "fa",
-      to: "envelope",
+      to: "spotify",
     },
   },
   {
@@ -89,19 +73,19 @@ const socialLinks = [
     },
   },
   {
-    href: "https://www.facebook.com/cuckooandthebirds",
-    ariaLabel: "Facebook",
-    icon: {
-      lib: "fab",
-      to: "facebook",
-    },
-  },
-  {
     href: "https://www.twitter.com/cuckooandbirds",
     ariaLabel: "Twitter",
     icon: {
       lib: "fab",
       to: "twitter",
+    },
+  },
+  {
+    href: "mailto:cuckooandthebirds@gmail.com",
+    ariaLabel: "Email",
+    icon: {
+      lib: "fa",
+      to: "envelope",
     },
   },
 ];
@@ -121,3 +105,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+</style>

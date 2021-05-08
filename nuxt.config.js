@@ -1,5 +1,3 @@
-import { join } from "path";
-
 export default {
   target: "static",
   ssr: true,
@@ -41,14 +39,17 @@ export default {
       ];
     },
   },
-  postcss: {
-    plugins: {
-      tailwindcss: join(__dirname, "tailwind.config.js"),
-    },
-    preset: {
-      stage: 2,
-    },
+  tailwindcss: {
+    jit: true,
   },
+  // postcss: {
+  //   plugins: {
+  //     tailwindcss: join(__dirname, "tailwind.config.js"),
+  //   },
+  //   preset: {
+  //     stage: 2,
+  //   },
+  // },
   plugins: [
     { src: "~/plugins/cloudinary.js" },
     { src: "~/plugins/vuelidate.js" },

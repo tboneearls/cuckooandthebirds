@@ -3,7 +3,7 @@
     <br>
     <social-media-icons />
     <p 
-      class="text-white font-default text-center text-sm font-thin tracking-wide"
+      class="mx-auto text-white font-default text-center text-sm font-thin tracking-wide"
       v-html="footerText"
     />
     <the-embedded-player />

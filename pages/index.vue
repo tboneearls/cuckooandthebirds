@@ -2,30 +2,54 @@
   <div>
     <text-card>
       <div>
-        <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-8">
+        <h1
+          class="text-center font-default text-4xl font-bold text-red-600 mb-8"
+        >
           Our Story
         </h1>
+        <!-- TODO: add splash image as a banner of sorts -->
         <section class="text-white text-xl">
-          <p>
-            Cuckoo and the Birds hail from Chicago, IL. The name dates back to when Tyler Earls tried his hand at a solo project in high school after getting kicked out of the band he was in.
-          </p>
-          <br>
-          <p>
-            He played one show in the basement of a house party. While performing, the drummer of the main band started blasting his double bass pedal behind him to "test it out," which inspired much of the audience to generally talk over him until finally that band played, when in the excitement someone rammed their friend's head through the drywall.
-          </p>
-          <br>
-          <p>
-            Several years later, Tyler resolved for better or worse to bring Cuckoo and the Birds back from the dead—but this time around, he rams heavy metal drummers through the wall.
-          </p>
-          <br>
-          <p>
-            For booking inquiries, please email <a
-              class="text-red-600 hover:text-cyan-300 rounded-sm"
-              target="_blank"
-              rel="noreferrer"
-              href="mailto:cuckooandthebirds@gmail.com"
-            >cuckooandthebirds@gmail.com</a>.
-          </p>
+          <text-image-card
+            v-for="(item, index) in textAndImageData"
+            :key="'text-item-' + index"
+            :image-first="index % 2 === 0"
+          >
+            <template
+              v-if="item.cloudinaryPublicId != null"
+              #image
+            >
+              <cld-image
+                secure="true"
+                format="jpg"
+                :public-id="item.cloudinaryPublicId"
+                :alt="item.imageAlt"
+                loading="lazy"
+                width="500"
+                height="700"
+              >
+                <cld-transformation
+                  crop="fill"
+                  gravity="face"
+                  quality="60"
+                  fetch-format="auto"
+                />
+              </cld-image>
+            </template>
+            <template #photo-credit>
+              <p class="my-2">
+                Photo by Sanjana Elina
+              </p>
+            </template>
+            <template #text>
+              <p
+                v-if="item.html != null"
+                v-html="item.html"
+              />
+              <p v-else>
+                {{ item.text }}
+              </p>
+            </template>
+          </text-image-card>
         </section>
       </div>
     </text-card>
@@ -33,21 +57,59 @@
 </template>
 
 <script>
-import TextCard from "../components/widgets/TextCard.vue";
+import TextCard from "@/components/widgets/TextCard.vue";
+import TextImageCard from "@/components/widgets/TextImageCard.vue";
+import textData from "../assets/homePageTextData.json";
 
-export default ({
+export default {
   components: {
     TextCard,
+    TextImageCard,
   },
-});
+  data() {
+    return {
+      textData,
+      photoGroupLengths: {
+        // harmonica: 2,
+        joy: 5,
+        martin: 11,
+        profile: 7,
+        rickenbacker: 6,
+        telecaster: 2,
+      },
+    };
+  },
+  computed: {
+    shuffledPhotoGroups() {
+      return Object.keys(this.photoGroupLengths).sort(() => 0.5 - Math.random());
+    },
+    textAndImageData() {
+      const photoGroups = this.shuffledPhotoGroups;
+      return textData.map((item, i) => {
+        const photoGroupName = photoGroups[i];
+        if (photoGroupName == null) return item;
+        
+        const photoGroupLength = this.photoGroupLengths[photoGroupName];
+        const photoId = this.getRandomNumber(photoGroupLength);
+        return {
+          ...item,
+          cloudinaryPublicId: `Sanjana%20Quarantine%20Photoshoot/${photoGroupName}/${photoId}`,
+          imageAlt: `Sanjana Quarantine Photoshoot ${photoGroupName}-${photoId}`,
+        };
+      });
+    },
+  },
+  methods: {
+    getRandomNumber(max, min = 1) {
+      return Math.floor(Math.random()*(max-min+1)+min);
+    },
+  },
+};
 </script>
 
 <style scoped>
 .text-shadow {
-  text-shadow:
-    1px 1px #111827,
-    1px -1px #111827,
-    -1px 1px #111827,
+  text-shadow: 1px 1px #111827, 1px -1px #111827, -1px 1px #111827,
     -1px -1px #111827;
 }
 </style>
