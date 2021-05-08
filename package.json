@@ -29,6 +29,7 @@
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@nuxt/babel-preset-app": "^2.14.12",
     "@nuxtjs/cloudinary": "^1.0.3-beta-4",
     "@nuxtjs/google-analytics": "^2.4.0",
