@@ -5,7 +5,6 @@ export default {
   // PUBLIC ENV VARS //
   /////////////////////
   publicRuntimeConfig: {
-    cloudinaryId: process.env.CLOUDINARY_ID,
     recaptchaSitekey: process.env.RECAPTCHA_SITEKEY,
   },
   //////////////////////
@@ -16,7 +15,13 @@ export default {
     // allows webpack analyzer to run when doing npm run generate in development
     // analyze: process.env.NODE_ENV !== "production" ? true : false,
     extractCSS: true,
+    babel: {
+      plugins: [
+        ["@babel/plugin-proposal-private-methods", { loose: true }],
+      ],
+    },
   },
+  // info on buildModules vs modules: https://nuxtjs.org/docs/2.x/directory-structure/modules/
   buildModules: [
     [
       "@nuxtjs/google-analytics",
@@ -25,6 +30,7 @@ export default {
       },
     ],
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/cloudinary",
   ],
   babel: {
     presets() {
@@ -39,19 +45,15 @@ export default {
       ];
     },
   },
-  tailwindcss: {
-    jit: true,
-  },
-  // postcss: {
-  //   plugins: {
-  //     tailwindcss: join(__dirname, "tailwind.config.js"),
-  //   },
-  //   preset: {
-  //     stage: 2,
-  //   },
+  // https://github.com/tailwindlabs/tailwindcss/issues/4176
+  // tailwindcss: {
+  //   jit: true,
   // },
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_ID,
+    useComponent: true,
+  },
   plugins: [
-    { src: "~/plugins/cloudinary.js" },
     { src: "~/plugins/vuelidate.js" },
   ],
   head: {
