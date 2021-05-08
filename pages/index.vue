@@ -15,10 +15,14 @@
             :image-first="index % 2 === 0"
           >
             <template
-              v-if="item.cloudinaryPublicId != null"
+              v-if="item.cloudinaryUrl != null"
               #image
             >
-              <cld-image
+              <img
+                :src="item.cloudinaryUrl"
+                :alt="item.imageAlt"
+              >
+              <!-- <cld-image
                 secure="true"
                 format="jpg"
                 :public-id="item.cloudinaryPublicId"
@@ -33,7 +37,7 @@
                   quality="60"
                   fetch-format="auto"
                 />
-              </cld-image>
+              </cld-image> -->
             </template>
             <template #photo-credit>
               <p class="my-2">
@@ -91,9 +95,17 @@ export default {
         
         const photoGroupLength = this.photoGroupLengths[photoGroupName];
         const photoId = this.getRandomNumber(photoGroupLength);
+        const cloudinaryUrl = this.$cloudinary.image.url(`Sanjana%20Quarantine%20Photoshoot/${photoGroupName}/${photoId}`, {
+          width: "500",
+                height:"700",
+          crop: "fill",
+          gravity: "face",
+          quality: "60",
+          "fetch-format": "auto",
+        });
         return {
           ...item,
-          cloudinaryPublicId: `Sanjana%20Quarantine%20Photoshoot/${photoGroupName}/${photoId}`,
+          cloudinaryUrl,
           imageAlt: `Sanjana Quarantine Photoshoot ${photoGroupName}-${photoId}`,
         };
       });

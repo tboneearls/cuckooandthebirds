@@ -17,6 +17,7 @@ export default {
     // analyze: process.env.NODE_ENV !== "production" ? true : false,
     extractCSS: true,
   },
+  // info on buildModules vs modules: https://nuxtjs.org/docs/2.x/directory-structure/modules/
   buildModules: [
     [
       "@nuxtjs/google-analytics",
@@ -25,7 +26,9 @@ export default {
       },
     ],
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/cloudinary",
   ],
+  // modules: [],
   babel: {
     presets() {
       return [
@@ -39,9 +42,9 @@ export default {
       ];
     },
   },
-  tailwindcss: {
-    jit: true,
-  },
+  // tailwindcss: {
+  //   jit: true,
+  // },
   // postcss: {
   //   plugins: {
   //     tailwindcss: join(__dirname, "tailwind.config.js"),
@@ -50,8 +53,12 @@ export default {
   //     stage: 2,
   //   },
   // },
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_ID,
+    useComponent: true,
+  },
   plugins: [
-    { src: "~/plugins/cloudinary.js" },
+    // { src: "~/plugins/cloudinary.js" },
     { src: "~/plugins/vuelidate.js" },
   ],
   head: {
