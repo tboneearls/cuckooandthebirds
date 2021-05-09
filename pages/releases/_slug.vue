@@ -76,7 +76,7 @@
 
 <script>
 import TextCard from "@/components/widgets/TextCard.vue";
-import releaseData from "../../assets/data/releaseData.json";
+import releaseData from "../../assets/data/releases/releaseData.json";
 
 export default {
   components: {
@@ -96,6 +96,30 @@ export default {
       }
       // in practice, this should never happen because asyncData creates the 404 response for us.
       throw new Error(`${this.releaseId} is not a valid release id.`);
+    },
+  },
+  mounted() {
+    const releaseLinks = document.querySelectorAll(".release-link");
+    for (let i = 0; i < releaseLinks.length; i++) {
+      let releaseLink = releaseLinks[i];
+      releaseLink.addEventListener("focus", this.addFocusStyleToParent);
+      releaseLink.addEventListener("blur", this.removeFocusStyleFromParent);
+    }
+  },
+  destroyed() {
+    const releaseLinks = document.querySelectorAll(".release-link");
+    for (let i = 0; i < releaseLinks.length; i++) {
+      let releaseLink = releaseLinks[i];
+      releaseLink.removeEventListener("focus", this.addFocusStyleToParent);
+      releaseLink.removeEventListener("blur", this.removeFocusStyleFromParent);
+    }
+  },
+  methods: {
+    addFocusStyleToParent(e) {
+      e.target.parentElement.style.boxShadow = "0 0 3pt 2pt rgb(178, 245, 234)";
+    },
+    removeFocusStyleFromParent(e) {
+      e.target.parentElement.style.boxShadow = "";
     },
   },
 };
