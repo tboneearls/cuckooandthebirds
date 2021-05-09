@@ -82,8 +82,11 @@ export default {
   components: {
     TextCard,
   },
-  async asyncData({ params }) {
+  async asyncData({ params, error }) {
     const releaseId = params.slug;
+    if (releaseId in releaseData === false) {
+      return error({ statusCode: 404, message: `${releaseId} does not exist` });
+    }
     return { releaseId };
   },
   computed: {
@@ -91,6 +94,7 @@ export default {
       if (this.releaseId in releaseData) {
         return releaseData[this.releaseId];
       }
+      // in practice, this should never happen because asyncData creates the 404 response for us.
       throw new Error(`${this.releaseId} is not a valid release id.`);
     },
   },
