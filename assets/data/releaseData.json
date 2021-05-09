@@ -1,0 +1,25 @@
+{
+  "twin-stars": {
+    "imgsrc": "Twin%20Stars/twin-stars-album-art.jpg",
+    "alt": "Album Artwork for Twin Stars",
+    "artworkCredit": "Breanda Fedie",
+    "year": 2019,
+    "title": "Twin Stars",
+    "href": "https://cuckooandthebirds.bandcamp.com/releases",
+    "descriptions": [
+      "Twin Stars is a project born in the aftermath of Tyler’s previous band breaking up. It explores the stages of coping with losing someone so close that a part of yourself seems lost, too.",
+      "These songs encapsulate a newfound sense of agency after a toxic friendship ends with finality, and the necessary re-framing of identity that follows.",
+      "In a similar sense, because these are the first five songs Tyler has written since high school, when the Cuckoo and the Birds moniker was created, they can be viewed as a thought experiment to test how far this reinvigorated expression can go.",
+      "They were tracked, mixed, and mastered by Zachary Taylor, whose recording prowess and drumming wizardry take the songs to new heights. They were recorded DIY style over several nights in the comfort of Zach’s basement.",
+      "Featuring only two musicians, the raw, understated texture becomes a distinguishing character of Twin Stars."
+    ],
+    "members": [
+      "Tyler Earls: Vocals, Guitars, Bass",
+      "Zachary Taylor: Drums, Percussion"
+    ],
+    "recordingCredits": [
+      "Songs written by Tyler Earls",
+      "Tracked, Mixed, and Mastered by Zachary Taylor"
+    ]
+  }
+}
