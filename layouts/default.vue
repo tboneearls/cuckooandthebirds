@@ -42,7 +42,7 @@ body.nav-active h1 {
 }
 p {
   line-height: 2rem !important;
-  max-width: 50ch;
+  /* max-width: 50ch; */
 }
 
 /* transitions */
