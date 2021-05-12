@@ -1,7 +1,14 @@
 <template>
-  <div>
-    <!-- TODO: show some text on hover -->
-    <a :href="imageHref">
+  <div
+    class="outline-none border-transparent"
+    :class="isFocused ? 'shadow-outline-light-blur' : ''"
+  >
+    <a
+      :href="imageHref"
+      class="focus:shadow-none"
+      @focus="isFocused = true"
+      @blur="isFocused = false"
+    >
       <template v-if="isCloudinaryImage">
         <client-only>
           <cld-image
@@ -18,12 +25,13 @@
         </client-only>
       </template>
       <template v-else>
-        <img 
-          :src="imageSrc" 
+        <img
+          :src="imageSrc"
           :alt="imageAlt"
         >
       </template>
     </a>
+    <slot name="link-text" />
   </div>
 </template>
 
@@ -46,6 +54,11 @@ export default {
       type: Boolean,
       default: true,
     },
+  },
+  data() {
+    return {
+      isFocused: false,
+    };
   },
 };
 </script>

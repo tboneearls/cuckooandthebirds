@@ -9,7 +9,7 @@
       </h1>
 
       <div class="w-4/5 mx-auto">
-        <div class="mx-auto w-4/5 mb-4 md:w-1/2 md:float-left md:mr-2 md:mb-2">
+        <div class="mx-auto w-4/5 mb-4 md:w-1/2 md:float-left md:mr-8 md:mb-2">
           <a
             target="_blank"
             class="release-link focus:shadow-none"
@@ -36,14 +36,14 @@
           >Artwork by {{ release.artworkCredit }}</span>
         </div>
         <div class="px-8 mb-4">
-          <template v-for="(paragraph, index) in release.descriptions">
+          <template v-for="(description, index) in release.descriptions">
             <p
-              :key="'paragraph' + index"
+              :key="'description-' + index"
               class="text-xl"
             >
-              {{ paragraph }}
+              {{ description }}
             </p>
-            <br :key="'paragraph-break' + index">
+            <br :key="'description-break-' + index">
           </template>
         </div>
       </div>
@@ -53,21 +53,33 @@
           <h2 class="text-red-600 text-2xl font-semibold mb-4">
             Credits:
           </h2>
-          <p
-            v-for="(member, index) in release.members"
-            :key="'member' + index"
-            class="px-8 text-xl"
-          >
-            {{ member }}
-          </p>
-          <br>
-          <p
-            v-for="(credit, index) in release.recordingCredits"
-            :key="'credit' + index"
-            class="px-8 text-xl"
-          >
-            {{ credit }}
-          </p>
+          <div class="my-4">
+            <p
+              v-for="(performer, index) in release.performingCredits"
+              :key="'performer-' + index"
+              class="px-8 text-xl"
+            >
+              {{ performer }}
+            </p>
+          </div>
+          <div v-if="release.videoCredits.length > 0" class="my-4">
+            <p
+              v-for="(videoCredit, index) in release.videoCredits"
+              :key="'video-credit-' + index"
+              class="px-8 text-xl"
+            >
+              {{ videoCredit }}
+            </p>
+          </div>
+          <div class="my-4">
+            <p
+              v-for="(performingCredit, index) in release.recordingCredits"
+              :key="'performing-credit-' + index"
+              class="px-8 text-xl"
+            >
+              {{ performingCredit }}
+            </p>
+          </div>
         </div>
       </text-card>
     </section>
@@ -76,7 +88,7 @@
 
 <script>
 import TextCard from "@/components/widgets/TextCard.vue";
-import releaseData from "../../assets/data/releases/releaseData.json";
+import releaseDetailsData from "../../assets/data/releases/releaseDetailsData.json";
 
 export default {
   components: {
@@ -84,15 +96,15 @@ export default {
   },
   async asyncData({ params, error }) {
     const releaseId = params.slug;
-    if (releaseId in releaseData === false) {
+    if (releaseId in releaseDetailsData === false) {
       return error({ statusCode: 404, message: `${releaseId} does not exist` });
     }
     return { releaseId };
   },
   computed: {
     release() {
-      if (this.releaseId in releaseData) {
-        return releaseData[this.releaseId];
+      if (this.releaseId in releaseDetailsData) {
+        return releaseDetailsData[this.releaseId];
       }
       // in practice, this should never happen because asyncData creates the 404 response for us.
       throw new Error(`${this.releaseId} is not a valid release id.`);
