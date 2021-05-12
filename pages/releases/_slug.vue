@@ -62,7 +62,10 @@
               {{ performer }}
             </p>
           </div>
-          <div v-if="release.videoCredits.length > 0" class="my-4">
+          <div
+            v-if="release.videoCredits.length > 0"
+            class="my-4"
+          >
             <p
               v-for="(videoCredit, index) in release.videoCredits"
               :key="'video-credit-' + index"

@@ -7,7 +7,9 @@
       Releases
     </h1>
     <!-- <text-card class="release-header-text">Hello friend. </text-card> -->
-    <text-card class="release-header-text">If you want, you can click on the album artwork below to learn more about it!</text-card>
+    <text-card class="release-header-text">
+      If you want, you can click on the album artwork below to learn more about it!
+    </text-card>
     <section class="flex flex-col md:flex-row justify-center">
       <div
         v-for="release in sortedReleases"
