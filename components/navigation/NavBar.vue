@@ -16,7 +16,7 @@
         <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
           <li
             v-for="(section, index) in sections"
-            :key="index"
+            :key="'section-' + index"
             class="mx-auto py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-700 sm:border-none sm:mx-0 sm:w-auto"
             :class="index === sections.length - 1 ? 'border-none' : ''"
           >
@@ -27,6 +27,20 @@
             >
               {{ section.name }}
             </router-link>
+            <!-- <ul v-if="section.childLinks && section.childLinks.length > 0">
+              <li 
+                v-for="(childLink, childLinkIndex) in sections.childLinks"
+                :key="'section-child-link-' + childLinkIndex"
+              >
+                <router-link
+                  :to="childLink.href"
+                  :tabindex="isNavActive ? 0 : -1"
+                  class="px-4 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm"
+                >
+                  {{ childLink.name }}
+                </router-link>
+              </li>
+            </ul> -->
           </li>
         </ul>
       </nav>
@@ -48,22 +62,36 @@ const sections = [
   {
     href: "/",
     name: "Bio",
+    childLinks: [],
   },
   {
     href: "/releases",
     name: "Releases",
+    childLinks: [
+      {
+        href: "/releases/twin-stars",
+        name: "Twin Stars",
+      },
+      {
+        href: "/releases/show-me-the-dark",
+        name: "Show Me The Dark",
+      },
+    ],
   },
   // {
   //   href: "/shows",
   //   name: "Shows",
+  //   childLinks: [],
   // },
   {
     href: "/press",
     name: "Press",
+    childLinks: [],
   },
   {
     href: "/booking",
     name: "Booking",
+    childLinks: [],
   },
 ];
 
