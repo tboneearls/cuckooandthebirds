@@ -25,7 +25,9 @@
             slot="link-text"
             class="mx-auto text-center"
           >
-            <p class="text-lg">{{ release.title }}</p>
+            <p class="text-lg">
+              {{ release.title }}
+            </p>
           </text-card>
         </image-link>
       </div>
