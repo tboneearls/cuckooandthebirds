@@ -98,7 +98,7 @@ export default {
         const photoId = this.getRandomNumber(photoGroupLength);
         const cloudinaryUrl = this.$cloudinary.image.url(`Sanjana%20Quarantine%20Photoshoot/${photoGroupName}/${photoId}`, {
           width: "500",
-          height:"700",
+          height: "700",
           crop: "fill",
           gravity: "face",
           quality: "60",
