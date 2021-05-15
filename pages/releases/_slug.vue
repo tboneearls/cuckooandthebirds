@@ -18,11 +18,11 @@
             :image-href="release.href"
           >
             <cld-image
-                class="flex justify-center m-2"
-                format="jpg"
-                :public-id="release.imgsrc"
-                :alt="release.alt"
-              >
+              class="flex justify-center m-2"
+              format="jpg"
+              :public-id="release.imgsrc"
+              :alt="release.alt"
+            >
               <cld-transformation
                 width="400"
                 quality="auto"
