@@ -8,15 +8,16 @@
     </h1>
     <!-- <text-card class="release-header-text">Hello friend. </text-card> -->
     <text-card class="release-header-text">
-      If you want, you can click on the album artwork below to learn more about it!
+      Click on the album artwork below to learn more about it!
     </text-card>
     <section class="flex flex-col md:flex-row justify-center">
       <div
         v-for="release in sortedReleases"
         :key="release.id"
+        class="mx-auto w-4/5"
       >
         <image-link
-          class="mx-auto max-w-sm"
+          class="mx-auto w-11/12"
           :image-src="release.cldImgPath"
           :image-alt="release.alt"
           :image-href="`releases/${release.releaseId}`"
@@ -26,7 +27,7 @@
             class="mx-auto text-center"
           >
             <p class="text-lg">
-              {{ release.title }}
+              {{ release.title }} ({{ release.year }})
             </p>
           </text-card>
         </image-link>
@@ -65,7 +66,7 @@ export default {
   width: 95%;
 }
 .cld-image > img:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 .release-header-text {
   @apply my-4 text-xl mx-auto text-center max-w-65ch;

@@ -4,12 +4,11 @@
     class="font-default text-white"
   >
     <section>
-      <h1 class="text-red-600 text-center text-3xl font-semibold mb-4">
+      <h1 class="text-red-600 text-center text-3xl font-semibold mx-4 mb-4">
         {{ release.title }} ({{ release.year }})
       </h1>
-
       <div class="w-4/5 mx-auto">
-        <div class="mx-auto w-4/5 mb-4 md:w-1/2 md:float-left md:mr-8 md:mb-2">
+        <div class="mx-auto w-11/12 mb-4 md:w-1/2 md:float-left md:mr-8 md:mb-2">
           <a
             target="_blank"
             class="release-link focus:shadow-none"
@@ -139,3 +138,10 @@ export default {
   },
 };
 </script>
+
+<style>
+
+.cld-image > img:hover {
+  opacity: 0.8;
+}
+</style>
