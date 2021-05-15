@@ -34,7 +34,7 @@
             >Artwork by {{ release.artworkCredit }}</span>
           </image-link>
         </div>
-        <div class="px-8 mb-4">
+        <div class="px-8">
           <template v-for="(description, index) in release.descriptions">
             <p
               :key="'description-' + index"
@@ -47,7 +47,7 @@
         </div>
         <div 
           v-if="release.videosrc != null"
-          class="flex flex-col text-center justify-center mx-auto my-4"
+          class="flex flex-col text-center justify-center mx-auto mb-8"
         >
           <p class="text-lg my-2">
             Check out the official music video for {{ release.title }}!
