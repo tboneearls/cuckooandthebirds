@@ -6,7 +6,6 @@
     <h1 class="text-center font-default text-4xl font-bold text-red-600 mb-8">
       Releases
     </h1>
-    <!-- <text-card class="release-header-text">Hello friend. </text-card> -->
     <text-card class="release-header-text">
       Click on the album artwork below to learn more about it!
     </text-card>
@@ -61,13 +60,6 @@ export default {
 </script>
 
 <style>
-/* need this style because I can't target the image in tailwind */
-.cld-image > img {
-  width: 95%;
-}
-.cld-image > img:hover {
-  opacity: 0.8;
-}
 .release-header-text {
   @apply my-4 text-xl mx-auto text-center max-w-65ch;
 }

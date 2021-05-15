@@ -9,30 +9,30 @@
       </h1>
       <div class="w-4/5 mx-auto">
         <div class="mx-auto w-11/12 mb-4 md:w-1/2 md:float-left md:mr-8 md:mb-2">
-          <a
+          <image-link
             target="_blank"
-            class="release-link focus:shadow-none"
             rel="noreferrer"
-            :aria-label="'Listen to ' + release.title"
-            :href="release.href"
+            class="flex-col justify-center m-2"
+            :image-src="release.imgsrc"
+            :image-alt="release.alt"
+            :image-href="release.href"
           >
-            <client-only>
-              <cld-image
+            <cld-image
                 class="flex justify-center m-2"
                 format="jpg"
                 :public-id="release.imgsrc"
                 :alt="release.alt"
               >
-                <cld-transformation
-                  width="400"
-                  quality="auto"
-                />
-              </cld-image>
-            </client-only>
-          </a>
-          <span
-            class="block text-center text-red-600 text-lg italic"
-          >Artwork by {{ release.artworkCredit }}</span>
+              <cld-transformation
+                width="400"
+                quality="auto"
+              />
+            </cld-image>
+            <span
+              slot="link-text"
+              class="block text-center text-red-600 text-lg italic mx-2"
+            >Artwork by {{ release.artworkCredit }}</span>
+          </image-link>
         </div>
         <div class="px-8 mb-4">
           <template v-for="(description, index) in release.descriptions">
@@ -89,11 +89,13 @@
 </template>
 
 <script>
+import ImageLink from "@/components/widgets/ImageLink.vue";
 import TextCard from "@/components/widgets/TextCard.vue";
 import releaseDetailsData from "../../assets/data/releases/releaseDetailsData.json";
 
 export default {
   components: {
+    ImageLink,
     TextCard,
   },
   async asyncData({ params, error }) {
@@ -138,10 +140,3 @@ export default {
   },
 };
 </script>
-
-<style>
-
-.cld-image > img:hover {
-  opacity: 0.8;
-}
-</style>

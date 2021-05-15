@@ -5,14 +5,16 @@
   >
     <a
       :href="imageHref"
-      class="focus:shadow-none"
+      :target="target"
+      :rel="rel"
+      class="focus:shadow-none group"
       @focus="isFocused = true"
       @blur="isFocused = false"
     >
       <template v-if="isCloudinaryImage">
         <client-only>
           <cld-image
-            class="flex justify-center m-2"
+            class="flex justify-center m-2 group-hover:opacity-80"
             format="jpg"
             :public-id="imageSrc"
             :alt="imageAlt"
@@ -26,6 +28,7 @@
       </template>
       <template v-else>
         <img
+          class="flex justify-center m-2 group-hover:opacity-80"
           :src="imageSrc"
           :alt="imageAlt"
         >
@@ -53,6 +56,14 @@ export default {
     isCloudinaryImage: {
       type: Boolean,
       default: true,
+    },
+    target: {
+      type: String,
+      default: "_self",
+    },
+    rel: {
+      type: String,
+      default: "noreferrer",
     },
   },
   data() {
