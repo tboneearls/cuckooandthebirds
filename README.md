@@ -4,12 +4,13 @@
 
 Cuckoo and the Birds is a Chicago rock band who play sad songs that flirt with harmonies.
 
-## Check out our Music: 
+## Music: 
 
-- [Spotify](https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD?si=KAG0Wnb2Sr6TYP5Rp3MWeA)
 - [Bandcamp](https://cuckooandthebirds.bandcamp.com)
+- [YouTube](https://www.youtube.com/channel/UCoDdh8m-C8GPhGktauuuifQ)
+- [Spotify](https://open.spotify.com/artist/3JcmKe00eIMMsC0MRkKknD?si=KAG0Wnb2Sr6TYP5Rp3MWeA)
 
-## Check out our Social Media:
+## Social Media:
 
 - [Instagram](https://www.instagram.com/cuckooandthebirds)
 - [Facebook](https://www.facebook.com/cuckooandthebirds)
