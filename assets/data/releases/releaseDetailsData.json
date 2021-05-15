@@ -1,6 +1,7 @@
 {
   "twin-stars": {
     "imgsrc": "Twin%20Stars/twin-stars-album-art.jpg",
+    "videosrc": null,
     "alt": "Album Artwork for Twin Stars",
     "artworkCredit": "Breanda Fedie",
     "year": 2019,
@@ -25,6 +26,7 @@
   },
   "show-me-the-dark": {
     "imgsrc": "Show%20Me%20The%20Dark/show-me-the-dark-artwork.jpg",
+    "videosrc": "https://www.youtube.com/watch?v=W9NnCvO9xac",
     "alt": "Album Artwork for Show Me The Dark",
     "artworkCredit": "Mikal Bae and Alcides Diaz",
     "year": 2021,

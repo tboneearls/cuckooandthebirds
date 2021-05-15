@@ -45,6 +45,19 @@
             <br :key="'description-break-' + index">
           </template>
         </div>
+        <div 
+          v-if="release.videosrc != null"
+          class="flex flex-col text-center justify-center mx-auto my-4"
+        >
+          <p class="text-lg my-2">
+            Check out the official music video for {{ release.title }}!
+          </p>
+          <lazy-youtube 
+            ref="releaseVideo"
+            class="mx-auto"
+            :src="release.videosrc"
+          />
+        </div>
       </div>
 
       <text-card>
@@ -89,6 +102,7 @@
 </template>
 
 <script>
+import { LazyYoutube } from "vue-lazytube";
 import ImageLink from "@/components/widgets/ImageLink.vue";
 import TextCard from "@/components/widgets/TextCard.vue";
 import releaseDetailsData from "../../assets/data/releases/releaseDetailsData.json";
@@ -96,6 +110,7 @@ import releaseDetailsData from "../../assets/data/releases/releaseDetailsData.js
 export default {
   components: {
     ImageLink,
+    LazyYoutube,
     TextCard,
   },
   async asyncData({ params, error }) {
