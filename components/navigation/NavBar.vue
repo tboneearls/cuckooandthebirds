@@ -42,6 +42,7 @@
                 </router-link>
                 <button 
                   v-if="section.childLinks && section.childLinks.length > 0"
+                  :ref="`section-dropdown-${index}`"
                   class="inline-block arrow-right mx-2"
                   :class="{'down': section.showChildren}"
                   @click="section.showChildren = !section.showChildren"
@@ -65,7 +66,8 @@
                     <router-link
                       :to="childLink.href"
                       :tabindex="isNavActive ? 0 : -1"
-                      class="block px-4 py-2 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
+                      :data-section="index"
+                      class="child-link block px-4 py-2 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
                     >
                       {{ childLink.name }}
                     </router-link>
@@ -164,6 +166,13 @@ export default {
           if (firstRouterLink != null) {
             firstRouterLink.focus();
           }
+        } else if (activeRouterLink.classList.contains("child-link")) {
+          const sectionId = activeRouterLink.dataset.section;
+          const dropdownButton = this.$refs[`section-dropdown-${sectionId}`][0];
+          dropdownButton.click();
+          this.$nextTick(() => {
+            activeRouterLink.focus();
+          });
         } else {
           activeRouterLink.focus();
         }
