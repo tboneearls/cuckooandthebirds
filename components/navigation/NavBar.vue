@@ -36,7 +36,7 @@
                 <router-link
                   :to="section.href"
                   :tabindex="isNavActive ? 0 : -1"
-                  class="pl-4 pr-2 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
+                  class="pl-4 pr-1 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
                 >
                   {{ section.name }}
                 </router-link>
