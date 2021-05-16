@@ -56,16 +56,16 @@
                     v-for="(childLink, childLinkIndex) in section.childLinks"
                     :key="'section-child-link-' + childLinkIndex"
                     class="inline-block text-center sm:text-left border-gray-700 w-full mx-auto sm:mx-0 sm:w-auto sm:border-gray-600"
-                    :class="{'sm:border-b': section.childLinks.length - 1}"
+                    :class="{'sm:border-b': childLinkIndex < section.childLinks.length - 1}"
                   >
                     <hr 
-                      :class="{'my-2': childLinkIndex === 0}"
+                      :class="{'mt-2': childLinkIndex === 0}"
                       class="sm:hidden border-gray-700 w-4/5 mx-auto"
                     >
                     <router-link
                       :to="childLink.href"
                       :tabindex="isNavActive ? 0 : -1"
-                      class="block px-4 my-2 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
+                      class="block px-4 py-2 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
                     >
                       {{ childLink.name }}
                     </router-link>
