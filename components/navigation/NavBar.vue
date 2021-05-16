@@ -181,9 +181,9 @@ export default {
 .arrow-right {
   width: 0; 
   height: 0; 
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-left: 6px solid white;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid white;
 }
 .arrow-right.down {
   transform: rotate(90deg);
