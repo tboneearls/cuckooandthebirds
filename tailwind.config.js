@@ -8,6 +8,9 @@ module.exports = {
       margin: {
         "21": "84px",
       },
+      zIndex: {
+        "100": 100,
+      },
       maxWidth: {
         "65ch": "65ch",
       },
