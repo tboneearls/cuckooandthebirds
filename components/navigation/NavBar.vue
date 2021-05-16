@@ -149,6 +149,8 @@ export default {
     isNavActive(isActive) {
       if (isActive) {
         this.initializeFocus();
+      } else {
+        this.sections.map((section) => section.showChildren = false);
       }
     },
   },

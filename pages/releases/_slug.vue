@@ -4,7 +4,7 @@
     class="font-default text-white"
   >
     <section>
-      <h1 class="text-red-600 text-center text-3xl font-semibold mx-4 mb-4">
+      <h1 class="text-red-600 text-center text-3xl font-semibold mx-4 mb-8">
         {{ release.title }} ({{ release.year }})
       </h1>
       <div class="w-4/5 mx-auto">
