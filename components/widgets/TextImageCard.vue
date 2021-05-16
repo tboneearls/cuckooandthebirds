@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col sm:flex-row my-24 w-full justify-between"
+    class="flex flex-col sm:flex-row w-full justify-between"
     :class="imageFirst ? '' : 'sm:flex-row-reverse'"
   >
     <div class="p-4 self-center max-w-md w-full sm:w-1/2 text-red-500 text-center">

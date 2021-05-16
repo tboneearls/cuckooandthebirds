@@ -25,6 +25,7 @@ module.exports = {
       "registeredComponentsOnly": false,
       "ignores": [],
     }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
     "comma-dangle": ["error", {
       "arrays": "always-multiline",
       "objects": "always-multiline",

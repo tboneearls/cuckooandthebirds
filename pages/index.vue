@@ -13,6 +13,8 @@
             v-for="(item, index) in textAndImageData"
             :key="'text-item-' + index"
             :image-first="index % 2 === 0"
+            class="my-8"
+            :class="{'mt-4': index === 0}"
           >
             <template
               v-if="item.cloudinaryUrl != null"
@@ -45,7 +47,9 @@
                 Photo by Sanjana Elina
               </p>
             </template>
-            <template #text>
+            <template 
+              #text
+            >
               <p
                 v-if="item.html != null"
                 v-html="item.html"
@@ -64,7 +68,7 @@
 <script>
 import TextCard from "@/components/widgets/TextCard.vue";
 import TextImageCard from "@/components/widgets/TextImageCard.vue";
-import textData from "../assets/homePageTextData.json";
+import textData from "../assets/data/homePageTextData.json";
 
 export default {
   components: {
@@ -98,7 +102,7 @@ export default {
         const photoId = this.getRandomNumber(photoGroupLength);
         const cloudinaryUrl = this.$cloudinary.image.url(`Sanjana%20Quarantine%20Photoshoot/${photoGroupName}/${photoId}`, {
           width: "500",
-          height:"700",
+          height: "700",
           crop: "fill",
           gravity: "face",
           quality: "60",

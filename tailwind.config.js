@@ -5,6 +5,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      maxWidth: {
+        "65ch": "65ch",
+      },
       fontFamily: {
         default: "Asul, sans-sarif",
       },
@@ -12,6 +15,7 @@ module.exports = {
         fit: "fit-content",
       },
       boxShadow: {
+        "outline-light-blur": "0 0 3pt 2pt rgb(178 245 234)",
         "outline-light": "0 0 0 3px #22D3EE", // cyan-400
         "outline-dark": "0 0 0 3px #67E8F9", // cyan-300
         "outline-inset-dark":
