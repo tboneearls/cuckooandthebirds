@@ -13,6 +13,8 @@
             v-for="(item, index) in textAndImageData"
             :key="'text-item-' + index"
             :image-first="index % 2 === 0"
+            class="my-8"
+            :class="{'mt-4': index === 0}"
           >
             <template
               v-if="item.cloudinaryUrl != null"
@@ -45,7 +47,9 @@
                 Photo by Sanjana Elina
               </p>
             </template>
-            <template #text>
+            <template 
+              #text
+            >
               <p
                 v-if="item.html != null"
                 v-html="item.html"

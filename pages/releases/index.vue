@@ -16,7 +16,7 @@
         class="mx-auto w-4/5"
       >
         <image-link
-          class="mx-auto w-11/12"
+          class="mx-auto my-4 w-11/12"
           :image-src="release.cldImgPath"
           :image-alt="release.alt"
           :image-href="`releases/${release.releaseId}`"
@@ -25,7 +25,7 @@
             slot="link-text"
             class="mx-auto text-center"
           >
-            <p class="text-lg">
+            <p class="text-xl sm:text-lg">
               {{ release.title }} ({{ release.year }})
             </p>
           </text-card>
