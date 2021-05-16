@@ -1,8 +1,9 @@
 <template>
   <div
     id="nav-container"
+    ref="nav-container"
     class="fixed z-10 flex items-center justify-end w-screen top-0 font-default text-white border border-gray-500 border-t-0 border-l-0 border-r-0 h-fit"
-    :class="{'border-b-1 bg-coolgray-900': isNavActive, 'border-0 border-b-0': !isNavActive}"
+    :class="{'border-b-1 bg-coolgray-900': isNavActive, 'border-0 border-b-0 h-16': !isNavActive}"
   >
     <transition
       name="fade"
@@ -45,7 +46,7 @@
                   :ref="`section-dropdown-${index}`"
                   class="inline-block arrow-right mx-2"
                   :class="{'down': section.showChildren}"
-                  @click="section.showChildren = !section.showChildren"
+                  @click="handleDropdownClick(section)"
                 />
               </div>
               <div 
@@ -140,6 +141,7 @@ export default {
   data() {
     return {
       sections,
+      navHeight: 0,
     };
   },
   computed: {
@@ -154,7 +156,18 @@ export default {
       } else {
         this.sections.map((section) => section.showChildren = false);
       }
+      this.checkNavHeight();
     },
+    navHeight(navHeight) {
+      document.body.style.marginTop = `${navHeight + 20  }px`;
+    },
+  },
+  mounted() {
+    this.checkNavHeight();
+    window.addEventListener("resize", this.checkNavHeight);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.checkNavHeight);
   },
   methods: {
     initializeFocus() {
@@ -177,6 +190,16 @@ export default {
           activeRouterLink.focus();
         }
       });
+    },
+    checkNavHeight() {
+      this.$nextTick(() => {
+        const navContainer = this.$refs["nav-container"];
+        this.navHeight = navContainer.offsetHeight;
+      });
+    },
+    handleDropdownClick(section) {
+      section.showChildren = !section.showChildren;
+      this.checkNavHeight();
     },
   },
 };
