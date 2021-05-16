@@ -5,6 +5,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      margin: {
+        "21": "84px",
+      },
       maxWidth: {
         "65ch": "65ch",
       },

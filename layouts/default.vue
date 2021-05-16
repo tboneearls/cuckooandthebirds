@@ -23,7 +23,7 @@ export default {
 
 <style>
 body {
-  @apply bg-coolgray-900 font-default p-0 m-0;
+  @apply bg-coolgray-900 font-default p-0 m-0 mt-21;
 }
 body *:focus {
   outline: 0;
@@ -31,15 +31,6 @@ body *:focus {
   border-color: transparent;
 }
 
-h1 {
-  @apply mt-20;
-  will-change: margin;
-  transition: all 300ms ease-out 100ms;
-}
-body.nav-active h1 {
-  /* 4 items in nav, 28 mt difference. mt change = nav items * 7 */
-  @apply mt-48 pt-1 sm:mt-20 sm:pt-0;
-}
 p {
   line-height: 2rem !important;
   /* max-width: 50ch; */
