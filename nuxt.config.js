@@ -1,6 +1,9 @@
 export default {
   target: "static",
   ssr: true,
+  generate: {
+    fallback: true,
+  },
   /////////////////////
   // PUBLIC ENV VARS //
   /////////////////////

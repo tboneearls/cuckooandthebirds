@@ -7,7 +7,6 @@
         >
           Our Story
         </h1>
-        <!-- TODO: add splash image as a banner of sorts -->
         <section class="text-white text-xl">
           <text-image-card
             v-for="(item, index) in textAndImageData"
@@ -24,23 +23,6 @@
                 :src="item.cloudinaryUrl"
                 :alt="item.imageAlt"
               >
-              <!-- leaving for now in case I run into any future issues with nuxt/cloudinary -->
-              <!-- <cld-image
-                secure="true"
-                format="jpg"
-                :public-id="item.cloudinaryPublicId"
-                :alt="item.imageAlt"
-                loading="lazy"
-                width="500"
-                height="700"
-              >
-                <cld-transformation
-                  crop="fill"
-                  gravity="face"
-                  quality="60"
-                  fetch-format="auto"
-                />
-              </cld-image> -->
             </template>
             <template #photo-credit>
               <p class="my-2">
@@ -123,10 +105,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.text-shadow {
-  text-shadow: 1px 1px #111827, 1px -1px #111827, -1px 1px #111827,
-    -1px -1px #111827;
-}
-</style>
