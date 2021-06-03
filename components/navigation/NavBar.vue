@@ -105,11 +105,11 @@ const sections = [
     name: "Releases",
     childLinks: [
       {
-        href: "/twin-stars",
+        href: "/releases/twin-stars",
         name: "Twin Stars",
       },
       {
-        href: "/show-me-the-dark",
+        href: "/releases/show-me-the-dark",
         name: "Show Me The Dark",
       },
     ],
