@@ -39,56 +39,13 @@
             >
               {{ section.name }}
             </router-link>
-            <div
+            <nav-child-links-container 
               v-else
-              class="w-full"
-            >
-              <div class="flex items-center">
-                <button
-                  v-if="section.childLinks && section.childLinks.length > 0"
-                  :ref="`section-dropdown-${index}`"
-                  class="flex items-center mx-2 hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
-                  @click="handleDropdownClick(section)"
-                >
-                  {{ section.name }}
-                  <div
-                    class="inline-block arrow-right mx-2"
-                    :class="{ down: section.showChildren }"
-                  />
-                </button>
-              </div>
-              <div
-                v-if="section.childLinks && section.childLinks.length > 0"
-                v-show="section.showChildren"
-              >
-                <ul
-                  class="static sm:absolute top-full z-20 flex flex-col sm:border sm:border-gray-600 bg-coolgray-900"
-                >
-                  <li
-                    v-for="(childLink, childLinkIndex) in section.childLinks"
-                    :key="'section-child-link-' + childLinkIndex"
-                    class="inline-block text-center sm:text-left border-gray-700 w-full mx-auto sm:mx-0 sm:w-auto sm:border-gray-600"
-                    :class="{
-                      'sm:border-b':
-                        childLinkIndex < section.childLinks.length - 1
-                    }"
-                  >
-                    <hr
-                      :class="{ 'mt-2': childLinkIndex === 0 }"
-                      class="sm:hidden border-gray-700 w-4/5 mx-auto"
-                    >
-                    <router-link
-                      :to="childLink.href"
-                      :tabindex="isNavActive ? 0 : -1"
-                      :data-section="index"
-                      class="child-link block px-4 py-2 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
-                    >
-                      {{ childLink.name }}
-                    </router-link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+              :child-links="section.childLinks"
+              :parent-label="section.name"
+              :parent-index="index"
+              @toggle="checkNavHeight"
+            />
           </li>
         </ul>
       </nav>
@@ -100,6 +57,7 @@
 <script>
 import { mapState } from "vuex";
 import NavBarToggle from "./NavBarToggle.vue";
+import NavChildLinksContainer from "./NavChildLinksContainer.vue";
 
 // TODO: add sections to setup hook when Vue 3.x is released
 /*
@@ -150,6 +108,7 @@ const sections = [
 export default {
   components: {
     NavBarToggle,
+    NavChildLinksContainer,
   },
   data() {
     return {
@@ -212,10 +171,6 @@ export default {
         this.navHeight = navContainer.offsetHeight;
       });
     },
-    handleDropdownClick(section) {
-      section.showChildren = !section.showChildren;
-      this.checkNavHeight();
-    },
   },
 };
 </script>
@@ -224,15 +179,5 @@ export default {
 #nav-container {
   will-change: border-bottom-width;
   transition: border-bottom-width 0.1s ease-in;
-}
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid white;
-}
-.arrow-right.down {
-  transform: rotate(90deg);
 }
 </style>
