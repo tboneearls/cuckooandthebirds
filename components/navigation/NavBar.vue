@@ -3,7 +3,10 @@
     id="nav-container"
     ref="nav-container"
     class="fixed z-100 flex items-center justify-end w-screen top-0 font-default text-white border border-gray-500 border-t-0 border-l-0 border-r-0 h-fit"
-    :class="{'border-b-1 bg-coolgray-900': isNavActive, 'border-0 border-b-0 h-16': !isNavActive}"
+    :class="{
+      'border-b-1 bg-coolgray-900': isNavActive,
+      'border-0 border-b-0 h-16': !isNavActive
+    }"
   >
     <transition
       name="fade"
@@ -14,12 +17,19 @@
         id="nav-bar"
         class="w-screen"
       >
-        <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
+        <ul
+          class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end"
+        >
           <li
             v-for="(section, index) in sections"
             :key="'section-' + index"
             class="flex items-center mx-auto pt-2 sm:py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-600 sm:border-none sm:mx-0 sm:w-auto"
-            :class="{'border-none': index === sections.length - 1, 'pb-2': (section.childLinks && section.childLinks.length === 0) || !section.showChildren}"
+            :class="{
+              'border-none': index === sections.length - 1,
+              'pb-2':
+                !section.showChildren ||
+                (section.childLinks && section.childLinks.length === 0)
+            }"
           >
             <router-link
               v-if="section.childLinks && section.childLinks.length === 0"
@@ -29,39 +39,42 @@
             >
               {{ section.name }}
             </router-link>
-            <div 
+            <div
               v-else
               class="w-full"
             >
               <div class="flex items-center">
-                <router-link
-                  :to="section.href"
-                  :tabindex="isNavActive ? 0 : -1"
-                  class="pl-4 pr-1 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
-                >
-                  {{ section.name }}
-                </router-link>
-                <button 
+                <button
                   v-if="section.childLinks && section.childLinks.length > 0"
                   :ref="`section-dropdown-${index}`"
-                  class="inline-block arrow-right mx-2"
-                  :class="{'down': section.showChildren}"
+                  class="flex items-center mx-2 hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
                   @click="handleDropdownClick(section)"
-                />
+                >
+                  {{ section.name }}
+                  <div
+                    class="inline-block arrow-right mx-2"
+                    :class="{ down: section.showChildren }"
+                  />
+                </button>
               </div>
-              <div 
+              <div
                 v-if="section.childLinks && section.childLinks.length > 0"
                 v-show="section.showChildren"
               >
-                <ul class="static sm:absolute top-full z-20 flex flex-col sm:border sm:border-gray-600 bg-coolgray-900">
-                  <li 
+                <ul
+                  class="static sm:absolute top-full z-20 flex flex-col sm:border sm:border-gray-600 bg-coolgray-900"
+                >
+                  <li
                     v-for="(childLink, childLinkIndex) in section.childLinks"
                     :key="'section-child-link-' + childLinkIndex"
                     class="inline-block text-center sm:text-left border-gray-700 w-full mx-auto sm:mx-0 sm:w-auto sm:border-gray-600"
-                    :class="{'sm:border-b': childLinkIndex < section.childLinks.length - 1}"
+                    :class="{
+                      'sm:border-b':
+                        childLinkIndex < section.childLinks.length - 1
+                    }"
                   >
-                    <hr 
-                      :class="{'mt-2': childLinkIndex === 0}"
+                    <hr
+                      :class="{ 'mt-2': childLinkIndex === 0 }"
                       class="sm:hidden border-gray-700 w-4/5 mx-auto"
                     >
                     <router-link
@@ -145,21 +158,19 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      "isNavActive",
-    ]),
+    ...mapState(["isNavActive"]),
   },
   watch: {
     isNavActive(isActive) {
       if (isActive) {
         this.initializeFocus();
       } else {
-        this.sections.map((section) => section.showChildren = false);
+        this.sections.map(section => (section.showChildren = false));
       }
       this.checkNavHeight();
     },
     navHeight(navHeight) {
-      document.body.style.marginTop = `${navHeight + 20  }px`;
+      document.body.style.marginTop = `${navHeight + 20}px`;
     },
   },
   mounted() {
@@ -173,9 +184,13 @@ export default {
     initializeFocus() {
       // need to use next tick to ensure tabindex is set to 0 before attempting to focus
       this.$nextTick(() => {
-        const activeRouterLink = document.querySelector("a.nuxt-link-exact-active");
+        const activeRouterLink = document.querySelector(
+          "a.nuxt-link-exact-active",
+        );
         if (activeRouterLink == null) {
-          const firstRouterLink = document.querySelector("#navbar ul li:first-child a");
+          const firstRouterLink = document.querySelector(
+            "#navbar ul li:first-child a",
+          );
           if (firstRouterLink != null) {
             firstRouterLink.focus();
           }
@@ -211,8 +226,8 @@ export default {
   transition: border-bottom-width 0.1s ease-in;
 }
 .arrow-right {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 8px solid white;
