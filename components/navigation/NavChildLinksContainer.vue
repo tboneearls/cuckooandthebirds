@@ -4,12 +4,12 @@
       <button
         v-if="childLinks && childLinks.length > 0"
         :ref="`parent-dropdown-${parentIndex}`"
-        class="flex items-center mx-2 pl-2 pr-1 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
+        class="flex items-center mx-2 pl-2 pr-1 text-lg group hover:opacity-100 rounded-sm w-full sm:w-auto"
         @click="handleDropdownClick()"
       >
-        {{ parentLabel }}
+        <span class="group-hover:text-cyan-300">{{ parentLabel }}</span>
         <div
-          class="inline-block arrow-right mx-2"
+          class="inline-block arrow-right mx-2 group-hover:border-l-cyan-300"
           :class="{ down: showChildren }"
         />
       </button>
