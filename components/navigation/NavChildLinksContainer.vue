@@ -4,7 +4,7 @@
       <button
         v-if="childLinks && childLinks.length > 0"
         :ref="`parent-dropdown-${parentIndex}`"
-        class="flex items-center mx-2 pl-2 pr-1 text-lg group hover:opacity-100 rounded-sm w-full sm:w-auto"
+        class="flex items-center justify-center m-0 p-0 sm:mx-2 sm:pl-2 sm:pr-1 text-lg group hover:opacity-100 rounded-sm w-full sm:w-auto"
         @click="handleDropdownClick()"
       >
         <span class="group-hover:text-cyan-300">{{ parentLabel }}</span>
@@ -103,10 +103,10 @@ export default {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 8px solid white;
-  transition: 0.1s linear all;
+  transition: transform 0.1s linear;
 }
 .arrow-right.down {
   transform: rotate(90deg);
-  transition: 0.1s linear all;
+  transition: transform 0.1s linear;
 }
 </style>
