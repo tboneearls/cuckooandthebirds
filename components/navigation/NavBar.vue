@@ -34,14 +34,16 @@
             >
               {{ section.name }}
             </router-link>
-            <!-- <nav-child-links-container 
+            <!-- todo: don't pass down all these props. only do section, but rename that too. -->
+            <nav-child-links-container 
               v-else
               :child-links="section.childLinks"
               :parent-label="section.name"
               :parent-path="section.href"
+              :section="section"
               @toggle="checkNavHeight"
-            /> -->
-            <div 
+            />
+            <!-- <div 
               v-else
               class="w-full"
             >
@@ -72,7 +74,7 @@
                   />
                 </ul>
               </div>
-            </div>
+            </div> -->
           </li>
         </ul>
       </nav>
@@ -84,8 +86,7 @@
 <script>
 import { mapState } from "vuex";
 import NavBarToggle from "./NavBarToggle.vue";
-import NavChildLink from "./NavChildLink.vue";
-// import NavChildLinksContainer from "./NavChildLinksContainer.vue";
+import NavChildLinksContainer from "./NavChildLinksContainer.vue";
 
 // TODO: add sections to setup hook when Vue 3.x is released
 /*
@@ -138,8 +139,7 @@ const sections = [
 export default {
   components: {
     NavBarToggle,
-    // NavChildLinksContainer,
-    NavChildLink,
+    NavChildLinksContainer,
   },
   data() {
     return {
