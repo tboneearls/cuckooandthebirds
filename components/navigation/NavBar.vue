@@ -23,19 +23,17 @@
           <li
             v-for="(section, index) in sections"
             :key="'section-' + index"
-            class="flex items-center mx-auto pt-2 sm:py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-600 sm:border-none sm:mx-0 sm:w-auto"
+            class="flex items-center mx-auto sm:py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-600 sm:border-none sm:mx-0 sm:w-auto"
             :class="{
               'border-none': index === sections.length - 1,
-              'pb-2':
-                !section.showChildren ||
-                (section.childLinks && section.childLinks.length === 0)
+              
             }"
           >
             <router-link
               v-if="section.childLinks && section.childLinks.length === 0"
               :to="section.href"
               :tabindex="isNavActive ? 0 : -1"
-              class="px-4 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
+              class="px-4 my-2 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
             >
               {{ section.name }}
             </router-link>
@@ -43,7 +41,7 @@
               v-else
               :child-links="section.childLinks"
               :parent-label="section.name"
-              :parent-index="index"
+              :parent-path="section.href"
               @toggle="checkNavHeight"
             />
           </li>
@@ -63,6 +61,8 @@ import NavChildLinksContainer from "./NavChildLinksContainer.vue";
 /*
  * href: router-link url
  * name: route name that will appear on nav bar
+ * childLinks: array of child pages (nested under the top-level href path)
+ * showChildren: if true, show children pages in dropdown. should always be false if childLinks is empty.
  */
 const sections = [
   {
@@ -76,11 +76,11 @@ const sections = [
     name: "Releases",
     childLinks: [
       {
-        href: "/releases/twin-stars",
+        href: "/twin-stars",
         name: "Twin Stars",
       },
       {
-        href: "/releases/show-me-the-dark",
+        href: "/show-me-the-dark",
         name: "Show Me The Dark",
       },
     ],
@@ -90,6 +90,7 @@ const sections = [
   //   href: "/shows",
   //   name: "Shows",
   //   childLinks: [],
+  //   showChildren: false,
   // },
   {
     href: "/press",
@@ -123,8 +124,6 @@ export default {
     isNavActive(isActive) {
       if (isActive) {
         this.initializeFocus();
-      } else {
-        this.sections.map(section => (section.showChildren = false));
       }
       this.checkNavHeight();
     },
@@ -154,12 +153,19 @@ export default {
             firstRouterLink.focus();
           }
         } else if (activeRouterLink.classList.contains("child-link")) {
-          const sectionId = activeRouterLink.dataset.section;
-          const dropdownButton = this.$refs[`section-dropdown-${sectionId}`][0];
-          dropdownButton.click();
-          this.$nextTick(() => {
-            activeRouterLink.focus();
-          });
+          // grab parent subpath for child page, use it to match against the button with that path as a data attribute.
+          const path = window.location.pathname;
+          
+          // e.g., "/releases/twin-stars" will return ["/releases", "/twin-stars"]
+          const parentPathRegex = /\/[a-z-]*/gi;
+          const parentPath = path.match(parentPathRegex) ? path.match(parentPathRegex)[0] : "none";
+
+          // NOTE: each button which opens a dropdown menu needs a `data-parent-path` attribute whose value is the parent path.
+          // it would be nice to find a better idiomatic Vue solution for this.
+          const dropdownButton = document.querySelector(`[data-parent-path='${parentPath}']`);
+
+          // rather than clicking this menu open then focusing on the specific child page, just focus on it. less of a side effect that way. 
+          if (dropdownButton != null) dropdownButton.focus();
         } else {
           activeRouterLink.focus();
         }

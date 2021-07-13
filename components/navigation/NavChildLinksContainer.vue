@@ -1,15 +1,17 @@
 <template>
+  <!-- need to implement more robust a11y -->
+  <!-- https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton -->
   <div class="w-full">
     <div class="flex items-center">
       <button
         v-if="childLinks && childLinks.length > 0"
-        :ref="`parent-dropdown-${parentIndex}`"
-        class="flex items-center justify-center m-0 p-0 sm:mx-2 sm:pl-2 sm:pr-1 text-lg group hover:opacity-100 rounded-sm w-full sm:w-auto"
+        :data-parent-path="parentPath"
+        class="flex items-center justify-center my-1 p-0 sm:mx-2 sm:my-0 sm:pl-2 sm:pr-1 text-lg group hover:opacity-100 rounded-sm w-full sm:w-auto"
         @click="handleDropdownClick()"
       >
         <span class="group-hover:text-cyan-300">{{ parentLabel }}</span>
         <div
-          class="inline-block arrow-right mx-2 group-hover:border-l-cyan-300"
+          class="inline-block arrow-right mx-2 group-hover:border-l-cyan-300 sm:transition-transform"
           :class="{ down: showChildren }"
         />
       </button>
@@ -38,9 +40,9 @@
               class="sm:hidden border-gray-700 w-4/5 mx-auto"
             >
             <router-link
-              :to="childLink.href"
+              :to="getFullChildPath(childLink.href)"
               :tabindex="showChildren ? 0 : -1"
-              class="child-link block px-4 py-2 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
+              class="child-link block px-4 my-2 sm:py-2 sm:my-0 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
             >
               {{ childLink.name }}
             </router-link>
@@ -65,8 +67,8 @@ export default {
       type: String,
       required: true,
     },
-    parentIndex: {
-      type: Number,
+    parentPath: {
+      type: String,
       required: true,
     },
   },
@@ -92,6 +94,9 @@ export default {
       this.showChildren = !this.showChildren;
       this.$emit("toggle");
     },
+    getFullChildPath(childPath) {
+      return this.parentPath + childPath;
+    },
   },
 };
 </script>
@@ -103,10 +108,8 @@ export default {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 8px solid white;
-  transition: transform 0.1s linear;
 }
 .arrow-right.down {
   transform: rotate(90deg);
-  transition: transform 0.1s linear;
 }
 </style>
