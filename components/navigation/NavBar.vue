@@ -2,10 +2,10 @@
   <div
     id="nav-container"
     ref="nav-container"
-    class="fixed z-100 flex items-center justify-end w-screen top-0 font-default text-white border border-gray-500 border-t-0 border-l-0 border-r-0 h-fit"
+    class="fixed z-100 flex items-center justify-end w-screen top-0 font-default text-white border-gray-500 h-fit sm:h-16"
     :class="{
-      'border-b-1 bg-coolgray-900': isNavActive,
-      'border-0 border-b-0 h-16': !isNavActive
+      'border-b': isNavActive,
+      'border-b-0 h-16': !isNavActive
     }"
   >
     <transition
