@@ -26,7 +26,6 @@
             class="flex items-center mx-auto sm:py-2 text-center w-1/3 border border-t-0 border-l-0 border-r-0 border-b-1 border-gray-600 sm:border-none sm:mx-0 sm:w-auto"
             :class="{
               'border-none': index === sections.length - 1,
-              
             }"
           >
             <router-link
