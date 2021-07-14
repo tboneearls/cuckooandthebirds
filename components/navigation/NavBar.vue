@@ -1,7 +1,6 @@
 <template>
   <div
     id="nav-container"
-    ref="nav-container"
     class="fixed z-100 flex items-center justify-end w-screen top-0 font-default text-white border-gray-500 h-fit sm:h-16"
     :class="{
       'border-b': isNavActive,
@@ -37,7 +36,7 @@
             <nav-child-links-container 
               v-else
               :parent="parent"
-              @toggle="checkNavHeight"
+              @toggle="$emit('navbar-height-changed')"
             />
           </li>
         </ul>
@@ -61,7 +60,6 @@ export default {
   data() {
     return {
       navigationData,
-      navHeight: 0,
     };
   },
   computed: {
@@ -77,18 +75,7 @@ export default {
         // if the nav is inactive, the child link lists should collapse, too.
         this.navigationData.map((section) => section.showChildren = false);
       }
-      this.checkNavHeight();
     },
-    navHeight(navHeight) {
-      document.body.style.marginTop = `${navHeight + 20}px`;
-    },
-  },
-  mounted() {
-    this.checkNavHeight();
-    window.addEventListener("resize", this.checkNavHeight);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.checkNavHeight);
   },
   methods: {
     initializeFocus() {
@@ -119,15 +106,9 @@ export default {
         }
       });
     },
-    checkNavHeight() {
-      this.$nextTick(() => {
-        const navContainer = this.$refs["nav-container"];
-        this.navHeight = navContainer.offsetHeight;
-      });
-    },
     handleDropdownClick(section) {
       section.showChildren = !section.showChildren;
-      this.checkNavHeight();
+      this.$emit("navbar-height-changed");
     },
   },
 };
