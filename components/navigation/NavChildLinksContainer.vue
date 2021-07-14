@@ -1,4 +1,6 @@
 <template>
+  <!-- TODO: implement more robust a11y for dropdown menu: -->
+  <!-- https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton -->
   <div 
     class="w-full"
   >
