@@ -31,6 +31,7 @@ export default [
   //   href: "/shows",
   //   name: "Shows",
   //   childLinks: [],
+  //   showChildren: false,
   // },
   {
     href: "/press",
