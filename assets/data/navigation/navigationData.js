@@ -1,5 +1,5 @@
 /*
- * href: router-link url
+ * href: nuxt-link url
  * name: route name that will appear on nav bar
  * childLinks: array of child pages (nested under the top-level href path)
  * showChildren: if true, show children pages in dropdown. should always be false if childLinks is empty.
