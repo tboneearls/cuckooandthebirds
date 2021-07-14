@@ -22,7 +22,6 @@ import Placeholder from "../components/widgets/Placeholder.vue";
 const NAV_ADDITIONAL_OFFSET = 20;
 
 export default {
-  name: "App",
   components: {
     NavBar,
     TheFooter,

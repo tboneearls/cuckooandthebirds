@@ -5,12 +5,12 @@
     <hr
       class="border-gray-700 w-4/5 sm:w-full mx-auto"
     >
-    <router-link
+    <nuxt-link
       :to="getFullChildPath(childLink.href)"
       class="child-link block px-4 my-2 sm:py-2 sm:my-0 text-sm sm:text-md hover:text-cyan-300 hover:opacity-100 rounded-sm w-full"
     >
       {{ childLink.name }}
-    </router-link>
+    </nuxt-link>
   </li>
 </template>
 

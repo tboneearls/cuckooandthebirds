@@ -25,14 +25,14 @@
               'border-none': index === navigationData.length - 1,
             }"
           >
-            <router-link
+            <nuxt-link
               v-if="parent.childLinks && parent.childLinks.length === 0"
               :to="parent.href"
               :tabindex="isNavActive ? 0 : -1"
               class="px-4 my-2 text-lg hover:text-cyan-300 hover:opacity-100 rounded-sm w-full sm:w-auto"
             >
               {{ parent.name }}
-            </router-link>
+            </nuxt-link>
             <nav-child-links-container 
               v-else
               :parent="parent"
