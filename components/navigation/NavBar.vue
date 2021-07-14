@@ -50,7 +50,7 @@
 import { mapState } from "vuex";
 import NavBarToggle from "./NavBarToggle.vue";
 import NavChildLinksContainer from "./NavChildLinksContainer.vue";
-import navigationData from "../../assets/data/navigation/navigationData";
+import navigationData from "@/assets/data/navigation/navigationData";
 
 export default {
   components: {

@@ -15,9 +15,9 @@
 <script>
 import { mapState } from "vuex";
 
-import NavBar from "../components/navigation/NavBar.vue";
-import TheFooter from "../components/global/TheFooter.vue";
-import Placeholder from "../components/widgets/Placeholder.vue";
+import NavBar from "@/components/navigation/NavBar.vue";
+import TheFooter from "@/components/global/TheFooter.vue";
+import Placeholder from "@/components/widgets/Placeholder.vue";
 
 const NAV_ADDITIONAL_OFFSET = 20;
 
